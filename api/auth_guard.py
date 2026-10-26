@@ -36,9 +36,22 @@ def get_user_claims(authorization: str | None) -> dict:
     if not authorization.removeprefix("Bearer ").strip():
         raise HTTPException(status_code=401, detail="Authentication required.")
 
+    demo_mode = os.getenv("DEMO_MODE", "false").lower() == "true"
+    if demo_mode and authorization:
+        token = authorization.removeprefix("Bearer ").strip()
+        if token.startswith("demo-"):
+            if "admin" in token:
+                return {"id": "00000000-0000-0000-0000-000000000001", "app_metadata": {"role": "admin"}, "role": "admin"}
+            elif "applicant" in token or "institution" in token:
+                return {"id": "00000000-0000-0000-0000-000000000003", "app_metadata": {"role": "applicant"}, "role": "applicant"}
+            else:
+                return {"id": "00000000-0000-0000-0000-000000000002", "app_metadata": {"role": "scrutiny_officer"}, "role": "scrutiny_officer"}
+
     supabase_url = os.getenv("SUPABASE_URL")
     anon_key = os.getenv("SUPABASE_ANON_KEY")
     if not supabase_url or not anon_key:
+        if demo_mode:
+            return {"id": "00000000-0000-0000-0000-000000000002", "app_metadata": {"role": "scrutiny_officer"}, "role": "scrutiny_officer"}
         raise HTTPException(status_code=503, detail="Authentication is unavailable; configure Supabase.")
 
     user = _supabase_request(
@@ -70,7 +83,7 @@ def extract_user_role(authorization: str | None) -> str:
         return "applicant"
     if role in {"applicant", "scrutiny_officer", "regional_officer", "admin"}:
         return str(role)
-    raise HTTPException(status_code=403, detail="Your account has no assigned PreFlight role.")
+    raise HTTPException(status_code=403, detail="Your account has no assigned ZoomIn role.")
 
 
 def require_role(authorization: str | None, allowed_roles: set[str]) -> str:

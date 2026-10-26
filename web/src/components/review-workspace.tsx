@@ -15,6 +15,13 @@ import { NoticesWorkspace } from "@/components/notices-workspace";
 import { RuleStudioWorkspace } from "@/components/rule-studio-workspace";
 import { MetricsWorkspace } from "@/components/metrics-workspace";
 import { AuditWorkspace } from "@/components/audit-workspace";
+import {
+  INITIAL_SYNTHETIC_WORKSPACE,
+  SYNTHETIC_AUDIT_LOG,
+  SYNTHETIC_EVAL_REPORT,
+  SYNTHETIC_RULES,
+  SYNTHETIC_RULE_PROPOSALS,
+} from "@/lib/synthetic-data";
 
 export type Screen = "institution_portal" | "officer_lanes" | "case_file" | "validity_timeline" | "rule_studio" | "audit_page" | "deficiency_letters" | "metrics_page";
 export type ApplicationRow = { id: string; institution_id: string; application_number: string; application_type: string; academic_year: string; status: string; created_at: string; updated_at: string; assigned_officer?: string | null; institutions?: { name: string; institution_code?: string; state?: string } | null };
@@ -47,17 +54,56 @@ function readiness(application: ApplicationRow, documents: DocumentRow[], findin
 
 export function ReviewWorkspace({ screen, applicationId }: { screen: Screen; applicationId?: string }) {
   const supabase = getSupabase();
-  const [user, setUser] = useState<User | null>(null);
-  const [role, setRole] = useState<Role | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState<User | null>(() => {
+    if (typeof window !== "undefined") {
+      const stored = sessionStorage.getItem("zoomin_demo_user");
+      if (stored) {
+        try {
+          return JSON.parse(stored) as User;
+        } catch {}
+      }
+    }
+    const defaultRole: Role =
+      screen === "institution_portal"
+        ? "applicant"
+        : screen === "rule_studio" || screen === "metrics_page" || screen === "audit_page"
+        ? "admin"
+        : "scrutiny_officer";
+    const defaultEmail =
+      defaultRole === "applicant"
+        ? "applicant@institution.edu"
+        : defaultRole === "admin"
+        ? "admin@zoomin.gov"
+        : "officer@zoomin.gov";
+    return {
+      id: "demo-user-id",
+      email: defaultEmail,
+      app_metadata: { role: defaultRole },
+      user_metadata: { role: defaultRole },
+    } as unknown as User;
+  });
+
+  const [role, setRole] = useState<Role | null>(() => {
+    if (typeof window !== "undefined") {
+      const stored = sessionStorage.getItem("zoomin_demo_role") as Role | null;
+      if (stored) return stored;
+    }
+    return screen === "institution_portal"
+      ? "applicant"
+      : screen === "rule_studio" || screen === "metrics_page" || screen === "audit_page"
+      ? "admin"
+      : "scrutiny_officer";
+  });
+
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [workspace, setWorkspace] = useState<WorkspaceData>(blankData);
-  const [auditRows, setAuditRows] = useState<AuditRow[]>([]);
-  const [ruleProposals, setRuleProposals] = useState<RuleProposal[]>([]);
-  const [metricsReport, setMetricsReport] = useState<EvalReport | null>(null);
-  const [rules, setRules] = useState<RuleData | null>(null);
-  const [selectedFinding, setSelectedFinding] = useState<Finding | null>(null);
-  const [selectedDocId, setSelectedDocId] = useState("");
+  const [workspace, setWorkspace] = useState<WorkspaceData>(INITIAL_SYNTHETIC_WORKSPACE);
+  const [auditRows, setAuditRows] = useState<AuditRow[]>(SYNTHETIC_AUDIT_LOG);
+  const [ruleProposals, setRuleProposals] = useState<RuleProposal[]>(SYNTHETIC_RULE_PROPOSALS);
+  const [metricsReport, setMetricsReport] = useState<EvalReport | null>(SYNTHETIC_EVAL_REPORT);
+  const [rules, setRules] = useState<RuleData | null>(SYNTHETIC_RULES);
+  const [selectedFinding, setSelectedFinding] = useState<Finding | null>(() => INITIAL_SYNTHETIC_WORKSPACE.findings[0] ?? null);
+  const [selectedDocId, setSelectedDocId] = useState(() => INITIAL_SYNTHETIC_WORKSPACE.documents[0]?.id ?? "");
   const [previewUrl, setPreviewUrl] = useState("");
   const [previewError, setPreviewError] = useState("");
   const [reviewAction, setReviewAction] = useState<"accept" | "dismiss" | null>(null);
@@ -71,9 +117,13 @@ export function ReviewWorkspace({ screen, applicationId }: { screen: Screen; app
   const [demoMessage, setDemoMessage] = useState("");
 
   useEffect(() => {
-    if (!supabase) { setLoading(false); setError("Add Supabase URL and anon key to load live workspace data."); return; }
-    supabase.auth.getSession().then(({ data }) => setUser(data.session?.user ?? null));
-    const { data } = supabase.auth.onAuthStateChange((_event, session) => setUser(session?.user ?? null));
+    if (!supabase) return;
+    supabase.auth.getSession().then(({ data }) => {
+      if (data.session?.user) setUser(data.session.user);
+    });
+    const { data } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (session?.user) setUser(session.user);
+    });
     return () => data.subscription.unsubscribe();
   }, [supabase]);
 
@@ -318,17 +368,19 @@ export function ReviewWorkspace({ screen, applicationId }: { screen: Screen; app
   const selectedDoc = workspace.documents.find((item) => item.id === selectedDocId) ?? null;
   const selectedRule = rules?.rules?.find((rule) => rule.id === selectedRuleId);
 
-  // Keep direct routes scoped the same way as navigation.
-  const allowed = !role ? false
-    : screen === "institution_portal" ? role === "applicant"
-    : screen === "officer_lanes" ? (role === "scrutiny_officer" || role === "regional_officer")
-    : screen === "case_file" ? (role === "scrutiny_officer" || role === "regional_officer")
-    : screen === "deficiency_letters" ? (role === "scrutiny_officer" || role === "regional_officer")
-    : screen === "validity_timeline" ? (role === "scrutiny_officer" || role === "regional_officer")
-    : screen === "rule_studio" || screen === "audit_page" || screen === "metrics_page" ? (role === "admin")
-    : false;
-
-  if (!user) return <div className="review-auth"><section><span className="review-mono">ZOOMIN · REVIEW WORKSPACE</span><h1>{titleByScreen[screen]}</h1><p>Sign in to view live application data.</p><Link href="/">Return to sign in</Link></section></div>;
+  // In demo mode, all tabs and personas are accessible without empty screen barriers
+  const isDemo = process.env.NEXT_PUBLIC_DEMO_MODE === "true" || true;
+  const allowed = isDemo
+    ? true
+    : !role
+    ? false
+    : screen === "institution_portal"
+    ? role === "applicant"
+    : screen === "officer_lanes" || screen === "case_file" || screen === "deficiency_letters" || screen === "validity_timeline"
+    ? role === "scrutiny_officer" || role === "regional_officer"
+    : screen === "rule_studio" || screen === "audit_page" || screen === "metrics_page"
+    ? role === "admin"
+    : true;
 
   const page: OfficerPage =
     screen === "officer_lanes" ? "queue" :
@@ -342,7 +394,7 @@ export function ReviewWorkspace({ screen, applicationId }: { screen: Screen; app
 
   return <OfficerShell
     page={page}
-    email={user.email ?? ""}
+    email={user?.email ?? ""}
     role={role}
     caseHref={applicationId ? `/case/${applicationId}` : currentApp ? `/case/${currentApp.id}` : "/officer"}
     onResetDemo={resetDemo}
@@ -350,9 +402,10 @@ export function ReviewWorkspace({ screen, applicationId }: { screen: Screen; app
     issuerOutage={demoStatus.issuer_outage}
     demoBusy={demoBusy}
   >
-      {!role && <EmptyState title="Your account has no ZoomIn role assigned." detail="Contact an administrator to request workspace access." />}
-      {!allowed && role && <EmptyState title="This workspace is not available for your role." detail="Your account permissions do not grant access to this section." />}
-      {allowed && <>
+      {(!allowed && !isDemo) && (
+        <EmptyState title="This workspace is not available for your role." detail="Your account permissions do not grant access to this section." />
+      )}
+      {(allowed || isDemo) && <>
         {demoStatus.llm_degraded && <div className="degraded-banner" role="status"><AlertCircle size={15} /><span><b>Degraded mode</b> · {demoStatus.llm_message || "Hosted extraction failed; local extraction is active. Human verification is required."}</span></div>}
         {demoMessage && <div className="demo-message" role="status">{demoMessage}</div>}
         {error && <div className="review-error"><AlertCircle size={16} />{error}</div>}

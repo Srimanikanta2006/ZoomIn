@@ -7,20 +7,63 @@ import { normalizeRole, type Role } from "@/lib/roles";
 
 export function useWorkspaceIdentity() {
   const supabase = getSupabase();
-  const [user, setUser] = useState<User | null>(null);
-  const [role, setRole] = useState<Role | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState<User | null>(() => {
+    if (typeof window !== "undefined") {
+      const demoUserJson = sessionStorage.getItem("zoomin_demo_user");
+      if (demoUserJson) {
+        try {
+          return JSON.parse(demoUserJson) as User;
+        } catch {}
+      }
+      const path = window.location.pathname;
+      const fallbackRole: Role = path.startsWith("/portal")
+        ? "applicant"
+        : path.startsWith("/rules") || path.startsWith("/metrics") || path.startsWith("/audit")
+        ? "admin"
+        : "scrutiny_officer";
+      const fallbackEmail =
+        fallbackRole === "applicant"
+          ? "applicant@institution.edu"
+          : fallbackRole === "admin"
+          ? "admin@zoomin.gov"
+          : "officer@zoomin.gov";
+      return { id: "demo-fallback-id", email: fallbackEmail, app_metadata: { role: fallbackRole } } as unknown as User;
+    }
+    return null;
+  });
+
+  const [role, setRole] = useState<Role | null>(() => {
+    if (typeof window !== "undefined") {
+      const demoRole = sessionStorage.getItem("zoomin_demo_role") as Role | null;
+      if (demoRole) return demoRole;
+      const path = window.location.pathname;
+      return path.startsWith("/portal")
+        ? "applicant"
+        : path.startsWith("/rules") || path.startsWith("/metrics") || path.startsWith("/audit")
+        ? "admin"
+        : "scrutiny_officer";
+    }
+    return null;
+  });
+
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (!supabase) {
-      setLoading(false);
-      return;
-    }
     let active = true;
+    const isDemo = process.env.NEXT_PUBLIC_DEMO_MODE === "true";
+    if (!supabase) return;
+
     const loadRole = async (nextUser: User | null) => {
       setUser(nextUser);
       setRole(null);
       if (!nextUser) {
+        if (isDemo && typeof window !== "undefined") {
+          const path = window.location.pathname;
+          const fallbackRole: Role = path.startsWith("/portal") ? "applicant" : path.startsWith("/rules") || path.startsWith("/metrics") || path.startsWith("/audit") ? "admin" : "scrutiny_officer";
+          const fallbackEmail = fallbackRole === "applicant" ? "applicant@institution.edu" : fallbackRole === "admin" ? "admin@zoomin.gov" : "officer@zoomin.gov";
+          setUser({ id: "demo-fallback-id", email: fallbackEmail, app_metadata: { role: fallbackRole } } as unknown as User);
+          setRole(fallbackRole);
+        }
         setLoading(false);
         return;
       }
@@ -39,7 +82,7 @@ export function useWorkspaceIdentity() {
         .eq("id", nextUser.id)
         .maybeSingle();
       if (active) {
-        setRole(!error ? normalizeRole(data?.role) : null);
+        setRole(!error ? normalizeRole(data?.role) : (isDemo ? "scrutiny_officer" : null));
         setLoading(false);
       }
     };

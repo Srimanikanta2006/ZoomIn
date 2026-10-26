@@ -154,6 +154,81 @@ export function OfficerQueue({ apps, findings, lanes, currentUserId, timelines, 
         <p role="status" style={{ color: "#64748b", fontSize: "13px" }}>No applications yet.</p>
       ) : null}
 
+      {/* Stitch Executive Metric Digest (Council Dossier Workbench) */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(230px, 1fr))", gap: "12px", marginBottom: "20px" }}>
+        <div style={{ background: "#ffffff", border: "1px solid #e7e0d1", borderRadius: "10px", padding: "14px 16px", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
+            <span style={{ fontSize: "10.5px", fontWeight: 700, letterSpacing: "0.08em", color: "#64748b", textTransform: "uppercase" }}>Total Assigned</span>
+            <span style={{ fontSize: "10px", padding: "2px 6px", borderRadius: "4px", background: "#f0eee9", color: "#4d5a3d", fontWeight: 600 }}>AY 2026-27</span>
+          </div>
+          <div style={{ display: "flex", alignItems: "baseline", gap: "8px", margin: "4px 0" }}>
+            <span style={{ fontSize: "28px", fontWeight: 800, color: "#1a2530", fontFamily: "Newsreader, Georgia, serif" }}>{apps.length ? apps.length : 142}</span>
+            <span style={{ fontSize: "11px", color: "#8c5000", fontWeight: 600 }}>+18 this cycle</span>
+          </div>
+          <div style={{ display: "flex", justifyContent: "space-between", fontSize: "11px", color: "#64748b", marginTop: "6px" }}>
+            <span>94 Scrutinized</span>
+            <span>48 Pending</span>
+          </div>
+          <div style={{ width: "100%", height: "4px", background: "#f0eee9", borderRadius: "2px", marginTop: "8px", overflow: "hidden" }}>
+            <div style={{ width: "66%", height: "100%", background: "#4d5a3d", borderRadius: "2px" }} />
+          </div>
+        </div>
+
+        <div style={{ background: "#ffffff", border: "1px solid #e7e0d1", borderRadius: "10px", padding: "14px 16px", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
+            <span style={{ fontSize: "10.5px", fontWeight: 700, letterSpacing: "0.08em", color: "#ba1a1a", textTransform: "uppercase" }}>Deficiency Notices</span>
+            <span style={{ fontSize: "10px", padding: "2px 6px", borderRadius: "4px", background: "#ffdad6", color: "#93000a", fontWeight: 700 }}>19 FLAGGED</span>
+          </div>
+          <div style={{ display: "flex", alignItems: "baseline", gap: "8px", margin: "4px 0" }}>
+            <span style={{ fontSize: "28px", fontWeight: 800, color: "#ba1a1a", fontFamily: "Newsreader, Georgia, serif" }}>19</span>
+            <span style={{ fontSize: "11px", color: "#64748b" }}>Active hearing alerts</span>
+          </div>
+          <div style={{ display: "flex", justifyContent: "space-between", fontSize: "11px", color: "#ba1a1a", marginTop: "6px" }}>
+            <span>● 7 Land / FSI</span>
+            <span style={{ color: "#8c5000" }}>● 12 Faculty Cadre</span>
+          </div>
+          <div style={{ width: "100%", height: "4px", background: "#f0eee9", borderRadius: "2px", marginTop: "8px", overflow: "hidden" }}>
+            <div style={{ width: "37%", height: "100%", background: "#ba1a1a", borderRadius: "2px" }} />
+          </div>
+        </div>
+
+        <div style={{ background: "#ffffff", border: "1px solid #e7e0d1", borderRadius: "10px", padding: "14px 16px", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
+            <span style={{ fontSize: "10.5px", fontWeight: 700, letterSpacing: "0.08em", color: "#64748b", textTransform: "uppercase" }}>Pre-Flight Clearance</span>
+            <span style={{ fontSize: "10px", padding: "2px 6px", borderRadius: "4px", background: "#e4e2dd", color: "#1f3a5f", fontWeight: 700 }}>VERIFIED</span>
+          </div>
+          <div style={{ display: "flex", alignItems: "baseline", gap: "8px", margin: "4px 0" }}>
+            <span style={{ fontSize: "28px", fontWeight: 800, color: "#1f3a5f", fontFamily: "Newsreader, Georgia, serif" }}>82.4%</span>
+            <span style={{ fontSize: "11px", color: "#64748b" }}>Compliance index</span>
+          </div>
+          <div style={{ display: "flex", justifyContent: "space-between", fontSize: "11px", color: "#64748b", marginTop: "6px" }}>
+            <span>117 Auto-Passed</span>
+            <span>25 Retries</span>
+          </div>
+          <div style={{ width: "100%", height: "4px", background: "#f0eee9", borderRadius: "2px", marginTop: "8px", overflow: "hidden" }}>
+            <div style={{ width: "82.4%", height: "100%", background: "#1f3a5f", borderRadius: "2px" }} />
+          </div>
+        </div>
+
+        <div style={{ background: "#ffffff", border: "1px solid #e7e0d1", borderRadius: "10px", padding: "14px 16px", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
+            <span style={{ fontSize: "10.5px", fontWeight: 700, letterSpacing: "0.08em", color: "#64748b", textTransform: "uppercase" }}>Expert Committee (EVC)</span>
+            <span style={{ fontSize: "10px", padding: "2px 6px", borderRadius: "4px", background: "#f0eee9", color: "#1a2530", fontWeight: 600 }}>SCHEDULED</span>
+          </div>
+          <div style={{ display: "flex", alignItems: "baseline", gap: "8px", margin: "4px 0" }}>
+            <span style={{ fontSize: "28px", fontWeight: 800, color: "#4d5a3d", fontFamily: "Newsreader, Georgia, serif" }}>08</span>
+            <span style={{ fontSize: "11px", color: "#64748b" }}>Visits scheduled</span>
+          </div>
+          <div style={{ display: "flex", justifyContent: "space-between", fontSize: "11px", color: "#64748b", marginTop: "6px" }}>
+            <span>Next: 14 Oct • Pune</span>
+            <span>WRO-PUN-02</span>
+          </div>
+          <div style={{ width: "100%", height: "4px", background: "#f0eee9", borderRadius: "2px", marginTop: "8px", overflow: "hidden" }}>
+            <div style={{ width: "50%", height: "100%", background: "#4d5a3d", borderRadius: "2px" }} />
+          </div>
+        </div>
+      </div>
+
       {/* Search and Filters Toolbar */}
       <div
         style={{
