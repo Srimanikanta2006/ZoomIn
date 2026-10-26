@@ -45,7 +45,10 @@ export function AuthWorkspace() {
 
   const isDemoMode = process.env.NEXT_PUBLIC_DEMO_MODE === "true";
 
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
+    setMounted(true);
     if (typeof window !== "undefined") {
       const notice = sessionStorage.getItem("zoomin_timeout") || sessionStorage.getItem("preflight_timeout");
       if (notice) {
@@ -308,7 +311,7 @@ export function AuthWorkspace() {
                 </p>
               </div>
 
-              {timeoutNotice && (
+              {mounted && timeoutNotice && (
                 <div className="falcon-timeout-alert">
                   <AlertCircle size={15} />
                   <span>{timeoutNotice}</span>
@@ -348,8 +351,8 @@ export function AuthWorkspace() {
                 </div>
               )}
 
-              <form onSubmit={signIn} className="falcon-form">
-                <div className="falcon-field">
+              <form onSubmit={signIn} className="falcon-form" suppressHydrationWarning>
+                <div className="falcon-field" suppressHydrationWarning>
                   <label htmlFor="email" className="sr-only">Email address</label>
                   <input
                     id="email"
@@ -360,10 +363,11 @@ export function AuthWorkspace() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
+                    suppressHydrationWarning
                   />
                 </div>
 
-                <div className="falcon-field">
+                <div className="falcon-field" suppressHydrationWarning>
                   <label htmlFor="password" className="sr-only">Password</label>
                   <input
                     id="password"
@@ -374,6 +378,7 @@ export function AuthWorkspace() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
+                    suppressHydrationWarning
                   />
                 </div>
 
