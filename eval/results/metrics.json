@@ -1,0 +1,940 @@
+{
+  "generated_at": "2026-10-25T21:56:40.715653+00:00",
+  "dataset": {
+    "name": "PreFlight synthetic generated set",
+    "records": 50,
+    "modes": [
+      "original",
+      "scanned"
+    ],
+    "synthetic_only": true
+  },
+  "pipeline": {
+    "llm_mode": "local",
+    "cache_hits": 2,
+    "cache_misses": 98
+  },
+  "documents_processed": 100,
+  "average_processing_seconds": 0.416,
+  "processing_seconds_total": 41.6004,
+  "field_extraction_accuracy": [
+    {
+      "input_mode": "original",
+      "field": "amount_inr",
+      "target": "canonical",
+      "correct": 8,
+      "total": 8,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "original",
+      "field": "amount_inr",
+      "target": "observed",
+      "correct": 8,
+      "total": 8,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "original",
+      "field": "amount_inr_display",
+      "target": "canonical",
+      "correct": 7,
+      "total": 8,
+      "accuracy": 0.875
+    },
+    {
+      "input_mode": "original",
+      "field": "amount_inr_display",
+      "target": "observed",
+      "correct": 8,
+      "total": 8,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "original",
+      "field": "application_number",
+      "target": "canonical",
+      "correct": 42,
+      "total": 42,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "original",
+      "field": "application_number",
+      "target": "observed",
+      "correct": 42,
+      "total": 42,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "original",
+      "field": "document_reference",
+      "target": "canonical",
+      "correct": 40,
+      "total": 42,
+      "accuracy": 0.9524
+    },
+    {
+      "input_mode": "original",
+      "field": "document_reference",
+      "target": "observed",
+      "correct": 42,
+      "total": 42,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "original",
+      "field": "document_type",
+      "target": "observed",
+      "correct": 50,
+      "total": 50,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "original",
+      "field": "faculty_reference_id",
+      "target": "canonical",
+      "correct": 5,
+      "total": 8,
+      "accuracy": 0.625
+    },
+    {
+      "input_mode": "original",
+      "field": "faculty_reference_id",
+      "target": "observed",
+      "correct": 8,
+      "total": 8,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "original",
+      "field": "institution_address",
+      "target": "canonical",
+      "correct": 40,
+      "total": 42,
+      "accuracy": 0.9524
+    },
+    {
+      "input_mode": "original",
+      "field": "institution_address",
+      "target": "observed",
+      "correct": 42,
+      "total": 42,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "original",
+      "field": "institution_name",
+      "target": "canonical",
+      "correct": 39,
+      "total": 42,
+      "accuracy": 0.9286
+    },
+    {
+      "input_mode": "original",
+      "field": "institution_name",
+      "target": "observed",
+      "correct": 42,
+      "total": 42,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "original",
+      "field": "issue_date",
+      "target": "canonical",
+      "correct": 40,
+      "total": 42,
+      "accuracy": 0.9524
+    },
+    {
+      "input_mode": "original",
+      "field": "issue_date",
+      "target": "observed",
+      "correct": 42,
+      "total": 42,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "original",
+      "field": "payment_date",
+      "target": "canonical",
+      "correct": 6,
+      "total": 8,
+      "accuracy": 0.75
+    },
+    {
+      "input_mode": "original",
+      "field": "payment_date",
+      "target": "observed",
+      "correct": 8,
+      "total": 8,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "original",
+      "field": "receipt_reference",
+      "target": "canonical",
+      "correct": 6,
+      "total": 8,
+      "accuracy": 0.75
+    },
+    {
+      "input_mode": "original",
+      "field": "receipt_reference",
+      "target": "observed",
+      "correct": 8,
+      "total": 8,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "original",
+      "field": "signatory",
+      "target": "canonical",
+      "correct": 41,
+      "total": 42,
+      "accuracy": 0.9762
+    },
+    {
+      "input_mode": "original",
+      "field": "signatory",
+      "target": "observed",
+      "correct": 41,
+      "total": 42,
+      "accuracy": 0.9762
+    },
+    {
+      "input_mode": "original",
+      "field": "signature_present",
+      "target": "canonical",
+      "correct": 40,
+      "total": 42,
+      "accuracy": 0.9524
+    },
+    {
+      "input_mode": "original",
+      "field": "signature_present",
+      "target": "observed",
+      "correct": 42,
+      "total": 50,
+      "accuracy": 0.84
+    },
+    {
+      "input_mode": "original",
+      "field": "transaction_reference",
+      "target": "canonical",
+      "correct": 6,
+      "total": 8,
+      "accuracy": 0.75
+    },
+    {
+      "input_mode": "original",
+      "field": "transaction_reference",
+      "target": "observed",
+      "correct": 8,
+      "total": 8,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "original",
+      "field": "valid_until",
+      "target": "canonical",
+      "correct": 39,
+      "total": 42,
+      "accuracy": 0.9286
+    },
+    {
+      "input_mode": "original",
+      "field": "valid_until",
+      "target": "observed",
+      "correct": 42,
+      "total": 42,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "scanned",
+      "field": "amount_inr",
+      "target": "canonical",
+      "correct": 8,
+      "total": 8,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "scanned",
+      "field": "amount_inr",
+      "target": "observed",
+      "correct": 8,
+      "total": 8,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "scanned",
+      "field": "amount_inr_display",
+      "target": "canonical",
+      "correct": 7,
+      "total": 8,
+      "accuracy": 0.875
+    },
+    {
+      "input_mode": "scanned",
+      "field": "amount_inr_display",
+      "target": "observed",
+      "correct": 8,
+      "total": 8,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "scanned",
+      "field": "application_number",
+      "target": "canonical",
+      "correct": 42,
+      "total": 42,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "scanned",
+      "field": "application_number",
+      "target": "observed",
+      "correct": 42,
+      "total": 42,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "scanned",
+      "field": "document_reference",
+      "target": "canonical",
+      "correct": 40,
+      "total": 42,
+      "accuracy": 0.9524
+    },
+    {
+      "input_mode": "scanned",
+      "field": "document_reference",
+      "target": "observed",
+      "correct": 42,
+      "total": 42,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "scanned",
+      "field": "document_type",
+      "target": "observed",
+      "correct": 50,
+      "total": 50,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "scanned",
+      "field": "faculty_reference_id",
+      "target": "canonical",
+      "correct": 0,
+      "total": 8,
+      "accuracy": 0.0
+    },
+    {
+      "input_mode": "scanned",
+      "field": "faculty_reference_id",
+      "target": "observed",
+      "correct": 0,
+      "total": 8,
+      "accuracy": 0.0
+    },
+    {
+      "input_mode": "scanned",
+      "field": "institution_address",
+      "target": "canonical",
+      "correct": 0,
+      "total": 42,
+      "accuracy": 0.0
+    },
+    {
+      "input_mode": "scanned",
+      "field": "institution_address",
+      "target": "observed",
+      "correct": 0,
+      "total": 42,
+      "accuracy": 0.0
+    },
+    {
+      "input_mode": "scanned",
+      "field": "institution_name",
+      "target": "canonical",
+      "correct": 39,
+      "total": 42,
+      "accuracy": 0.9286
+    },
+    {
+      "input_mode": "scanned",
+      "field": "institution_name",
+      "target": "observed",
+      "correct": 42,
+      "total": 42,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "scanned",
+      "field": "issue_date",
+      "target": "canonical",
+      "correct": 40,
+      "total": 42,
+      "accuracy": 0.9524
+    },
+    {
+      "input_mode": "scanned",
+      "field": "issue_date",
+      "target": "observed",
+      "correct": 42,
+      "total": 42,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "scanned",
+      "field": "payment_date",
+      "target": "canonical",
+      "correct": 6,
+      "total": 8,
+      "accuracy": 0.75
+    },
+    {
+      "input_mode": "scanned",
+      "field": "payment_date",
+      "target": "observed",
+      "correct": 8,
+      "total": 8,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "scanned",
+      "field": "receipt_reference",
+      "target": "canonical",
+      "correct": 6,
+      "total": 8,
+      "accuracy": 0.75
+    },
+    {
+      "input_mode": "scanned",
+      "field": "receipt_reference",
+      "target": "observed",
+      "correct": 8,
+      "total": 8,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "scanned",
+      "field": "signatory",
+      "target": "canonical",
+      "correct": 19,
+      "total": 42,
+      "accuracy": 0.4524
+    },
+    {
+      "input_mode": "scanned",
+      "field": "signatory",
+      "target": "observed",
+      "correct": 19,
+      "total": 42,
+      "accuracy": 0.4524
+    },
+    {
+      "input_mode": "scanned",
+      "field": "signature_present",
+      "target": "canonical",
+      "correct": 42,
+      "total": 42,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "scanned",
+      "field": "signature_present",
+      "target": "observed",
+      "correct": 40,
+      "total": 50,
+      "accuracy": 0.8
+    },
+    {
+      "input_mode": "scanned",
+      "field": "transaction_reference",
+      "target": "canonical",
+      "correct": 6,
+      "total": 8,
+      "accuracy": 0.75
+    },
+    {
+      "input_mode": "scanned",
+      "field": "transaction_reference",
+      "target": "observed",
+      "correct": 8,
+      "total": 8,
+      "accuracy": 1.0
+    },
+    {
+      "input_mode": "scanned",
+      "field": "valid_until",
+      "target": "canonical",
+      "correct": 39,
+      "total": 42,
+      "accuracy": 0.9286
+    },
+    {
+      "input_mode": "scanned",
+      "field": "valid_until",
+      "target": "observed",
+      "correct": 42,
+      "total": 42,
+      "accuracy": 1.0
+    }
+  ],
+  "validation": [
+    {
+      "input_mode": "original",
+      "finding_count": 395,
+      "defect_metrics": [
+        {
+          "input_mode": "original",
+          "defect_type": "expired_validity",
+          "rule_id": "DOCUMENT-VALIDITY-PERIOD",
+          "field": "valid_until",
+          "positive_count": 3,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "tn": 47,
+          "precision": 1.0,
+          "recall": 1.0,
+          "false_positive_rate": 0.0
+        },
+        {
+          "input_mode": "original",
+          "defect_type": "name_mismatch",
+          "rule_id": "CLAIM-FIELD-COMPARISON",
+          "field": "institution_name",
+          "positive_count": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "tn": 48,
+          "precision": 1.0,
+          "recall": 1.0,
+          "false_positive_rate": 0.0
+        },
+        {
+          "input_mode": "original",
+          "defect_type": "wrong_id",
+          "rule_id": "CLAIM-FIELD-COMPARISON",
+          "field": "document_reference",
+          "positive_count": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "tn": 48,
+          "precision": 1.0,
+          "recall": 1.0,
+          "false_positive_rate": 0.0
+        },
+        {
+          "input_mode": "original",
+          "defect_type": "edited_date",
+          "rule_id": "CLAIM-FIELD-COMPARISON",
+          "field": "issue_date",
+          "positive_count": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "tn": 48,
+          "precision": 1.0,
+          "recall": 1.0,
+          "false_positive_rate": 0.0
+        },
+        {
+          "input_mode": "original",
+          "defect_type": "duplicate_document_across_institutions",
+          "rule_id": "DUPLICATE-FILE-CROSS-INSTITUTION",
+          "field": null,
+          "positive_count": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "tn": 48,
+          "precision": 1.0,
+          "recall": 1.0,
+          "false_positive_rate": 0.0
+        },
+        {
+          "input_mode": "original",
+          "defect_type": "missing_signature",
+          "rule_id": "CLAIM-FIELD-COMPARISON",
+          "field": "signature_present",
+          "positive_count": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "tn": 48,
+          "precision": 1.0,
+          "recall": 1.0,
+          "false_positive_rate": 0.0
+        },
+        {
+          "input_mode": "original",
+          "defect_type": "same_faculty_id_in_3_institutions",
+          "rule_id": "SHARED-FACULTY-REFERENCE",
+          "field": null,
+          "positive_count": 3,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "tn": 47,
+          "precision": 1.0,
+          "recall": 1.0,
+          "false_positive_rate": 0.0
+        },
+        {
+          "input_mode": "original",
+          "defect_type": "same_address_in_2_applications",
+          "rule_id": "SHARED-INSTITUTION-ADDRESS",
+          "field": null,
+          "positive_count": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "tn": 48,
+          "precision": 1.0,
+          "recall": 1.0,
+          "false_positive_rate": 0.0
+        }
+      ],
+      "decoy_false_positive_rate": {
+        "input_mode": "original",
+        "decoy_count": 10,
+        "flagged_count": 0,
+        "false_positive_rate": 0.0,
+        "flagged_applications": []
+      },
+      "what_we_miss": []
+    },
+    {
+      "input_mode": "scanned",
+      "finding_count": 438,
+      "defect_metrics": [
+        {
+          "input_mode": "scanned",
+          "defect_type": "expired_validity",
+          "rule_id": "DOCUMENT-VALIDITY-PERIOD",
+          "field": "valid_until",
+          "positive_count": 3,
+          "tp": 3,
+          "fp": 0,
+          "fn": 0,
+          "tn": 47,
+          "precision": 1.0,
+          "recall": 1.0,
+          "false_positive_rate": 0.0
+        },
+        {
+          "input_mode": "scanned",
+          "defect_type": "name_mismatch",
+          "rule_id": "CLAIM-FIELD-COMPARISON",
+          "field": "institution_name",
+          "positive_count": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "tn": 48,
+          "precision": 1.0,
+          "recall": 1.0,
+          "false_positive_rate": 0.0
+        },
+        {
+          "input_mode": "scanned",
+          "defect_type": "wrong_id",
+          "rule_id": "CLAIM-FIELD-COMPARISON",
+          "field": "document_reference",
+          "positive_count": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "tn": 48,
+          "precision": 1.0,
+          "recall": 1.0,
+          "false_positive_rate": 0.0
+        },
+        {
+          "input_mode": "scanned",
+          "defect_type": "edited_date",
+          "rule_id": "CLAIM-FIELD-COMPARISON",
+          "field": "issue_date",
+          "positive_count": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "tn": 48,
+          "precision": 1.0,
+          "recall": 1.0,
+          "false_positive_rate": 0.0
+        },
+        {
+          "input_mode": "scanned",
+          "defect_type": "duplicate_document_across_institutions",
+          "rule_id": "DUPLICATE-FILE-CROSS-INSTITUTION",
+          "field": null,
+          "positive_count": 2,
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "tn": 48,
+          "precision": 1.0,
+          "recall": 1.0,
+          "false_positive_rate": 0.0
+        },
+        {
+          "input_mode": "scanned",
+          "defect_type": "missing_signature",
+          "rule_id": "CLAIM-FIELD-COMPARISON",
+          "field": "signature_present",
+          "positive_count": 2,
+          "tp": 0,
+          "fp": 0,
+          "fn": 2,
+          "tn": 48,
+          "precision": null,
+          "recall": 0.0,
+          "false_positive_rate": 0.0
+        },
+        {
+          "input_mode": "scanned",
+          "defect_type": "same_faculty_id_in_3_institutions",
+          "rule_id": "SHARED-FACULTY-REFERENCE",
+          "field": null,
+          "positive_count": 3,
+          "tp": 0,
+          "fp": 0,
+          "fn": 3,
+          "tn": 47,
+          "precision": null,
+          "recall": 0.0,
+          "false_positive_rate": 0.0
+        },
+        {
+          "input_mode": "scanned",
+          "defect_type": "same_address_in_2_applications",
+          "rule_id": "SHARED-INSTITUTION-ADDRESS",
+          "field": null,
+          "positive_count": 2,
+          "tp": 0,
+          "fp": 0,
+          "fn": 2,
+          "tn": 48,
+          "precision": null,
+          "recall": 0.0,
+          "false_positive_rate": 0.0
+        }
+      ],
+      "decoy_false_positive_rate": {
+        "input_mode": "scanned",
+        "decoy_count": 10,
+        "flagged_count": 0,
+        "false_positive_rate": 0.0,
+        "flagged_applications": []
+      },
+      "what_we_miss": [
+        {
+          "input_mode": "scanned",
+          "application_number": "SYN-APP-0030",
+          "defect_type": "missing_signature",
+          "rule_id": "CLAIM-FIELD-COMPARISON",
+          "field": "signature_present",
+          "why": "No matching validation finding was emitted for the planted defect."
+        },
+        {
+          "input_mode": "scanned",
+          "application_number": "SYN-APP-0033",
+          "defect_type": "missing_signature",
+          "rule_id": "CLAIM-FIELD-COMPARISON",
+          "field": "signature_present",
+          "why": "No matching validation finding was emitted for the planted defect."
+        },
+        {
+          "input_mode": "scanned",
+          "application_number": "SYN-APP-0004",
+          "defect_type": "same_faculty_id_in_3_institutions",
+          "rule_id": "SHARED-FACULTY-REFERENCE",
+          "field": null,
+          "why": "No matching validation finding was emitted for the planted defect."
+        },
+        {
+          "input_mode": "scanned",
+          "application_number": "SYN-APP-0010",
+          "defect_type": "same_faculty_id_in_3_institutions",
+          "rule_id": "SHARED-FACULTY-REFERENCE",
+          "field": null,
+          "why": "No matching validation finding was emitted for the planted defect."
+        },
+        {
+          "input_mode": "scanned",
+          "application_number": "SYN-APP-0016",
+          "defect_type": "same_faculty_id_in_3_institutions",
+          "rule_id": "SHARED-FACULTY-REFERENCE",
+          "field": null,
+          "why": "No matching validation finding was emitted for the planted defect."
+        },
+        {
+          "input_mode": "scanned",
+          "application_number": "SYN-APP-0043",
+          "defect_type": "same_address_in_2_applications",
+          "rule_id": "SHARED-INSTITUTION-ADDRESS",
+          "field": null,
+          "why": "No matching validation finding was emitted for the planted defect."
+        },
+        {
+          "input_mode": "scanned",
+          "application_number": "SYN-APP-0048",
+          "defect_type": "same_address_in_2_applications",
+          "rule_id": "SHARED-INSTITUTION-ADDRESS",
+          "field": null,
+          "why": "No matching validation finding was emitted for the planted defect."
+        }
+      ]
+    }
+  ],
+  "what_we_miss": [
+    {
+      "input_mode": "scanned",
+      "application_number": "SYN-APP-0030",
+      "defect_type": "missing_signature",
+      "rule_id": "CLAIM-FIELD-COMPARISON",
+      "field": "signature_present",
+      "why": "No matching validation finding was emitted for the planted defect."
+    },
+    {
+      "input_mode": "scanned",
+      "application_number": "SYN-APP-0033",
+      "defect_type": "missing_signature",
+      "rule_id": "CLAIM-FIELD-COMPARISON",
+      "field": "signature_present",
+      "why": "No matching validation finding was emitted for the planted defect."
+    },
+    {
+      "input_mode": "scanned",
+      "application_number": "SYN-APP-0004",
+      "defect_type": "same_faculty_id_in_3_institutions",
+      "rule_id": "SHARED-FACULTY-REFERENCE",
+      "field": null,
+      "why": "No matching validation finding was emitted for the planted defect."
+    },
+    {
+      "input_mode": "scanned",
+      "application_number": "SYN-APP-0010",
+      "defect_type": "same_faculty_id_in_3_institutions",
+      "rule_id": "SHARED-FACULTY-REFERENCE",
+      "field": null,
+      "why": "No matching validation finding was emitted for the planted defect."
+    },
+    {
+      "input_mode": "scanned",
+      "application_number": "SYN-APP-0016",
+      "defect_type": "same_faculty_id_in_3_institutions",
+      "rule_id": "SHARED-FACULTY-REFERENCE",
+      "field": null,
+      "why": "No matching validation finding was emitted for the planted defect."
+    },
+    {
+      "input_mode": "scanned",
+      "application_number": "SYN-APP-0043",
+      "defect_type": "same_address_in_2_applications",
+      "rule_id": "SHARED-INSTITUTION-ADDRESS",
+      "field": null,
+      "why": "No matching validation finding was emitted for the planted defect."
+    },
+    {
+      "input_mode": "scanned",
+      "application_number": "SYN-APP-0048",
+      "defect_type": "same_address_in_2_applications",
+      "rule_id": "SHARED-INSTITUTION-ADDRESS",
+      "field": null,
+      "why": "No matching validation finding was emitted for the planted defect."
+    },
+    {
+      "input_mode": "red_team",
+      "application_number": "SYN-APP-0030",
+      "defect_type": "missing_signature",
+      "rule_id": "CLAIM-FIELD-COMPARISON",
+      "field": null,
+      "why": "Red-team case RT-03 was not detected."
+    },
+    {
+      "input_mode": "red_team",
+      "application_number": "SYN-APP-0029",
+      "defect_type": "duplicate_document_across_institutions",
+      "rule_id": "DUPLICATE-FILE-CROSS-INSTITUTION",
+      "field": null,
+      "why": "Red-team case RT-04 was not detected."
+    }
+  ],
+  "red_team": [
+    {
+      "attempt_id": "RT-01",
+      "attack": "Add a white-on-white valid date after the visible expired date.",
+      "attacker_goal": "Hide the expired validity date from a text-first review.",
+      "target_defect": "expired_validity",
+      "target_rule_id": "DOCUMENT-VALIDITY-PERIOD",
+      "result": "resisted",
+      "indicator_emitted": true,
+      "applications": [
+        "SYN-APP-0001"
+      ],
+      "pipeline_error": null
+    },
+    {
+      "attempt_id": "RT-02",
+      "attack": "Use a full-width zero in a wrong document reference.",
+      "attacker_goal": "Make a wrong reference harder to compare visually and by text rules.",
+      "target_defect": "wrong_id",
+      "target_rule_id": "CLAIM-FIELD-COMPARISON",
+      "result": "resisted",
+      "indicator_emitted": true,
+      "applications": [
+        "SYN-APP-0015"
+      ],
+      "pipeline_error": null
+    },
+    {
+      "attempt_id": "RT-03",
+      "attack": "Add printed signature-looking text without a cryptographic signature.",
+      "attacker_goal": "Make a blank signature field appear present to text extraction.",
+      "target_defect": "missing_signature",
+      "target_rule_id": "CLAIM-FIELD-COMPARISON",
+      "result": "not_detected",
+      "indicator_emitted": false,
+      "applications": [
+        "SYN-APP-0030"
+      ],
+      "pipeline_error": null
+    },
+    {
+      "attempt_id": "RT-04",
+      "attack": "Re-serialize a byte-identical duplicate so its SHA-256 changes.",
+      "attacker_goal": "Avoid exact-file duplicate matching while preserving page content.",
+      "target_defect": "duplicate_document_across_institutions",
+      "target_rule_id": "DUPLICATE-FILE-CROSS-INSTITUTION",
+      "result": "not_detected",
+      "indicator_emitted": false,
+      "applications": [
+        "SYN-APP-0029",
+        "SYN-APP-0041"
+      ],
+      "pipeline_error": null
+    },
+    {
+      "attempt_id": "RT-05",
+      "attack": "Append a later PDF revision to a locally test-signed sample.",
+      "attacker_goal": "Keep the signed appearance while changing the PDF after signing.",
+      "target_defect": "post_signature_modification",
+      "target_rule_id": "PDF-POST-SIGNATURE-CHANGE",
+      "result": "resisted",
+      "indicator_emitted": true,
+      "applications": [
+        "SYN-APP-0002"
+      ],
+      "pipeline_error": null
+    }
+  ],
+  "pipeline_errors": []
+}

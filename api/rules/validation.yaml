@@ -1,0 +1,188 @@
+version: 1
+
+# The synthetic demo uses one document per application. Production application
+# types can define broader checklists without changing evaluator code.
+checklists:
+  single_document_demo:
+    required_documents: []
+  new_institution:
+    required_documents: [application_form, affidavit, fire_noc, lease, accreditation_letter, structural_certificate, ter_receipt]
+  renewal:
+    required_documents: [application_form, fire_noc, lease, accreditation_letter, structural_certificate, ter_receipt]
+  increase_in_intake:
+    required_documents: [application_form, fire_noc, lease, accreditation_letter, structural_certificate, ter_receipt, faculty_record]
+  new_program:
+    required_documents: [application_form, fire_noc, lease, accreditation_letter, structural_certificate, ter_receipt, faculty_record]
+
+officer_lanes:
+  clean:
+    severities: []
+    statuses: [open]
+  clarification:
+    severities: [info, low, medium]
+    statuses: [open, under_review]
+  investigation:
+    severities: [high, critical]
+    statuses: [open, under_review]
+
+officer_timelines:
+  review_deadline_days: 14
+  approaching_deadline_days: 3
+  ageing_warning_days: 6
+
+display_options:
+  validity_timeline:
+    near_expiry_days: 180
+
+# Handbook-derived rules are restricted to this YAML-defined schema. Model
+# output stays in draft until an admin approves it, then is parsed as YAML.
+handbook_rule_policy:
+  fields:
+    - institution_name
+    - application_number
+    - document_reference
+    - issue_date
+    - valid_until
+    - institution_address
+    - faculty_reference_id
+    - receipt_reference
+    - transaction_reference
+    - payment_date
+    - amount_inr_display
+    - signature_present
+  operators: [field_equals, field_required, date_on_or_after_reference]
+  severities: [low, medium, high]
+  date_formats: ["%Y-%m-%d", "%d/%m/%Y"]
+
+evaluation:
+  defect_checks:
+    expired_validity: {rule_id: DOCUMENT-VALIDITY-PERIOD, field: valid_until}
+    name_mismatch: {rule_id: CLAIM-FIELD-COMPARISON, field: institution_name}
+    wrong_id: {rule_id: CLAIM-FIELD-COMPARISON, field: document_reference}
+    edited_date: {rule_id: CLAIM-FIELD-COMPARISON, field: issue_date}
+    duplicate_document_across_institutions: {rule_id: DUPLICATE-FILE-CROSS-INSTITUTION, field: null}
+    missing_signature: {rule_id: CLAIM-FIELD-COMPARISON, field: signature_present}
+    same_faculty_id_in_3_institutions: {rule_id: SHARED-FACULTY-REFERENCE, field: null}
+    same_address_in_2_applications: {rule_id: SHARED-INSTITUTION-ADDRESS, field: null}
+
+rules:
+  - id: CLAIM-FIELD-COMPARISON
+    kind: field_comparison
+    fields: [institution_name, application_number, document_reference, issue_date, institution_address, faculty_reference_id, signature_present]
+    name_fields: [institution_name]
+    fuzzy_name_threshold: 0.84
+    date_formats: ["%Y-%m-%d", "%d/%m/%Y"]
+    severity: high
+    mismatch_type: claim_contradiction
+    mismatch_reason: "The declared {field} does not match the value extracted from the document. This is an indicator requiring human verification."
+    mismatch_reasons:
+      institution_name: "The institution name in the document differs from the application claim. This is an indicator requiring human verification."
+      document_reference: "The document reference differs from the application claim. This is an indicator requiring human verification."
+      issue_date: "The extracted issue date differs from the application claim. This is an indicator requiring human verification."
+      signature_present: "The application expects a signature, but the document shows a blank signature line. This is an indicator requiring human verification."
+
+  - id: REQUIRED-SIGNATURE
+    kind: field_expected_value
+    fields:
+      signature_present: true
+    severity: high
+    finding_type: claim_contradiction
+    reason: "The application expects a signature, but the document shows a blank signature line. This is an indicator requiring human verification."
+
+  - id: DOCUMENT-VALIDITY-PERIOD
+    kind: date_arithmetic
+    field: valid_until
+    operation: on_or_after_reference_date
+    severity: high
+    expired_type: claim_expired
+    expired_reason: "The document validity date {value} is before the review date {reference_date}. Human verification is required."
+
+  - id: DUPLICATE-FILE-CROSS-INSTITUTION
+    kind: cross_document_equality
+    key: sha256
+    scope: institution
+    minimum_distinct_institutions: 2
+    severity: high
+    finding_type: duplicate_document
+    reason: "The same document file is present in applications for multiple institutions. This is an indicator requiring human verification."
+
+  - id: SHARED-FACULTY-REFERENCE
+    kind: cross_document_equality
+    key: field:faculty_reference_id
+    scope: institution
+    minimum_distinct_institutions: 3
+    severity: medium
+    finding_type: repeated_field_value
+    reason: "The same faculty reference appears in multiple institutions. This is an indicator requiring human verification."
+
+  - id: SHARED-INSTITUTION-ADDRESS
+    kind: cross_document_equality
+    key: field:institution_address
+    scope: institution
+    minimum_distinct_institutions: 2
+    fuzzy_threshold: 0.94
+    severity: medium
+    finding_type: repeated_field_value
+    reason: "The same institution address appears in multiple applications. This is an indicator requiring human verification."
+
+  - id: REQUIRED-DOCUMENTS
+    kind: required_documents
+    severity: medium
+    finding_type: missing_required_document
+    reason: "A required document type is missing for this application type: {document_type}."
+
+anomaly_checks:
+  metadata_inconsistency:
+    id: PDF-METADATA-CONTENT-MISMATCH
+    severity: low
+    expected_title_by_type:
+      application_form: [application]
+      affidavit: [institution declaration, affidavit]
+      fire_noc: [fire safety clearance]
+      lease: [lease agreement, lease deed]
+      accreditation_letter: [accreditation status letter, accreditation letter]
+      ter_receipt: [technical education review fee receipt, ter receipt]
+      structural_certificate: [structural safety certificate]
+    check_creation_modification_order: true
+    reason: "PDF metadata does not agree with the document content or its timestamps. This is an indicator requiring human verification."
+  post_signature_modification:
+    id: PDF-POST-SIGNATURE-CHANGE
+    severity: high
+    require_full_coverage: true
+    reason: "The PDF contains changes outside the signed revision. This is an indicator requiring human verification."
+  multiple_revisions:
+    id: PDF-MULTIPLE-REVISIONS
+    severity: medium
+    max_unsigned_revisions: 1
+    max_signed_revisions: 2
+    reason: "The PDF contains more revisions than expected for its signature state. This is an indicator requiring human verification."
+  mixed_fonts:
+    id: PDF-MIXED-FONTS-IN-FIELD
+    severity: low
+    fields: [institution_name, application_number, document_reference, issue_date, valid_until, institution_address, faculty_reference_id, receipt_reference, transaction_reference, payment_date, amount_inr_display, signatory]
+    minimum_distinct_fonts: 2
+    reason: "This field uses multiple fonts. Review the source document to confirm the text."
+  impossible_dates:
+    id: FIELD-IMPOSSIBLE-DATE
+    severity: high
+    fields: [issue_date, valid_until, payment_date]
+    formats: ["%Y-%m-%d", "%d/%m/%Y"]
+    reason: "The extracted date is not a valid calendar date. This is an indicator requiring human verification."
+  id_formats:
+    id: FIELD-ID-FORMAT
+    severity: medium
+    fields:
+      application_number: ["SYN-APP-[0-9]{4}"]
+      document_reference: ["SYN-DOC-[0-9]{4}", "LOCAL/DEMO/[0-9]{4}"]
+      faculty_reference_id: ["FAC-SYN-(?:SHARED-)?[A-Z0-9]{4,5}"]
+      receipt_reference: ["SYN-TER-(?:[0-9]{4}|DUP-[0-9]{4})"]
+      transaction_reference: ["SYN-TRX-(?:[0-9]{4}|DUP-[0-9]{4})"]
+    reason: "The extracted identifier does not match an allowed format. This is an indicator requiring human verification."
+
+anomaly_metrics:
+  metadata_inconsistency: []
+  post_signature_modification: []
+  multiple_revisions: []
+  mixed_fonts: [edited_date]
+  impossible_dates: []
+  id_formats: [wrong_id]

@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-tint":"#465f86","on-secondary-fixed":"#2d1600","surface-container-lowest":"#ffffff","error-container":"#ffdad6","secondary":"#8c5000","surface-dim":"#dbdad5","inverse-primary":"#aec8f4","error":"#ba1a1a","on-secondary-container":"#653800","primary":"#032448","on-error":"#ffffff","on-tertiary":"#ffffff","surface":"#fbf9f4","on-primary-container":"#8ba4cf","surface-container":"#f0eee9","tertiary-fixed-dim":"#b9c8db","primary-container":"#1f3a5f","on-tertiary-fixed-variant":"#3a4858","inverse-on-surface":"#f2f1ec","on-surface-variant":"#43474e","surface-bright":"#fbf9f4","surface-container-highest":"#e4e2dd","on-tertiary-container":"#96a5b8","tertiary-container":"#2d3b4b","inverse-surface":"#30312e","tertiary-fixed":"#d5e4f8","outline":"#74777f","surface-container-low":"#f5f3ee","surface-variant":"#e4e2dd","on-primary-fixed":"#001c3b","on-secondary":"#ffffff","tertiary":"#172534","secondary-fixed":"#ffdcbf","secondary-fixed-dim":"#ffb873","on-secondary-fixed-variant":"#6a3b00","secondary-container":"#fc9923","on-tertiary-fixed":"#0e1d2b","on-surface":"#1b1c19","on-primary-fixed-variant":"#2d476d","surface-container-high":"#eae8e3","background":"#fbf9f4","outline-variant":"#c4c6cf","primary-fixed-dim":"#aec8f4","on-background":"#1b1c19","on-primary":"#ffffff","on-error-container":"#93000a","primary-fixed":"#d5e3ff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-mobile":"1rem",gutter:"1.5rem","space-xs":"0.5rem","space-md":"1.5rem","space-sm":"1rem","space-xl":"3rem","space-lg":"2rem",margin:"2.5rem","margin-mobile":"1rem"},fontFamily:{"code-sm":["JetBrains Mono"],"code-md":["JetBrains Mono"],"display-lg":["Newsreader"],"title-md":["Inter"],"display-lg-mobile":["Newsreader"],"title-lg":["Inter"],"headline-lg":["Newsreader"],"headline-sm":["Newsreader"],"headline-md":["Newsreader"],"body-md":["Inter"],"headline-lg-mobile":["Newsreader"],"body-sm":["Inter"],"body-lg":["Inter"]},fontSize:{"code-sm":["11px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"500"}],"code-md":["13px",{lineHeight:"18px",fontWeight:"500"}],"display-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"600"}],"title-md":["15px",{lineHeight:"20px",fontWeight:"600"}],"display-lg-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.01em",fontWeight:"600"}],"title-lg":["18px",{lineHeight:"24px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.015em",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"500"}],"headline-md":["24px",{lineHeight:"32px",fontWeight:"500"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-lg-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm min-w-max"><img alt="PreFlight Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xoz2uqV_R_gbFp4_bveXbs-XKUT8NjYIuD32J66a74un_4F55rO7tbe_jrnylWpjn8_b72jRtypH2wh8gdydVYubYRlwpdiiMmS-NP5hjEutyyu-pEEZ-n_6rwGs3HV6GhWFZYvDK4hB3m4_EkR6yb4GX3wXXW9_PRxnFRzJjc7ZpDK0hM4hNcqUYICZL-gZ4Yt7hB5fMW-b6Zo5Hodo2baT6trgzsZ331BY8wbON4A0-88YszEBQpo_k"/><div class="flex items-center gap-space-xs"><span class="font-title-lg text-title-lg font-bold text-primary tracking-tight">PreFlight</span><span class="font-body-sm text-body-sm text-on-surface-variant font-medium hidden xl:inline">— AICTE Regulatory Portal Approval Process Handbook 2025-26</span><span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium uppercase">AY 2025–26 Cycle 1</span></div></div><div class="flex items-center gap-space-md flex-1 max-w-xl justify-end"><button class="flex items-center justify-between w-64 px-space-sm py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface shadow-[0_1px_4px_rgba(0,0,0,0.02)] transition-colors text-left" type="button"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-sm">search</span><span class="font-body-sm text-body-sm">Application lookup</span></div><kbd class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-semibold">⌘K</kbd></button><div class="flex items-center gap-space-sm pl-space-xs"><button aria-label="Notifications" class="relative p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-error text-on-error font-code-sm text-[10px] font-bold leading-none">3</span></button><div class="h-6 w-px bg-surface-container-highest"></div><div class="flex items-center gap-space-xs"><div class="text-right hidden sm:block"><div class="font-title-md text-title-md font-semibold text-on-surface leading-tight">Dr. Sunita V. Rao</div><div class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Senior Regional Director (WRO)</div></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5P6Yw91SFBS68qVQPQTMAb3hAqy3bvQ10DJWiyTwjSVFylBBVJRY-oDF6s6CIZUtoWWcLdofRC9tvojo-KSmd6dPnyqTxsd0mdqpfysN5FmJgkiw0_Xw0cO4nhVqJyCrYTkGf_oO6SQMqJ1mbv5E-72xlGIHfCBaeEL1GwoFyC7ppgVyL1SgrEWc5LpJumF1M_VtOSyMC7VjqxoAbB-NA7Jj_Vh8V4MDWZIT7k4tL2odEd62LnBMK"/></div></div></div></div></header><aside class="fixed left-0 top-16 bottom-7 w-64 bg-surface-container-low z-40 flex flex-col py-space-md px-space-xs justify-between overflow-y-auto"><div class="flex flex-col gap-space-xs"><div class="px-space-xs pb-space-xs"><span class="font-code-sm text-code-sm uppercase text-on-surface-variant tracking-wider font-semibold">Regulatory Review</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm rounded-lg"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="application-review" href="#"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined">verified</span><span>Application Review</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="document-verification" href="#"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined">gpp_good</span><span>Document Verification</span></div><span class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-semibold">14 flagged</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="deficiency-reports" href="#"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined">warning</span><span>Deficiency Reports</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="inspection-schedules" href="#"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined">calendar_today</span><span>Inspection Schedules</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="institutional-registry" href="#"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined">account_balance</span><span>Institutional Registry</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="handbook-rules-and-norms" href="#"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined">menu_book</span><span>Handbook Rules &amp; Norms</span></div></a></nav></div><div class="p-space-xs rounded-lg bg-surface-container text-on-surface-variant"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-sm text-primary">verified_user</span><span class="font-code-sm text-code-sm font-semibold text-primary uppercase">AICTE Audit Mode</span></div><p class="font-body-sm text-body-sm mt-1 text-on-surface-variant">Scrutiny panel sessions are logged for gazette compliance.</p></div></aside><div class="pl-64"><main class="relative pt-16 min-h-screen pb-10 w-full px-gutter bg-surface"><div class="flex flex-col w-full">
+<!-- Subtle Architectural Atmospheric Glow (Contained) -->
+<div class="relative w-full">
+<div class="absolute top-0 right-1/4 -z-10 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="absolute top-48 left-10 -z-10 w-80 h-80 rounded-full bg-secondary-container/10 blur-3xl pointer-events-none"></div>
+</div>
+<!-- Section 1: Header / Context Banner -->
+<section class="pt-6 pb-8">
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs max-w-4xl">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-code-sm text-code-sm uppercase px-2.5 py-1 rounded bg-surface-container text-primary font-semibold tracking-wider flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">science</span>
+            Evaluation Benchmark v3.4
+          </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant px-2.5 py-1 rounded bg-surface-container-low font-medium">
+            AICTE AY 2025–26 Cycle
+          </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant px-2.5 py-1 rounded bg-surface-container-low font-medium">
+            Evaluated on: 12,450 Filings
+          </span>
+<span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">gavel</span>
+            Ground Truth: Senior Scrutiny Audit
+          </span>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight mt-1">
+          Evaluation Results &amp; Scrutiny Reliability
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
+          Empirical benchmarking, flaw detection sensitivity, and operational scrutiny efficiency metrics across 12,450 audited institutional filings in the WRO regional jurisdiction.
+        </p>
+</div>
+<!-- Action Suite -->
+<div class="flex items-center gap-space-xs min-w-max self-start xl:self-end">
+<button class="flex items-center gap-space-xs px-4 py-2.5 rounded-lg bg-surface-container text-on-surface font-title-md text-title-md hover:bg-surface-container-high transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-base">file_download</span>
+<span>Download CSV Ledger</span>
+</button>
+<button class="flex items-center gap-space-xs px-4 py-2.5 rounded-lg bg-primary text-on-primary font-title-md text-title-md hover:bg-primary-container transition-all shadow-md" type="button">
+<span class="material-symbols-outlined text-base">picture_as_pdf</span>
+<span>Export Evaluation Report</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Section 2: Top Stat / Quick Comparison Section -->
+<section class="mb-space-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md">
+<!-- Primary Scrutiny Velocity Card (8 cols) -->
+<div class="lg:col-span-8 p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-xl">speed</span>
+<span class="font-title-lg text-title-lg text-primary">Throughput &amp; Velocity Delta</span>
+</div>
+<span class="font-code-sm text-code-sm uppercase font-semibold text-secondary-container px-2 py-0.5 rounded bg-surface-container">
+              Cycle 1 Operational Sample
+            </span>
+</div>
+<!-- Comparison Bars -->
+<div class="flex flex-col gap-space-md mt-2">
+<!-- Manual Baseline -->
+<div class="p-space-sm rounded-lg bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-baseline justify-between">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-on-surface">Manual Regulatory Scrutiny</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant font-medium">(Human Scrutiny Committee)</span>
+</div>
+<div class="font-headline-md text-headline-md font-semibold text-on-surface">
+                  42.5 <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">min / filing</span>
+</div>
+</div>
+<!-- Visual Proportion Bar -->
+<div class="w-full h-3 rounded-full bg-surface-container-highest overflow-hidden flex">
+<div class="h-full bg-outline-variant w-[42%]" title="Document Cross-Check (18m)"></div>
+<div class="h-full bg-outline w-[33%]" title="Faculty Deduplication (14m)"></div>
+<div class="h-full bg-on-surface-variant w-[25%]" title="Land &amp; NOC Validity (10.5m)"></div>
+</div>
+<!-- Sub-segments Breakdown -->
+<div class="flex flex-wrap items-center justify-between gap-space-xs pt-1 font-code-sm text-code-sm text-on-surface-variant">
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-outline-variant"></span>18.0m Document Cross-Check</span>
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-outline"></span>14.0m Faculty Deduplication</span>
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-on-surface-variant"></span>10.5m Land/NOC Validity</span>
+</div>
+</div>
+<!-- PreFlight Automation -->
+<div class="p-space-sm rounded-lg bg-primary text-on-primary shadow-sm flex flex-col gap-space-xs relative overflow-hidden">
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-primary-container/40 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-baseline justify-between relative z-10">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-on-primary font-bold">PreFlight Autonomous Validation</span>
+<span class="font-code-sm text-code-sm text-primary-fixed-dim px-2 py-0.5 rounded bg-primary-container">
+                    91% Reduction
+                  </span>
+</div>
+<div class="font-headline-md text-headline-md font-bold text-on-primary">
+                  3.8 <span class="font-body-sm text-body-sm text-primary-fixed-dim font-normal">min / filing</span>
+</div>
+</div>
+<!-- Bar Indicator -->
+<div class="w-full h-3 rounded-full bg-primary-container overflow-hidden relative z-10">
+<div class="h-full bg-secondary-container w-[9%]"></div>
+</div>
+<div class="flex items-center justify-between font-code-sm text-code-sm text-primary-fixed-dim relative z-10">
+<span>Direct OCR + Graph verification: 2.1m</span>
+<span class="text-on-primary font-semibold">Human-in-the-loop review on anomalies: 1.7m</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">verified</span>
+            Validated across 12,450 double-blind scrutinized pilot records
+          </span>
+<span class="font-code-sm text-code-sm text-primary font-semibold">PreFlight Core Engine v3.4.1</span>
+</div>
+</div>
+<!-- Key Aggregate Metric Card (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Top Callout -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex-1 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-code-sm text-code-sm uppercase font-semibold text-on-surface-variant">Throughput Acceleration</span>
+<span class="material-symbols-outlined text-secondary">trending_up</span>
+</div>
+<div class="my-3">
+<div class="font-display-lg text-display-lg text-primary tracking-tight font-headline-lg">11.2×</div>
+<p class="font-title-md text-title-md text-on-surface font-semibold mt-1">Faster Cycle Completion</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Allows regional scrutinies to conclude in 4 business days rather than 6 weeks.</p>
+</div>
+<div class="p-2.5 rounded bg-surface-container flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">hourglass_top</span>
+<span class="font-code-sm text-code-sm text-primary font-semibold">Zero application backlog in pilot zone</span>
+</div>
+</div>
+<!-- Hours Saved Callout -->
+<div class="p-space-md rounded-xl bg-surface-container shadow-sm flex-1 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-code-sm text-code-sm uppercase font-semibold text-on-surface-variant">Officer Bandwidth Reclaimed</span>
+<span class="material-symbols-outlined text-primary">groups</span>
+</div>
+<div class="my-3">
+<div class="font-display-lg text-display-lg text-primary tracking-tight font-headline-lg">3,840</div>
+<p class="font-title-md text-title-md text-on-surface font-semibold mt-1">Senior Officer-Hours Saved</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Redirected directly to mandatory physical campus inspections &amp; forensic reviews.</p>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-full w-[88%]"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Core Table by Flaw Type -->
+<section class="mb-space-lg">
+<div class="rounded-xl bg-surface-container-lowest shadow-sm overflow-hidden">
+<!-- Table Header Bar -->
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-semibold">
+            Empirical Flaw Detection Sensitivity Ledger
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Breakdown across council audit criteria, verified against physical inspection findings (Ground-Truth N=12,450).
+          </p>
+</div>
+<!-- Filter Pill Chips -->
+<div class="flex items-center gap-1.5 font-code-sm text-code-sm">
+<span class="px-2.5 py-1 rounded bg-surface-container-highest text-primary font-semibold">All (9 Norms)</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface cursor-pointer">Tier 1 Gatekeeper</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface cursor-pointer">Tier 2 Nuanced</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface cursor-pointer">Tier 3 Advisory</span>
+</div>
+</div>
+<!-- Interactive Data Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md text-body-md border-collapse">
+<thead>
+<tr class="bg-surface-container font-code-sm text-code-sm uppercase tracking-wider text-on-surface-variant">
+<th class="py-3 px-space-md font-semibold">Flaw Category &amp; Archetype</th>
+<th class="py-3 px-space-sm font-semibold">Detection Reliability</th>
+<th class="py-3 px-space-sm font-semibold text-right">Sample (N)</th>
+<th class="py-3 px-space-sm font-semibold text-right">Precision</th>
+<th class="py-3 px-space-sm font-semibold text-right">Recall</th>
+<th class="py-3 px-space-sm font-semibold text-right">F1 Score</th>
+<th class="py-3 px-space-md font-semibold">Primary Automated Rule / Verification Pipeline</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- GROUP 1 HEADER: Consistently Caught -->
+<tr class="bg-surface-container-low/60">
+<td class="py-2.5 px-space-md" colspan="7">
+<div class="flex items-center gap-space-xs font-title-md text-title-md text-primary font-bold">
+<span class="material-symbols-outlined text-base text-secondary">check_circle</span>
+<span>Tier 1: Caught Consistently (Automated Gatekeepers)</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded-full bg-surface-container font-normal text-on-surface-variant">F1 &gt; 0.95</span>
+</div>
+</td>
+</tr>
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-title-md text-title-md text-on-surface">
+<div class="flex flex-col">
+<span class="font-semibold">Expired Municipal Fire NOC / Land Title Validity</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Appendix 4, Rule 4.12 — Essential Safety Cert</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-code-sm text-code-sm font-semibold bg-surface-container text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+                  Caught (100%)
+                </span>
+</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface-variant">842</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface font-semibold">99.4%</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface font-semibold">99.8%</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right font-bold text-primary">0.996</td>
+<td class="py-3.5 px-space-md font-body-sm text-body-sm text-on-surface-variant">
+                Digital state municipal registry timestamp sync &amp; multi-engine OCR expiry parsing.
+              </td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-title-md text-title-md text-on-surface">
+<div class="flex flex-col">
+<span class="font-semibold">Faculty Dual-Affiliation &amp; ID Collisions</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Cadre Ratio 1:15 — Mandatory Exclusive Engagement</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-code-sm text-code-sm font-semibold bg-surface-container text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+                  Caught (99.2%)
+                </span>
+</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface-variant">1,210</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface font-semibold">98.7%</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface font-semibold">99.5%</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right font-bold text-primary">0.991</td>
+<td class="py-3.5 px-space-md font-body-sm text-body-sm text-on-surface-variant">
+                Cross-institutional Aadhaar hash/PAN trust-graph deduplication across 36 state registries.
+              </td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-title-md text-title-md text-on-surface">
+<div class="flex flex-col">
+<span class="font-semibold">Digital Signature Certificate (DSC) Tampering / Invalidation</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">IT Act Sec 35 — Authorized Signatory Attestation</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-code-sm text-code-sm font-semibold bg-surface-container text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+                  Caught (100%)
+                </span>
+</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface-variant">319</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface font-semibold">100.0%</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface font-semibold">100.0%</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right font-bold text-primary">1.000</td>
+<td class="py-3.5 px-space-md font-body-sm text-body-sm text-on-surface-variant">
+                PKI cryptographic X.509 chain validation, CCA CRL status, and timestamp digest mismatch check.
+              </td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-title-md text-title-md text-on-surface">
+<div class="flex flex-col">
+<span class="font-semibold">Floor Space Index (FSI) &amp; Built-up Area Deficit</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Norms Chapter II, Table 2.1 — Space Allocation</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-code-sm text-code-sm font-semibold bg-surface-container text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+                  Caught (96.5%)
+                </span>
+</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface-variant">615</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface font-semibold">97.1%</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface font-semibold">96.0%</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right font-bold text-primary">0.965</td>
+<td class="py-3.5 px-space-md font-body-sm text-body-sm text-on-surface-variant">
+                Spatial geo-tag boundary polygon vs architectural CAD blueprint carpet computation.
+              </td>
+</tr>
+<!-- GROUP 2 HEADER: Caught Sometimes -->
+<tr class="bg-surface-container-low/60">
+<td class="py-2.5 px-space-md" colspan="7">
+<div class="flex items-center gap-space-xs font-title-md text-title-md text-on-surface font-bold">
+<span class="material-symbols-outlined text-base text-secondary">warning</span>
+<span>Tier 2: Caught Sometimes (Borderline / Nuanced Indicators)</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded-full bg-surface-container font-normal text-on-surface-variant">0.65 ≤ F1 ≤ 0.85</span>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-title-md text-title-md text-on-surface">
+<div class="flex flex-col">
+<span class="font-semibold">Stipend Underpayment in Regional Bank Formats</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">PG Scholarship Norms — 7th Pay Scale Mandate</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-code-sm text-code-sm font-semibold bg-surface-container text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Sometimes (78.4%)
+                </span>
+</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface-variant">422</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface font-semibold">82.1%</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface font-semibold">74.6%</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right font-bold text-secondary">0.782</td>
+<td class="py-3.5 px-space-md font-body-sm text-body-sm text-on-surface-variant">
+                Multi-column ledger extraction across non-standard cooperative bank statements.
+              </td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-title-md text-title-md text-on-surface">
+<div class="flex flex-col">
+<span class="font-semibold">Lab Equipment Invoice Credibility (Refurbished vs Brand New)</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Handbook Norms Clause 6.4 — Modern Equipment Ledger</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-code-sm text-code-sm font-semibold bg-surface-container text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Sometimes (64.2%)
+                </span>
+</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface-variant">280</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface font-semibold">71.0%</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface font-semibold">58.5%</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right font-bold text-secondary">0.641</td>
+<td class="py-3.5 px-space-md font-body-sm text-body-sm text-on-surface-variant">
+                GST portal invoice validation vs OEM benchmark catalog pricing statistical drift.
+              </td>
+</tr>
+<!-- Row 7 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-title-md text-title-md text-on-surface">
+<div class="flex flex-col">
+<span class="font-semibold">Affidavit Language Non-Standard Clause Alterations</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Affidavit 1 &amp; 2 Standard Gazette Proforma</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-code-sm text-code-sm font-semibold bg-surface-container text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Sometimes (72.0%)
+                </span>
+</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface-variant">503</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface font-semibold">84.5%</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface font-semibold">62.3%</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right font-bold text-secondary">0.717</td>
+<td class="py-3.5 px-space-md font-body-sm text-body-sm text-on-surface-variant">
+                Legal NLP sentence-embedding similarity score against statutory gazetted template templates.
+              </td>
+</tr>
+<!-- GROUP 3 HEADER: Missed / High human reliance -->
+<tr class="bg-surface-container-low/60">
+<td class="py-2.5 px-space-md" colspan="7">
+<div class="flex items-center gap-space-xs font-title-md text-title-md text-error font-bold">
+<span class="material-symbols-outlined text-base text-error">cancel</span>
+<span>Tier 3: Missed / Human Review Mandatory (Known Algorithmic Blindspots)</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded-full bg-error-container font-normal text-on-error-container">F1 &lt; 0.50</span>
+</div>
+</td>
+</tr>
+<!-- Row 8 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-title-md text-title-md text-on-surface">
+<div class="flex flex-col">
+<span class="font-semibold">Sham Equipment Leases with Active Collateral Liens</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Unencumbered Institutional Asset Mandate</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-code-sm text-code-sm font-semibold bg-error-container text-on-error-container">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                  Missed / Blindspot
+                </span>
+</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface-variant">114</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface font-semibold">44.0%</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface font-semibold">31.2%</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right font-bold text-error">0.365</td>
+<td class="py-3.5 px-space-md font-body-sm text-body-sm text-on-surface-variant">
+                Off-ledger hypothecations not indexed in MCA/CERSAI registry; requires bank loan book inspection.
+              </td>
+</tr>
+<!-- Row 9 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-3.5 px-space-md font-title-md text-title-md text-on-surface">
+<div class="flex flex-col">
+<span class="font-semibold">Physical Campus Boundary Encroachments</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Contiguous Campus Norms (No Public Thoroughfare)</span>
+</div>
+</td>
+<td class="py-3.5 px-space-sm">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-code-sm text-code-sm font-semibold bg-error-container text-on-error-container">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                  Missed / Blindspot
+                </span>
+</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface-variant">88</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface font-semibold">51.2%</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right text-on-surface font-semibold">28.0%</td>
+<td class="py-3.5 px-space-sm font-code-md text-code-md text-right font-bold text-error">0.362</td>
+<td class="py-3.5 px-space-md font-body-sm text-body-sm text-on-surface-variant">
+                Satellite SAR imagery cannot verify informal village thoroughfares without civil court stay orders.
+              </td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Summary Footbar -->
+<div class="p-space-sm bg-surface-container flex flex-wrap items-center justify-between text-on-surface-variant font-code-sm text-code-sm">
+<div class="flex items-center gap-space-sm">
+<span>Total Flaws Evaluated: <strong>4,403 verified discrepancies</strong></span>
+<span>•</span>
+<span>System Mean Macro F1: <strong>0.842</strong></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary-container"></span>
+<span>Model confidence calibrated to AICTE Scrutiny SOP Annexure VII</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Qualitative Deep-Dive Analysis (Side-by-Side Bento Cards) -->
+<section class="mb-space-lg">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-md">
+<!-- Card A: What We Miss -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div>
+<!-- Header -->
+<div class="flex items-center justify-between pb-space-xs mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="p-2 rounded-lg bg-error-container text-on-error-container material-symbols-outlined text-lg">policy</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold">What We Miss</h3>
+<span class="font-code-sm text-code-sm text-error font-medium uppercase tracking-wider">Algorithmic Boundaries &amp; Edge Blindspots</span>
+</div>
+</div>
+<span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-semibold">
+              4 Known Traps
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            An empirical accounting of structural vulnerabilities where computational document analysis cannot substitute for physical forensic scrutiny.
+          </p>
+<!-- List Items -->
+<div class="space-y-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<div class="mt-0.5 flex-shrink-0 w-6 h-6 rounded bg-surface-container flex items-center justify-center font-code-sm text-code-sm font-bold text-on-surface-variant">01</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Off-Registry Asset Relocation ("The Travelling Lab")</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Machinery photographed on-site during initial verification, but immediately shuttled to sister campuses or affiliated polytechnics post-inspection. Physical serial number tags match invoice, but geofenced presence is fleeting.
+                </p>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<div class="mt-0.5 flex-shrink-0 w-6 h-6 rounded bg-surface-container flex items-center justify-center font-code-sm text-code-sm font-bold text-on-surface-variant">02</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Undigitized Sub-Divisional Stay Orders</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Litigation or land disputes lodged in local Sub-Divisional Magistrate (SDM) courts that lack electronic court (e-Courts) indexing. Digital land title searches show clear revenue records despite active local civil injunctions.
+                </p>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<div class="mt-0.5 flex-shrink-0 w-6 h-6 rounded bg-surface-container flex items-center justify-center font-code-sm text-code-sm font-bold text-on-surface-variant">03</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Synthetic Foreign Partner Credentials</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  High-fidelity PhD credential letters with authentic-looking watermarks from unaccredited overseas entities or shut-down research foundations outside Association of Indian Universities (AIU) mutual recognition databases.
+                </p>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<div class="mt-0.5 flex-shrink-0 w-6 h-6 rounded bg-surface-container flex items-center justify-center font-code-sm text-code-sm font-bold text-on-surface-variant">04</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Unpledged Endowment Liquidity Pledges</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Joint fixed deposit receipts (FDRs) deposited in district cooperative banks where encumbrance liens are registered manually on paper vouchers rather than via Central Banking Solutions (CBS) webhooks.
+                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Mandatory Note -->
+<div class="mt-space-md p-space-sm rounded-lg bg-error-container/40 text-on-error-container flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-error text-lg">notification_important</span>
+<p class="font-body-sm text-body-sm">
+<strong>Mandatory Policy Directive:</strong> Filings flagging any of these 4 vectors are automatically routed to the Regional Director's docket for physical on-site verification before Letter of Approval (LoA) issuance.
+          </p>
+</div>
+</div>
+<!-- Card B: We Tried to Fool It -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div>
+<!-- Header -->
+<div class="flex items-center justify-between pb-space-xs mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="p-2 rounded-lg bg-surface-container text-primary material-symbols-outlined text-lg">smart_toy</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold">We Tried to Fool It</h3>
+<span class="font-code-sm text-code-sm text-primary font-medium uppercase tracking-wider">Adversarial Red-Teaming Benchmarks</span>
+</div>
+</div>
+<span class="font-code-sm text-code-sm px-2.5 py-1 rounded bg-surface-container text-primary font-semibold">
+              4 Attack Vectors Tested
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+            Simulated intentional evasions engineered by white-hat compliance forensic specialists to test model resilience against active fraud attempts.
+          </p>
+<!-- List Items -->
+<div class="space-y-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<span class="p-1.5 rounded bg-surface-container text-primary material-symbols-outlined text-base mt-0.5">blur_on</span>
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-on-surface font-semibold">The Scanned Photocopy Blur Attack</span>
+<span class="font-code-sm text-code-sm text-secondary font-semibold">REJECTED INSTANTLY</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Downsampled 72 DPI scans with synthetic grain to obfuscate expired dates on structural stability certificates.
+                </p>
+<div class="mt-1 font-code-sm text-code-sm text-primary">
+                  ↳ <strong>Detection Mechanism:</strong> Document Pre-Flight Quality gate failed file (DPI &lt; 200, edge sharpness delta &gt; 3.4).
+                </div>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<span class="p-1.5 rounded bg-surface-container text-primary material-symbols-outlined text-base mt-0.5">shuffle</span>
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-on-surface font-semibold">The Phantom Faculty Transliteration Shuffle</span>
+<span class="font-code-sm text-code-sm text-secondary font-semibold">NEUTRALIZED</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Submitting identical Aadhaar hash profiles with phonetically identical spelling variants across Devanagari and Latin scripts.
+                </p>
+<div class="mt-1 font-code-sm text-code-sm text-primary">
+                  ↳ <strong>Detection Mechanism:</strong> PreFlight Indic Soundex and Aadhaar cryptographic checksum detected collision.
+                </div>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<span class="p-1.5 rounded bg-surface-container text-primary material-symbols-outlined text-base mt-0.5">view_in_ar</span>
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Photomontaged Workstation Lab Rig</span>
+<span class="font-code-sm text-code-sm text-secondary font-semibold">FLAGGED FOR AUDIT</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Synthetically compositing 60 Dell workstations into an empty classroom shell using generative rendering to simulate IT labs.
+                </p>
+<div class="mt-1 font-code-sm text-code-sm text-primary">
+                  ↳ <strong>Detection Mechanism:</strong> Pixel shadow inconsistency and camera EXIF timestamp mismatch detected tampering.
+                </div>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<span class="p-1.5 rounded bg-surface-container text-primary material-symbols-outlined text-base mt-0.5">share_location</span>
+<div class="flex flex-col">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Split-Parcel Land Deeds (Non-Contiguous)</span>
+<span class="font-code-sm text-code-sm text-secondary font-semibold">AUTO-FLAGGED</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Stitching three disjointed rural land parcels together to artificially clear the mandatory 7.5 contiguous-acre threshold.
+                </p>
+<div class="mt-1 font-code-sm text-code-sm text-primary">
+                  ↳ <strong>Detection Mechanism:</strong> GIS boundary polygon topology validator identified 820m intervening municipal corridor.
+                </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Adversarial Stat Bar -->
+<div class="mt-space-md p-space-sm rounded-lg bg-surface-container text-on-surface flex items-center justify-between font-code-sm text-code-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">security</span>
+<span>Total Red-Team Vectors Attempted: <strong>142 variations</strong></span>
+</div>
+<span class="font-semibold text-primary">Evasion Success Rate: 2.1%</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Institutional Evidence & Visual Records Archive -->
+<section class="mb-space-lg">
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold">
+            Forensic Evidence Extraction Visuals
+          </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Live sample dossier snapshots illustrating automated bounding box classification and spatial verification runs.
+          </p>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant px-3 py-1 rounded bg-surface-container flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+          Sample Dossier: #AICTE-WRO-2025-88412
+        </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Evidence 1: Land Deed Survey -->
+<div class="rounded-lg bg-surface-container-low overflow-hidden flex flex-col justify-between">
+<div class="relative w-full h-48 bg-cover bg-center overflow-hidden" data-alt="High-resolution archival cadastral survey deed with intricate Telugu and English legal stamps, blue government seal wax, and bounding polygon annotations in technical navy blue ink. Crisp documentary photography in archival council light." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCMm4wSsQrNXCb2qf4IFEgctebZ47eeFlim_lbJl-KOm8K4UzasTYkF6z6ufS2cil-QPVCHiFbAyWMxqPkrcvupSEGyTMi0rkGHk3ORh_vUAf5lJSHYf7fZXsqFBIDVVo5BV2Gc2AoFbMAGihKzsHG6q1lSOp2m2ZgQJTmK49fWPQhQXKTPtfsTddBrv_AfpqxxJZfSW1sUv6YfvrjOcecAuGXB9SQbXH-IoUetFnz1_WvQZdcoNJJN')">
+<div class="absolute inset-0 bg-primary/20"></div>
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded bg-primary text-on-primary font-code-sm text-code-sm">
+              Boundary Verified
+            </div>
+<div class="absolute bottom-2 left-2 px-2 py-1 rounded bg-surface-container-lowest/90 font-code-sm text-code-sm text-primary font-semibold backdrop-blur-sm">
+              Cadastral Survey 412/A
+            </div>
+</div>
+<div class="p-space-sm">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Geo-Coordinate Cadastral Match</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+              Automated extraction matched revenue survey numbers against state GIS spatial boundary without manual surveyor re-visit.
+            </p>
+<div class="mt-3 pt-2 flex items-center justify-between font-code-sm text-code-sm text-primary">
+<span>Overlap Confidence: 99.4%</span>
+<span class="underline cursor-pointer">Inspect Blueprint</span>
+</div>
+</div>
+</div>
+<!-- Evidence 2: Physical Lab Validation -->
+<div class="rounded-lg bg-surface-container-low overflow-hidden flex flex-col justify-between">
+<div class="relative w-full h-48 bg-cover bg-center overflow-hidden" data-alt="Technical educational engineering laboratory with rows of precision oscilloscope measurement equipment and computing terminals. Clean ambient institutional fluorescent lighting with clear equipment asset barcode plaques visible." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBwnjD81gAcGSLxcJ19ElWGlGp3ubCVw0CzChqVa3IZntLvlDC8Hd8r3Zs6h2lM1f2udoOtvVTVEY3kKFNUWOUPX3zi7h-sDQEJn9RJQ2LE2umB2L3TxP0R0rA2P8nwd5cW_B6g2DrAwb1PWn3I96Qy8XjziU96HxVxK6Zti33hf_HSRqDGJ5aGksGUrdLVvR51X8eZkP0i8mEK3d4fzOVm4XqsGxoTA514Z1kGEIIbGhVbwhQm1eaQ')">
+<div class="absolute inset-0 bg-primary/10"></div>
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded bg-surface-container text-secondary font-code-sm text-code-sm font-semibold">
+              Asset Scan In-Progress
+            </div>
+<div class="absolute bottom-2 left-2 px-2 py-1 rounded bg-surface-container-lowest/90 font-code-sm text-code-sm text-primary font-semibold backdrop-blur-sm">
+              Electronics &amp; Comm Lab
+            </div>
+</div>
+<div class="p-space-sm">
+<span class="font-title-md text-title-md text-on-surface font-semibold">Physical Equipment Verification</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+              Computer vision verified 45 distinct optical bench setups against institutional procurement bill GSTIN numbers.
+            </p>
+<div class="mt-3 pt-2 flex items-center justify-between font-code-sm text-code-sm text-primary">
+<span>Asset Inventory: 45 / 45 Met</span>
+<span class="underline cursor-pointer">View Serial Log</span>
+</div>
+</div>
+</div>
+<!-- Evidence 3: Faculty Credentials Ledger -->
+<div class="rounded-lg bg-surface-container-low overflow-hidden flex flex-col justify-between">
+<div class="relative w-full h-48 bg-cover bg-center overflow-hidden" data-alt="University doctoral convocation degree parchment certificate with embossed gold foil seal, calligraphy inscription, and digital QR verification code. Dignified archival document aesthetic with high clarity." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdQhLpywaqKyFZiprSw4hTamb-sVq6Ihh_AMQUKNJrKJpqUWIAPx_E7A70JhZoBz6pHbguDTBPHmvhb7m0BcEDuxilxgY42he2i4GZSasNRqY49W88Pk11nR62F7tY5o_EXW_28Ju4dxg3MMF5i4KTT5HK_JiTcPMja3dCrCo0isYS_l_g1iPWSk8QsHuY-wH6IB-cEBvqrhSYiV-bAxm27fM4tFMJ_7sv7fZUTsrzoty2MMHc05NK')">
+<div class="absolute inset-0 bg-primary/20"></div>
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded bg-primary text-on-primary font-code-sm text-code-sm">
+              NAD Hash Authenticated
+            </div>
+<div class="absolute bottom-2 left-2 px-2 py-1 rounded bg-surface-container-lowest/90 font-code-sm text-code-sm text-primary font-semibold backdrop-blur-sm">
+              Doctoral Scroll Ledger
+            </div>
+</div>
+<div class="p-space-sm">
+<span class="font-title-md text-title-md text-on-surface font-semibold">National Academic Depository Link</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+              Ph.D. scroll cryptographic hash cross-referenced directly with issuing central university degree register via DigiLocker NAD API.
+            </p>
+<div class="mt-3 pt-2 flex items-center justify-between font-code-sm text-code-sm text-primary">
+<span>Certificate State: Unaltered</span>
+<span class="underline cursor-pointer">Verify Chain</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Footer Note & Statutory Methodology Disclaimer -->
+<section class="pb-8">
+<div class="p-space-md rounded-xl bg-surface-container-low text-on-surface-variant shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-sm max-w-4xl">
+<span class="material-symbols-outlined text-primary text-2xl mt-0.5 flex-shrink-0">verified_user</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-title-md text-title-md text-primary font-semibold">
+            Methodology &amp; Regulatory Jurisdiction Disclaimer
+          </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Benchmark data verified independently by the National Informatics Centre (NIC) and AICTE Quality Audit Taskforce. Model performance metrics reflect PreFlight Core Engine v3.4 running against the 2024–2025 archival scrutiny database. In accordance with the AICTE Act 1987 (Sub-clause 10k), all algorithmic flaw detections serve solely as decision-support heuristics for regulatory officers and do not constitute autonomous statutory determinations. Final approval, deficiency notices, and show-cause determinations remain under the exclusive statutory authority of the Senior Scrutiny Committee.
+          </p>
+</div>
+</div>
+<div class="flex sm:flex-col items-center sm:items-end justify-between w-full sm:w-auto gap-space-xs min-w-max text-right">
+<span class="font-code-sm text-code-sm text-primary font-semibold">AICTE Audit Mode: Active</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Gazette Ref: GSR 451(E)</span>
+<button class="text-primary hover:text-primary-container font-code-sm text-code-sm underline cursor-pointer mt-1" type="button">
+          Review Audit Log Signatures
+        </button>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Simple interactive tab highlighting for future filter states
+  document.addEventListener('DOMContentLoaded', () => {
+    const tableRows = document.querySelectorAll('tbody tr');
+    tableRows.forEach(row => {
+      row.addEventListener('click', () => {
+        // Subtle focus feedback for regulators examining individual rows
+        tableRows.forEach(r => r.classList.remove('bg-surface-container-high'));
+        row.classList.add('bg-surface-container-high');
+      });
+    });
+  });
+</script></main></div><footer class="fixed bottom-0 left-0 right-0 h-7 z-50 bg-surface-container-high text-on-surface-variant px-gutter flex items-center justify-between shadow-[0_-1px_6px_rgba(0,0,0,0.02)]"><div class="flex items-center gap-space-xs"><span class="inline-block w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span><span class="font-code-sm text-code-sm">Connected to National Academic Depository (NAD) &amp; Land Records API • Sync OK • Latency 42ms</span></div><div class="flex items-center gap-space-sm font-code-sm text-code-sm text-on-surface-variant"><span class="hidden md:inline">AICTE Act 1987 Sub-clause 10(k)</span><span>Node ID: WRO-INSP-04</span></div></footer></body></html>

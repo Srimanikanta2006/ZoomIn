@@ -1,0 +1,63 @@
+[
+  {
+    "attempt_id": "RT-01",
+    "file": "eval/red_team/attempts/attempt_01_hidden_validity_text.pdf",
+    "source_record_ids": [
+      1
+    ],
+    "attack": "Add a white-on-white valid date after the visible expired date.",
+    "target_defect": "expired_validity",
+    "target_field": "valid_until",
+    "target_rule_id": "DOCUMENT-VALIDITY-PERIOD",
+    "attacker_goal": "Hide the expired validity date from a text-first review."
+  },
+  {
+    "attempt_id": "RT-02",
+    "file": "eval/red_team/attempts/attempt_02_confusable_reference.pdf",
+    "source_record_ids": [
+      15
+    ],
+    "attack": "Use a full-width zero in a wrong document reference.",
+    "target_defect": "wrong_id",
+    "target_field": "document_reference",
+    "target_rule_id": "CLAIM-FIELD-COMPARISON",
+    "attacker_goal": "Make a wrong reference harder to compare visually and by text rules."
+  },
+  {
+    "attempt_id": "RT-03",
+    "file": "eval/red_team/attempts/attempt_03_signature_lookalike.pdf",
+    "source_record_ids": [
+      30
+    ],
+    "attack": "Add printed signature-looking text without a cryptographic signature.",
+    "target_defect": "missing_signature",
+    "target_field": "signature_present",
+    "target_rule_id": "CLAIM-FIELD-COMPARISON",
+    "attacker_goal": "Make a blank signature field appear present to text extraction."
+  },
+  {
+    "attempt_id": "RT-04",
+    "file": "eval/red_team/attempts/attempt_04_reserialized_duplicate.pdf",
+    "source_record_ids": [
+      29,
+      41
+    ],
+    "attack": "Re-serialize a byte-identical duplicate so its SHA-256 changes.",
+    "target_defect": "duplicate_document_across_institutions",
+    "target_field": null,
+    "target_rule_id": "DUPLICATE-FILE-CROSS-INSTITUTION",
+    "attacker_goal": "Avoid exact-file duplicate matching while preserving page content."
+  },
+  {
+    "attempt_id": "RT-05",
+    "file": "eval/red_team/attempts/attempt_05_signed_incremental_update.pdf",
+    "source_record_ids": [
+      2
+    ],
+    "attack": "Append a later PDF revision to a locally test-signed sample.",
+    "target_defect": "post_signature_modification",
+    "target_field": null,
+    "target_rule_id": "PDF-POST-SIGNATURE-CHANGE",
+    "attacker_goal": "Keep the signed appearance while changing the PDF after signing."
+  }
+]

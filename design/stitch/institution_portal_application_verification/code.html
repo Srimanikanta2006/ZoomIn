@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-tint":"#465f86","on-secondary-fixed":"#2d1600","surface-container-lowest":"#ffffff","error-container":"#ffdad6","secondary":"#8c5000","surface-dim":"#dbdad5","inverse-primary":"#aec8f4","error":"#ba1a1a","on-secondary-container":"#653800","primary":"#032448","on-error":"#ffffff","on-tertiary":"#ffffff","surface":"#fbf9f4","on-primary-container":"#8ba4cf","surface-container":"#f0eee9","tertiary-fixed-dim":"#b9c8db","primary-container":"#1f3a5f","on-tertiary-fixed-variant":"#3a4858","inverse-on-surface":"#f2f1ec","on-surface-variant":"#43474e","surface-bright":"#fbf9f4","surface-container-highest":"#e4e2dd","on-tertiary-container":"#96a5b8","tertiary-container":"#2d3b4b","inverse-surface":"#30312e","tertiary-fixed":"#d5e4f8","outline":"#74777f","surface-container-low":"#f5f3ee","surface-variant":"#e4e2dd","on-primary-fixed":"#001c3b","on-secondary":"#ffffff","tertiary":"#172534","secondary-fixed":"#ffdcbf","secondary-fixed-dim":"#ffb873","on-secondary-fixed-variant":"#6a3b00","secondary-container":"#fc9923","on-tertiary-fixed":"#0e1d2b","on-surface":"#1b1c19","on-primary-fixed-variant":"#2d476d","surface-container-high":"#eae8e3","background":"#fbf9f4","outline-variant":"#c4c6cf","primary-fixed-dim":"#aec8f4","on-background":"#1b1c19","on-primary":"#ffffff","on-error-container":"#93000a","primary-fixed":"#d5e3ff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-mobile":"1rem",gutter:"1.5rem","space-xs":"0.5rem","space-md":"1.5rem","space-sm":"1rem","space-xl":"3rem","space-lg":"2rem",margin:"2.5rem","margin-mobile":"1rem"},fontFamily:{"code-sm":["JetBrains Mono"],"code-md":["JetBrains Mono"],"display-lg":["Newsreader"],"title-md":["Inter"],"display-lg-mobile":["Newsreader"],"title-lg":["Inter"],"headline-lg":["Newsreader"],"headline-sm":["Newsreader"],"headline-md":["Newsreader"],"body-md":["Inter"],"headline-lg-mobile":["Newsreader"],"body-sm":["Inter"],"body-lg":["Inter"]},fontSize:{"code-sm":["11px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"500"}],"code-md":["13px",{lineHeight:"18px",fontWeight:"500"}],"display-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"600"}],"title-md":["15px",{lineHeight:"20px",fontWeight:"600"}],"display-lg-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.01em",fontWeight:"600"}],"title-lg":["18px",{lineHeight:"24px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.015em",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"500"}],"headline-md":["24px",{lineHeight:"32px",fontWeight:"500"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-lg-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm min-w-max"><img alt="PreFlight Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xoz2uqV_R_gbFp4_bveXbs-XKUT8NjYIuD32J66a74un_4F55rO7tbe_jrnylWpjn8_b72jRtypH2wh8gdydVYubYRlwpdiiMmS-NP5hjEutyyu-pEEZ-n_6rwGs3HV6GhWFZYvDK4hB3m4_EkR6yb4GX3wXXW9_PRxnFRzJjc7ZpDK0hM4hNcqUYICZL-gZ4Yt7hB5fMW-b6Zo5Hodo2baT6trgzsZ331BY8wbON4A0-88YszEBQpo_k"/><div class="flex items-center gap-space-xs"><span class="font-title-lg text-title-lg font-bold text-primary tracking-tight">PreFlight</span><span class="font-body-sm text-body-sm text-on-surface-variant font-medium hidden xl:inline">— AICTE Regulatory Portal Approval Process Handbook 2025-26</span><span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium uppercase">AY 2025–26 Cycle 1</span></div></div><div class="flex items-center gap-space-md flex-1 max-w-xl justify-end"><button class="flex items-center justify-between w-64 px-space-sm py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface shadow-[0_1px_4px_rgba(0,0,0,0.02)] transition-colors text-left" type="button"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-sm">search</span><span class="font-body-sm text-body-sm">Application lookup</span></div><kbd class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-semibold">⌘K</kbd></button><div class="flex items-center gap-space-sm pl-space-xs"><button aria-label="Notifications" class="relative p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-error text-on-error font-code-sm text-[10px] font-bold leading-none">3</span></button><div class="h-6 w-px bg-surface-container-highest"></div><div class="flex items-center gap-space-xs"><div class="text-right hidden sm:block"><div class="font-title-md text-title-md font-semibold text-on-surface leading-tight">Dr. Sunita V. Rao</div><div class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Senior Regional Director (WRO)</div></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5P6Yw91SFBS68qVQPQTMAb3hAqy3bvQ10DJWiyTwjSVFylBBVJRY-oDF6s6CIZUtoWWcLdofRC9tvojo-KSmd6dPnyqTxsd0mdqpfysN5FmJgkiw0_Xw0cO4nhVqJyCrYTkGf_oO6SQMqJ1mbv5E-72xlGIHfCBaeEL1GwoFyC7ppgVyL1SgrEWc5LpJumF1M_VtOSyMC7VjqxoAbB-NA7Jj_Vh8V4MDWZIT7k4tL2odEd62LnBMK"/></div></div></div></div></header><aside class="fixed left-0 top-16 bottom-7 w-64 bg-surface-container-low z-40 flex flex-col py-space-md px-space-xs justify-between overflow-y-auto"><div class="flex flex-col gap-space-xs"><div class="px-space-xs pb-space-xs"><span class="font-code-sm text-code-sm uppercase text-on-surface-variant tracking-wider font-semibold">Regulatory Review</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm rounded-lg"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="application-review" href="#"><span>Application Review</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="institutional-submission-and-scrutiny-portal" href="#"><span>Institution Portal</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="document-verification" href="#"><span>Document Verification</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="deficiency-reports" href="#"><span>Deficiency Reports</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="inspection-schedules" href="#"><span>Inspection Schedules</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="institutional-registry" href="#"><span>Institutional Registry</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="handbook-rules-and-norms" href="#"><span>Handbook Rules &amp; Norms</span></a></nav></div><div class="p-space-xs rounded-lg bg-surface-container text-on-surface-variant"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-sm text-primary">verified_user</span><span class="font-code-sm text-code-sm font-semibold text-primary uppercase">AICTE Audit Mode</span></div><p class="font-body-sm text-body-sm mt-1 text-on-surface-variant">Scrutiny panel sessions are logged for gazette compliance.</p></div></aside><div class="pl-64"><main class="relative pt-16 min-h-screen pb-10 w-full px-gutter bg-surface"><div class="flex flex-col w-full">
+<!-- Top Archival Context Banner & Institution Meta Header -->
+<section class="w-full pb-space-lg">
+<!-- Breadcrumb & Scrutiny Cycle Indicator -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-xs text-on-surface-variant font-code-sm text-code-sm">
+<div class="flex items-center gap-space-xs">
+<span class="text-primary font-semibold">PORTAL HOMEPAGE</span>
+<span>/</span>
+<span class="text-on-surface-variant">WESTERN REGIONAL OFFICE (WRO)</span>
+<span>/</span>
+<span class="text-on-surface font-semibold uppercase">MID-UPLOAD DOSSIER AUDIT</span>
+</div>
+<div class="flex items-center gap-space-xs px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant shadow-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary-container animate-ping"></span>
+<span class="font-code-sm text-code-sm font-medium">Real-time Scrutiny Engine Active</span>
+</div>
+</div>
+<!-- Main Title Card with Institutional Gravitas -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="flex flex-col lg:flex-row lg:items-start justify-between gap-space-md relative z-10">
+<div class="space-y-space-xs max-w-4xl">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-code-sm text-code-sm uppercase tracking-wider font-semibold">
+              EoA &amp; Variation
+            </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded">
+              Cycle 1 • AY 2025–26
+            </span>
+<span class="font-code-sm text-code-sm text-secondary font-semibold bg-secondary-fixed/50 px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">history_toggle_off</span>
+              Deficiency Cure Window: 9 Days Left
+            </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight font-serif pt-1">
+            Sardar Vallabhbhai College of Engineering &amp; Technology
+          </h1>
+<!-- Meta ledger ribbon -->
+<div class="flex flex-wrap items-center gap-y-2 gap-x-6 pt-2 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="text-outline uppercase font-code-sm text-code-sm font-semibold">Permanent ID:</span>
+<span class="font-code-md text-code-md font-semibold text-on-surface">PID: 1-39482910</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-outline uppercase font-code-sm text-code-sm font-semibold">Application Key:</span>
+<span class="font-code-md text-code-md font-semibold text-primary">AICTE-WRO-2025-8841</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-outline uppercase font-code-sm text-code-sm font-semibold">Jurisdiction:</span>
+<span class="font-body-sm text-body-sm text-on-surface">Western Region • Pune Division</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-outline uppercase font-code-sm text-code-sm font-semibold">Approved Intake Base:</span>
+<span class="font-code-md text-code-md font-semibold text-on-surface">780 Seats</span>
+</div>
+</div>
+</div>
+<!-- Quick Summary Actions -->
+<div class="flex flex-col sm:flex-row lg:flex-col gap-2 min-w-max lg:items-end">
+<button class="px-space-sm py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-title-md text-title-md flex items-center gap-2 shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-base">print</span>
+<span>Export Scrutiny Ledger</span>
+</button>
+<button class="px-space-sm py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-body-sm text-body-sm flex items-center gap-2 transition-all" type="button">
+<span class="material-symbols-outlined text-base">menu_book</span>
+<span>View APH 2025-26 Rules</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Two-Column Regulatory Workspace -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg w-full items-start">
+<!-- LEFT COLUMN: Dossier Document Slots & Scrutiny Stream (Cols 7 on XL) -->
+<section class="lg:col-span-7 xl:col-span-8 space-y-space-md">
+<!-- Section Header -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 pb-1">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-code-sm text-code-sm uppercase tracking-wider text-secondary font-bold">Document Ingestion</span>
+<span class="px-1.5 py-0.2 rounded-full text-[10px] font-code-sm font-semibold bg-surface-container-high text-on-surface-variant">7 / 9 Complete</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-primary font-serif font-semibold">
+            Required Dossier Documents
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+            Automated OCR &amp; pre-flight norm validation running in background. High-stakes validation is cross-checked with gazette norms.
+          </p>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1.5 text-xs font-title-md text-on-surface-variant hover:text-on-surface rounded bg-surface-container flex items-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+<span>Filter by Status</span>
+</button>
+<button class="px-2.5 py-1.5 text-xs font-title-md text-on-surface-variant hover:text-on-surface rounded bg-surface-container flex items-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm">refresh</span>
+<span>Sync Ledger</span>
+</button>
+</div>
+</div>
+<!-- Dossier Document Stack -->
+<div class="space-y-space-sm">
+<!-- 1. Land Contiguity & Title Deed (Looks good) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-code-sm text-code-sm font-semibold text-primary bg-primary-fixed/40 px-2 py-0.5 rounded">
+                  AICTE APH Clause 4.1
+                </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Statutory Mandatory</span>
+</div>
+<h3 class="font-title-lg text-title-lg font-bold text-on-surface">
+                Land Contiguity &amp; Title Deed
+              </h3>
+<div class="flex flex-wrap items-center gap-space-xs text-on-surface-variant font-code-sm text-code-sm pt-0.5">
+<span class="material-symbols-outlined text-sm text-on-surface-variant">description</span>
+<span class="font-medium text-on-surface">Land_Title_Registry_Gat72.pdf</span>
+<span>•</span>
+<span>14.2 MB</span>
+<span>•</span>
+<span>Digitally Signed by Sub-Registrar</span>
+</div>
+</div>
+<!-- Status Pill: Compliant / Looks Good -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EAF5EE] text-[#2E7D4F] font-title-md text-title-md font-semibold self-start shadow-sm">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span>Looks good</span>
+</div>
+</div>
+<!-- Audit Finding Box -->
+<div class="mt-space-sm p-3 rounded-lg bg-surface-container-low flex items-start gap-2 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-base text-[#2E7D4F] mt-0.5 flex-shrink-0">verified</span>
+<div class="flex-1">
+<p>Geotagged coordinates verified against Revenue records. Contiguity 8.4 acres confirmed without encumbrance.</p>
+<span class="font-code-sm text-code-sm text-on-surface-variant mt-1 block">Survey Nos: Gat 72/1, 72/2, 73 (Unified Master Plot)</span>
+</div>
+</div>
+<!-- Card Actions -->
+<div class="mt-space-sm pt-space-xs flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-title-md text-title-md transition-colors flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm">dataset</span>
+<span>View Extracted Data</span>
+</button>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface-variant font-title-md text-title-md transition-colors flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span>Audit Stamp</span>
+</button>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm font-semibold flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">sync_saved_locally</span>
+<span>Replace Dossier File</span>
+</button>
+</div>
+</article>
+<!-- 2. Faculty Cadre & Salary Gazette (Needs fixing) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<!-- Subtle Accent bar on left for severity -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-error"></div>
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm pl-2">
+<div class="space-y-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-code-sm text-code-sm font-semibold text-primary bg-primary-fixed/40 px-2 py-0.5 rounded">
+                  AICTE APH Clause 7.3
+                </span>
+<span class="font-code-sm text-code-sm text-error font-semibold">Immediate Action Required</span>
+</div>
+<h3 class="font-title-lg text-title-lg font-bold text-on-surface">
+                Faculty Cadre &amp; Salary Gazette
+              </h3>
+<div class="flex flex-wrap items-center gap-space-xs text-on-surface-variant font-code-sm text-code-sm pt-0.5">
+<span class="material-symbols-outlined text-sm">badge</span>
+<span class="font-medium text-on-surface">Cadre_Matrix_CSE_Mech_Signed.pdf</span>
+<span>•</span>
+<span>8.6 MB</span>
+<span>•</span>
+<span>Extracted: 68 Faculty Profiles</span>
+</div>
+</div>
+<!-- Status Pill: Critical / Needs Fixing -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FDF2F2] text-error font-title-md text-title-md font-semibold self-start shadow-sm">
+<span class="material-symbols-outlined text-base">error</span>
+<span>Needs fixing</span>
+</div>
+</div>
+<!-- Audit Finding Box (Defect breakdown) -->
+<div class="mt-space-sm ml-2 p-space-sm rounded-lg bg-error-container/40 text-on-error-container space-y-2">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-base text-error mt-0.5 flex-shrink-0">gpp_bad</span>
+<div class="space-y-1 text-on-surface">
+<p class="font-title-md text-title-md text-error font-semibold">Professor cadre shortfall in Computer Science</p>
+<p class="font-body-sm text-body-sm">
+                  Mandates strict 1:2:6 ratio for 240 intake. Available: 1 Prof, 4 Assoc Prof, 13 Asst Prof. Minimum required: 2 Full Professors.
+                </p>
+<div class="font-code-sm text-code-sm text-on-surface-variant pt-1">
+                  Deficit: -1 Senior Professor (PhD + 10 yrs verified experience)
+                </div>
+</div>
+</div>
+</div>
+<!-- Card Actions -->
+<div class="mt-space-sm pt-space-xs ml-2 flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<button class="px-space-sm py-1.5 rounded-lg bg-error text-on-error font-title-md text-title-md hover:bg-error/90 transition-colors flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm">upload</span>
+<span>Re-upload Corrected Matrix</span>
+</button>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-title-md text-title-md transition-colors flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm">table_rows</span>
+<span>View Discrepancy Ledger</span>
+</button>
+</div>
+<a class="font-code-sm text-code-sm text-primary hover:underline font-semibold" href="#">Clause 7.3 Norm Matrix →</a>
+</div>
+</article>
+<!-- 3. Fire Safety NOC (State Fire Service) (Needs fixing) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-error"></div>
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm pl-2">
+<div class="space-y-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-code-sm text-code-sm font-semibold text-primary bg-primary-fixed/40 px-2 py-0.5 rounded">
+                  AICTE APH Clause 12.2
+                </span>
+<span class="font-code-sm text-code-sm text-error font-semibold">Life Safety Defect</span>
+</div>
+<h3 class="font-title-lg text-title-lg font-bold text-on-surface">
+                Fire Safety NOC (State Fire Service)
+              </h3>
+<div class="flex flex-wrap items-center gap-space-xs text-on-surface-variant font-code-sm text-code-sm pt-0.5">
+<span class="material-symbols-outlined text-sm">local_fire_department</span>
+<span class="font-medium text-on-surface">Fire_NOC_District_HQ_2022.pdf</span>
+<span>•</span>
+<span>3.1 MB</span>
+<span>•</span>
+<span>Issued by: CFO Pune Division</span>
+</div>
+</div>
+<!-- Status Pill: Critical / Needs Fixing -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FDF2F2] text-error font-title-md text-title-md font-semibold self-start shadow-sm">
+<span class="material-symbols-outlined text-base">warning</span>
+<span>Needs fixing</span>
+</div>
+</div>
+<!-- Audit Finding Box -->
+<div class="mt-space-sm ml-2 p-space-sm rounded-lg bg-error-container/40 text-on-surface space-y-1">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-base text-error mt-0.5 flex-shrink-0">event_busy</span>
+<div class="space-y-1">
+<p class="font-title-md text-title-md text-error font-semibold">Certificate Lapsed on 12 Mar 2025</p>
+<p class="font-body-sm text-body-sm">
+                  Fire NOC expired on 12 Mar 2025. Mandatory council validity must cover the academic period through 30 June 2026.
+                </p>
+<div class="font-code-sm text-code-sm text-on-surface-variant">
+                  Current validity: Expired (–4 days). Provisional acknowledgement receipts not permissible without Chief Fire Officer provisional certificate.
+                </div>
+</div>
+</div>
+</div>
+<!-- Card Actions -->
+<div class="mt-space-sm pt-space-xs ml-2 flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<button class="px-space-sm py-1.5 rounded-lg bg-error text-on-error font-title-md text-title-md hover:bg-error/90 transition-colors flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm">file_upload</span>
+<span>Re-upload Renewal NOC</span>
+</button>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-title-md text-title-md transition-colors flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm">policy</span>
+<span>View Clause Norm</span>
+</button>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">help</span>
+<span>Need Fire Audit Extension?</span>
+</button>
+</div>
+</article>
+<!-- 4. Building Completion & Occupancy Certificate (Looks good) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-code-sm text-code-sm font-semibold text-primary bg-primary-fixed/40 px-2 py-0.5 rounded">
+                  AICTE APH Clause 4.3
+                </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Statutory Mandatory</span>
+</div>
+<h3 class="font-title-lg text-title-lg font-bold text-on-surface">
+                Building Completion &amp; Occupancy Certificate
+              </h3>
+<div class="flex flex-wrap items-center gap-space-xs text-on-surface-variant font-code-sm text-code-sm pt-0.5">
+<span class="material-symbols-outlined text-sm">apartment</span>
+<span class="font-medium text-on-surface">Municipal_Occupancy_Cert_Rev3.pdf</span>
+<span>•</span>
+<span>9.4 MB</span>
+<span>•</span>
+<span>Town Planning Sanctioned</span>
+</div>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EAF5EE] text-[#2E7D4F] font-title-md text-title-md font-semibold self-start shadow-sm">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span>Looks good</span>
+</div>
+</div>
+<div class="mt-space-sm p-3 rounded-lg bg-surface-container-low flex items-start gap-2 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-base text-[#2E7D4F] mt-0.5 flex-shrink-0">domain_verification</span>
+<div>
+<p>Carpet area 14,850 sq.m confirmed by Town Planning authority digital signature. Institutional FAR utilization within permissible index.</p>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex flex-wrap items-center justify-between gap-2">
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-title-md text-title-md transition-colors flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm">view_in_ar</span>
+<span>View Carpet Breakdown</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm font-semibold flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">edit</span>
+<span>Replace File</span>
+</button>
+</div>
+</article>
+<!-- 5. AICTE Bank Guarantee / FDR Lien Letter (Checking...) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-code-sm text-code-sm font-semibold text-primary bg-primary-fixed/40 px-2 py-0.5 rounded">
+                  AICTE APH Clause 2.14
+                </span>
+<span class="font-code-sm text-code-sm text-secondary font-medium">Financial Assurance</span>
+</div>
+<h3 class="font-title-lg text-title-lg font-bold text-on-surface">
+                AICTE Bank Guarantee / FDR Lien Letter
+              </h3>
+<div class="flex flex-wrap items-center gap-space-xs text-on-surface-variant font-code-sm text-code-sm pt-0.5">
+<span class="material-symbols-outlined text-sm">account_balance</span>
+<span class="font-medium text-on-surface">FDR_Lien_Confirmation_SBI.pdf</span>
+<span>•</span>
+<span>4.8 MB</span>
+<span>•</span>
+<span>State Bank of India (Treasury Branch)</span>
+</div>
+</div>
+<!-- Status Pill: Checking with pulse -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EDF5FB] text-[#1B6FB5] font-title-md text-title-md font-semibold self-start shadow-sm">
+<span class="material-symbols-outlined text-base animate-spin">progress_activity</span>
+<span>Checking...</span>
+</div>
+</div>
+<div class="mt-space-sm p-3 rounded-lg bg-surface-container-low flex items-start gap-2 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-base text-[#1B6FB5] mt-0.5 flex-shrink-0 animate-pulse">sync</span>
+<div class="flex-1">
+<p class="font-medium text-on-surface">Interrogating Bank API ledger &amp; Lead District Manager signature seal...</p>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full mt-2 overflow-hidden">
+<div class="bg-[#1B6FB5] h-full w-2/3 rounded-full animate-pulse"></div>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant mt-1.5 block">Estimated verification latency: 45 seconds remaining</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between">
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-high text-on-surface-variant font-title-md text-title-md cursor-not-allowed flex items-center gap-1.5 opacity-80" disabled="" type="button">
+<span class="material-symbols-outlined text-sm">hourglass_top</span>
+<span>Verification in Progress</span>
+</button>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Lien Value: ₹1,00,00,000 (Joint Account)</span>
+</div>
+</article>
+<!-- 6. Barrier-Free Environment / Divyangjan Audit (Looks good) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-code-sm text-code-sm font-semibold text-primary bg-primary-fixed/40 px-2 py-0.5 rounded">
+                  Clause 5.4 / PwD Act
+                </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Campus Accessibility</span>
+</div>
+<h3 class="font-title-lg text-title-lg font-bold text-on-surface">
+                Barrier-Free Environment / Divyangjan Audit
+              </h3>
+<div class="flex flex-wrap items-center gap-space-xs text-on-surface-variant font-code-sm text-code-sm pt-0.5">
+<span class="material-symbols-outlined text-sm">accessible_forward</span>
+<span class="font-medium text-on-surface">Divyangjan_Ramp_Lift_Audit.pdf</span>
+<span>•</span>
+<span>2.9 MB</span>
+<span>•</span>
+<span>Architect Certified</span>
+</div>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EAF5EE] text-[#2E7D4F] font-title-md text-title-md font-semibold self-start shadow-sm">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span>Looks good</span>
+</div>
+</div>
+<div class="mt-space-sm p-3 rounded-lg bg-surface-container-low flex items-start gap-2 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-base text-[#2E7D4F] mt-0.5 flex-shrink-0">check</span>
+<p>Ramp gradient 1:12 slope confirmed with braille directional signage across all 4 Academic Blocks.</p>
+</div>
+</article>
+<!-- 7. Anti-Ragging Committee Constitution & Gazette (Looks good) -->
+<article class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm hover:shadow-md transition-shadow">
+<div class="flex flex-col sm:flex-row sm:items-start justify-between gap-space-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-code-sm text-code-sm font-semibold text-primary bg-primary-fixed/40 px-2 py-0.5 rounded">
+                  UGC / AICTE Norm 6.1
+                </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Statutory Mandate</span>
+</div>
+<h3 class="font-title-lg text-title-lg font-bold text-on-surface">
+                Anti-Ragging Committee Constitution &amp; Gazette
+              </h3>
+<div class="flex flex-wrap items-center gap-space-xs text-on-surface-variant font-code-sm text-code-sm pt-0.5">
+<span class="material-symbols-outlined text-sm">shield</span>
+<span class="font-medium text-on-surface">AntiRagging_Affidavit_2025.pdf</span>
+<span>•</span>
+<span>1.8 MB</span>
+<span>•</span>
+<span>Notarized &amp; Gazetted</span>
+</div>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EAF5EE] text-[#2E7D4F] font-title-md text-title-md font-semibold self-start shadow-sm">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span>Looks good</span>
+</div>
+</div>
+<div class="mt-space-sm p-3 rounded-lg bg-surface-container-low flex items-start gap-2 text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-base text-[#2E7D4F] mt-0.5 flex-shrink-0">check</span>
+<p>Squad composition meets Supreme Court bench directives: civil rep, police liaison officer, faculty, student reps.</p>
+</div>
+</article>
+</div>
+</section>
+<!-- RIGHT COLUMN: Readiness & Actionable Fixes (Cols 5 on XL) -->
+<aside class="lg:col-span-5 xl:col-span-4 space-y-space-md lg:sticky lg:top-20">
+<!-- CARD 1: Application Readiness Meter -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<span class="font-code-sm text-code-sm uppercase tracking-wider text-on-surface-variant font-semibold">Council Clearance Gate</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-serif font-semibold">Application Readiness</h3>
+</div>
+<span class="px-2.5 py-1 rounded-full font-code-sm text-code-sm font-bold bg-secondary-fixed text-on-secondary-fixed">
+            Stage 2 of 4
+          </span>
+</div>
+<!-- Circular Progress Ring Visual with Accents -->
+<div class="flex flex-col items-center justify-center py-space-sm">
+<div class="relative w-44 h-44 flex items-center justify-center">
+<!-- SVG Progress Ring -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 160 160">
+<!-- Background track -->
+<circle cx="80" cy="80" fill="transparent" r="66" stroke="#f0eee9" stroke-width="14"></circle>
+<!-- Saffron & Navy Progress Ring (Circumference ~ 414.7) -> 72% = 298.6 -->
+<circle class="transition-all duration-1000 ease-out" cx="80" cy="80" fill="transparent" r="66" stroke="#1f3a5f" stroke-dasharray="414.7" stroke-dashoffset="116.1" stroke-linecap="round" stroke-width="14"></circle>
+<!-- Accent tip for warning elements -->
+<circle cx="80" cy="80" fill="transparent" r="66" stroke="#8c5000" stroke-dasharray="414.7" stroke-dashoffset="380" stroke-linecap="round" stroke-width="14"></circle>
+</svg>
+<!-- Central Typography Badge -->
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-lg text-headline-lg font-bold text-primary tracking-tighter leading-none">72%</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant font-semibold uppercase tracking-wider mt-1">Readiness</span>
+<span class="font-body-sm text-body-sm text-error font-medium">2 Blockers</span>
+</div>
+</div>
+<!-- Breakdown Tags -->
+<div class="grid grid-cols-3 gap-2 w-full mt-space-sm text-center">
+<div class="p-2 rounded-lg bg-surface-container-low">
+<div class="font-title-md text-title-md font-bold text-[#2E7D4F]">5</div>
+<div class="font-code-sm text-code-sm text-on-surface-variant">Verified</div>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low">
+<div class="font-title-md text-title-md font-bold text-[#1B6FB5]">1</div>
+<div class="font-code-sm text-code-sm text-on-surface-variant">Checking</div>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low">
+<div class="font-title-md text-title-md font-bold text-error">2</div>
+<div class="font-code-sm text-code-sm text-on-surface-variant">Blockers</div>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center mt-space-xs">
+          AICTE scrutiny algorithms evaluate document integrity, expiration dates, and statutory ratios against Chapter II norms.
+        </p>
+</div>
+<!-- CARD 2: Fix Before Submitting Callout -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-error text-xl">report_problem</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-serif font-semibold">Fix before submitting</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-code-sm text-code-sm font-bold">
+            2 Blockers Remaining
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+          Resolve these deficiencies to unlock formal submission to the Regional Scrutiny Ledger.
+        </p>
+<!-- Defect Item 1 -->
+<div class="space-y-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors space-y-2">
+<div class="flex items-start justify-between gap-2">
+<div class="space-y-0.5">
+<span class="font-code-sm text-code-sm font-semibold text-error uppercase">Clause 12.2 • Life Safety</span>
+<p class="font-title-md text-title-md text-on-surface font-semibold leading-snug">
+                  Fire NOC expired on 12 Mar 2025
+                </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Mandatory validity through June 30, 2026. Upload State CFO renewal certification.
+                </p>
+</div>
+</div>
+<div class="pt-1 flex items-center justify-between">
+<button class="px-3 py-1.5 rounded-lg bg-error text-on-error font-title-md text-title-md hover:bg-error/90 transition-colors flex items-center gap-1 text-xs font-semibold shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm">upload_file</span>
+<span>Re-upload</span>
+</button>
+<a class="font-code-sm text-code-sm text-primary hover:underline" href="#">Guidelines →</a>
+</div>
+</div>
+<!-- Defect Item 2 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors space-y-2">
+<div class="space-y-0.5">
+<span class="font-code-sm text-code-sm font-semibold text-error uppercase">Clause 7.3 • Cadre Ratio</span>
+<p class="font-title-md text-title-md text-on-surface font-semibold leading-snug">
+                Cadre ratio deficit: short 1 Professor in CSE
+              </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Computer Science requires minimum 2 full professors for 240 student intake.
+              </p>
+</div>
+<div class="pt-1 flex items-center justify-between">
+<button class="px-3 py-1.5 rounded-lg bg-error text-on-error font-title-md text-title-md hover:bg-error/90 transition-colors flex items-center gap-1 text-xs font-semibold shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm">upload_file</span>
+<span>Re-upload</span>
+</button>
+<a class="font-code-sm text-code-sm text-primary hover:underline" href="#">Ratio Formula →</a>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 3: Submission Lock & Regulatory Undertaking -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">gavel</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-serif font-semibold">Regulatory Undertaking</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Application lock is automatically enforced by the AICTE Compliance Engine. No incomplete dossiers can be forwarded to the Scrutiny Committee.
+        </p>
+<!-- Final Submission Action (Disabled) -->
+<div class="space-y-2">
+<button aria-disabled="true" class="w-full py-3 px-space-sm rounded-lg bg-surface-container-highest text-on-surface-variant font-title-md text-title-md font-semibold flex items-center justify-center gap-2 cursor-not-allowed opacity-80 shadow-none" disabled="" type="button">
+<span class="material-symbols-outlined text-lg">lock</span>
+<span>Submit Application for AICTE Scrutiny</span>
+</button>
+<div class="flex items-center justify-center gap-1 text-error font-code-sm text-code-sm text-center">
+<span class="material-symbols-outlined text-sm">lock_clock</span>
+<span>Disabled until all blockers resolved (2 remaining)</span>
+</div>
+</div>
+<!-- Helper Note -->
+<div class="p-2.5 rounded bg-surface-container text-on-surface-variant font-body-sm text-body-sm text-xs leading-relaxed">
+<span class="font-semibold text-primary">AICTE APH 2025–26 Sub-clause 2.6:</span>
+          Submissions with unresolved statutory deficiencies cannot proceed to the Regional Scrutiny Ledger. Once resolved, the portal enables digital signature stamping via Aadhaar e-Sign or DSC Token.
+        </div>
+<!-- Secondary Action -->
+<div class="pt-space-xs flex items-center justify-between">
+<button class="w-full py-2 px-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-title-md text-title-md transition-colors flex items-center justify-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-base">save</span>
+<span>Save Draft &amp; Exit</span>
+</button>
+</div>
+</div>
+<!-- Regulatory Audit Footer Snippet for Assessor Integrity -->
+<div class="p-space-sm rounded-xl bg-surface-container-low text-on-surface-variant text-center font-code-sm text-code-sm space-y-1">
+<div>Session Token: <span class="text-on-surface font-semibold">9F44-C210-APH25</span></div>
+<div class="text-[10px] text-outline">Logged under AICTE Centralized Scrutiny Framework v4.2</div>
+</div>
+</aside>
+</div>
+</div></main></div><footer class="fixed bottom-0 left-0 right-0 h-7 z-50 bg-surface-container-high text-on-surface-variant px-gutter flex items-center justify-between shadow-[0_-1px_6px_rgba(0,0,0,0.02)]"><div class="flex items-center gap-space-xs"><span class="inline-block w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span><span class="font-code-sm text-code-sm">Connected to National Academic Depository (NAD) &amp; Land Records API • Sync OK • Latency 42ms</span></div><div class="flex items-center gap-space-sm font-code-sm text-code-sm text-on-surface-variant"><span class="hidden md:inline">AICTE Act 1987 Sub-clause 10(k)</span><span>Node ID: WRO-INSP-04</span></div></footer></body></html>

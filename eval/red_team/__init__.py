@@ -1,0 +1,1 @@
+"""Synthetic red-team fixtures."""

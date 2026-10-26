@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feather Atlas — Interactive 3D Bird Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --bg: #f6f1e7;
+      --panel: #fbf8f1;
+      --line: #e7e0d1;
+      --ink: #1b1a17;
+      --muted: #6d685d;
+      --sage: #4d5a3d;
+      --sage-ink: #ffffff;
+      --sage-tint: #e9ebdc;
+      --chip: #efeadd;
+      --shadow: 60,48,28;
+      --ease: cubic-bezier(.22,.8,.24,1);
+    }
+    .hero[data-light="dusk"] {
+      --bg: #14170f;
+      --panel: #1b1f15;
+      --line: #2d3324;
+      --ink: #f2ecdf;
+      --muted: #a8a392;
+      --sage: #a9b98a;
+      --sage-ink: #14170f;
+      --sage-tint: #283020;
+      --chip: #262b1d;
+      --shadow: 0,0,0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      transition: background 0.6s var(--ease), color 0.6s var(--ease);
+    }
+    .hero {
+      position: relative;
+      height: 100vh;
+      height: 100dvh;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr) clamp(300px, 27vw, 360px);
+      background: var(--bg);
+      transition: background 0.6s var(--ease);
+    }
+    canvas#gl {
+      position: absolute;
+      inset: 0;
+      z-index: 5;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Left Sidebar */
+    aside.sidebar {
+      position: relative;
+      z-index: 6;
+      display: flex;
+      flex-direction: column;
+      padding: 22px 14px 18px 24px;
+      border-right: 1px solid var(--line);
+      background: var(--panel);
+      transition: background 0.6s var(--ease), border-color 0.6s var(--ease);
+    }
+    .brand-title {
+      font-family: 'Newsreader', serif;
+      font-size: 26px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-list {
+      margin: 20px 0 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 7px 10px;
+      border-radius: 10px;
+      font-size: 14.5px;
+      background: transparent;
+      border: 0;
+      color: var(--ink);
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.2s ease, transform 0.15s ease;
+      font-family: inherit;
+    }
+    .nav-btn:hover { background: var(--chip); }
+    .nav-btn[aria-current="page"] {
+      background: var(--sage-tint);
+      color: var(--sage);
+      font-weight: 600;
+    }
+    .nav-btn small {
+      display: block;
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 2px;
+      font-weight: 400;
+    }
+    .featured-card {
+      margin-top: auto;
+      background: var(--sage-tint);
+      border-radius: 10px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .featured-card .eyebrow {
+      font-size: 9.5px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 700;
+    }
+    .featured-card h3 {
+      font-family: 'Newsreader', serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .featured-card p {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* Centre Stage */
+    section.main {
+      position: relative;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      padding: 24px 20px 14px 26px;
+      z-index: 6;
+      pointer-events: auto;
+    }
+    .tabs-row {
+      display: flex;
+      gap: 10px;
+      z-index: 10;
+    }
+    .tab-btn {
+      width: 130px;
+      padding: 8px 8px 11px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s var(--ease), background 0.3s ease, border-color 0.3s ease;
+      font-family: inherit;
+    }
+    .tab-btn:hover { transform: translateY(-2px); }
+    .tab-btn[aria-selected="true"] {
+      background: var(--sage-tint);
+      border-color: var(--sage);
+    }
+    .tab-btn img {
+      width: 58px;
+      height: 52px;
+      object-fit: contain;
+    }
+    .tab-name {
+      font-family: 'Newsreader', serif;
+      font-size: 15.5px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .tab-latin {
+      font-family: 'Newsreader', serif;
+      font-style: italic;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+    #stage {
+      position: relative;
+      height: 100%;
+      touch-action: none;
+      cursor: grab;
+      user-select: none;
+    }
+    #stage:active { cursor: grabbing; }
+
+    /* Ground Shadow */
+    .ground-shadow {
+      position: absolute;
+      left: 50%;
+      bottom: 15%;
+      transform: translateX(-50%);
+      width: min(62%, 460px);
+      height: 44px;
+      border-radius: 50%;
+      background: radial-gradient(closest-side, rgba(var(--shadow), .22), transparent);
+      pointer-events: none;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .stage-hint {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      font-size: 11.5px;
+      color: var(--muted);
+      z-index: 10;
+      pointer-events: none;
+    }
+    .icon-rail {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .rail-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+    .rail-btn:hover { border-color: var(--sage); }
+    .rail-btn:active { transform: scale(0.92); }
+    .rail-btn.on { background: var(--sage); color: var(--sage-ink); }
+    .turn-pill {
+      position: absolute;
+      bottom: 46px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+    }
+    .turn-btn {
+      background: transparent;
+      border: 0;
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 13px;
+      padding: 2px 6px;
+    }
+    .caption-pill {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Newsreader', serif;
+      font-style: italic;
+      font-size: clamp(16px, 1.55vw, 20px);
+      color: var(--muted);
+      text-align: center;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    /* Right Column */
+    section.info {
+      position: relative;
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      gap: 16px;
+      padding: 20px 24px 18px 0;
+      z-index: 6;
+      background: transparent;
+    }
+    .info-top {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .search-box {
+      flex: 1;
+      height: 34px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      gap: 8px;
+    }
+    .search-box input {
+      border: 0;
+      outline: 0;
+      background: transparent;
+      font-size: 12px;
+      color: var(--ink);
+      width: 100%;
+    }
+    .detail-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 22px 20px 16px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .detail-card .eyebrow {
+      font-size: 10px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--sage);
+      font-weight: 700;
+    }
+    .detail-card h1 {
+      font-family: 'Newsreader', serif;
+      font-weight: 500;
+      font-size: clamp(34px, 3.5vw, 48px);
+      line-height: 1;
+      letter-spacing: -.025em;
+    }
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .tag-pill {
+      font-size: 11.5px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: var(--chip);
+      color: var(--ink);
+    }
+    .desc-text {
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+    .detail-card h2 {
+      font-family: 'Newsreader', serif;
+      font-size: 20px;
+      font-weight: 400;
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+      margin-top: 4px;
+    }
+    .trait-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 13px;
+    }
+    .trait-row {
+      display: grid;
+      grid-template-columns: 20px 80px 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+    .trait-label { color: var(--muted); }
+    .close-up-card {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: 60px 1fr 18px;
+      gap: 12px;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      cursor: pointer;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .close-up-card:hover {
+      border-color: var(--sage);
+      background: var(--sage-tint);
+    }
+    .lens-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-size: 520%;
+      border: 1px solid var(--line);
+    }
+
+    @media (max-width: 1100px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr) clamp(280px, 36vw, 340px);
+      }
+      aside.sidebar { display: none; }
+    }
+    @media (max-width: 760px) {
+      .hero {
+        display: flex;
+        flex-direction: column;
+        height: 100dvh;
+      }
+      section.info {
+        max-height: 40dvh;
+        padding: 10px 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero" id="hero" data-light="day">
+    <canvas id="gl"></canvas>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand-title">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <span>Feather Atlas</span>
+      </div>
+      <nav class="nav-list">
+        <button class="nav-btn" aria-current="page">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <div>Featured<small>Curated specimens</small></div>
+        </button>
+        <button class="nav-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <div>Kingfishers<small>8 species</small></div>
+        </button>
+        <button class="nav-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <div>Songbirds<small>34 species</small></div>
+        </button>
+      </nav>
+
+      <div class="featured-card">
+        <div class="eyebrow">FEATURED SPECIES</div>
+        <h3 id="featTitle">A flash of river blue.</h3>
+        <p id="featText">Extraordinary colours. A remarkable life by the water.</p>
+      </div>
+    </aside>
+
+    <!-- Main Stage -->
+    <section class="main">
+      <div class="tabs-row" role="tablist">
+        <button class="tab-btn" id="tabKingfisher" aria-selected="true">
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261004_073256_f9e3e60d-acdc-4925-b393-c4ce14b28711.png" alt="Kingfisher">
+          <span class="tab-name">Kingfisher</span>
+          <span class="tab-latin">Alcedo atthis</span>
+        </button>
+        <button class="tab-btn" id="tabHoopoe" aria-selected="false">
+          <img src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261004_073256_21ed095c-d038-4ab5-87b7-b44e527ec449.png" alt="Hoopoe">
+          <span class="tab-name">Hoopoe</span>
+          <span class="tab-latin">Upupa epops</span>
+        </button>
+      </div>
+
+      <div id="stage" tabindex="0" aria-label="Interactive specimen stage">
+        <div class="ground-shadow" id="shadow"></div>
+        <div class="stage-hint">Drag to turn · Scroll to zoom</div>
+        <div class="icon-rail">
+          <button class="rail-btn on" id="btnZoomIn" title="Zoom In">+</button>
+          <button class="rail-btn" id="btnZoomOut" title="Zoom Out">−</button>
+          <button class="rail-btn" id="btnLight" title="Toggle Day/Dusk">☀</button>
+        </div>
+        <div class="turn-pill">
+          <button class="turn-btn" id="turnCCW">↺</button>
+          <span>360°</span>
+          <button class="turn-btn" id="turnCW">↻</button>
+        </div>
+        <div class="caption-pill" id="caption">Blink, and the river keeps its secret.</div>
+      </div>
+    </section>
+
+    <!-- Info Column -->
+    <section class="info">
+      <div class="info-top">
+        <div class="search-box">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" placeholder="Search species, habitats, or regions…">
+        </div>
+      </div>
+
+      <div class="detail-card">
+        <div class="eyebrow" id="fam">ALCEDINIDAE</div>
+        <h1 id="birdName">Kingfisher</h1>
+        <div class="tag-row" id="tagRow">
+          <span class="tag-pill">River bird</span>
+          <span class="tag-pill">Diver</span>
+          <span class="tag-pill">Iridescent</span>
+        </div>
+        <p class="desc-text" id="desc">A small, spectacular bird of rivers and lakes, the kingfisher is renowned for its dazzling plumage and astonishing hunting dives. A master of stealth and speed, it links healthy waterways with extraordinary beauty.</p>
+        <h2>Key Traits</h2>
+        <div class="trait-grid">
+          <div class="trait-row"><span>📏</span><span class="trait-label">Length</span><span id="tLength">16–17 cm</span></div>
+          <div class="trait-row"><span>⚡</span><span class="trait-label">Speed</span><span id="tSpeed">Up to 40 km/h</span></div>
+          <div class="trait-row"><span>🐟</span><span class="trait-label">Diet</span><span id="tDiet">Small fish and insects</span></div>
+          <div class="trait-row"><span>🌍</span><span class="trait-label">Range</span><span id="tRange">Europe and Asia</span></div>
+        </div>
+        <h2>Habitat</h2>
+        <p class="desc-text" id="tHab">Slow rivers, streams and lakes.</p>
+
+        <div class="close-up-card" id="closeUpBtn">
+          <div class="lens-circle" id="lens" style="background-image:url('https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261004_073256_f9e3e60d-acdc-4925-b393-c4ce14b28711.png'); background-position: 24% 30%;"></div>
+          <div>
+            <div style="font-family:'Newsreader', serif; font-size:16px;">Close-up Detail</div>
+            <div style="font-size:11.5px; color:var(--muted);" id="closeUpTxt">An intricate mosaic of structure and colour gives the kingfisher its sheen.</div>
+          </div>
+          <div>→</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script type="module">
+    import * as THREE from 'three';
+    import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+    import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+    const canvas = document.getElementById('gl');
+    const hero = document.getElementById('hero');
+    const stage = document.getElementById('stage');
+
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.toneMapping = THREE.NeutralToneMapping;
+    renderer.toneMappingExposure = 1.05;
+
+    const scene = new THREE.Scene();
+    const pmremGenerator = new THREE.PMREMGenerator(renderer);
+    scene.environment = pmremGenerator.fromScene(new RoomEnvironment()).texture;
+
+    const camera = new THREE.PerspectiveCamera(26, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.set(0, 0, 5);
+
+    const dirLight = new THREE.DirectionalLight(0xfff4e2, 1.6);
+    dirLight.position.set(2.5, 4, 5);
+    scene.add(dirLight);
+
+    const rimLight = new THREE.DirectionalLight(0xbfd8ff, 0.5);
+    rimLight.position.set(-4, 2, -3);
+    scene.add(rimLight);
+
+    const pivot = new THREE.Group();
+    scene.add(pivot);
+
+    const loader = new GLTFLoader();
+    const models = {
+      kingfisher: 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261004_073345_12721630-c589-442f-8884-e4a445cd8980.glb',
+      hoopoe: 'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20261004_073347_06b339a7-70bc-4ecd-9e72-1a4143264da9.glb'
+    };
+
+    let currentModel = null;
+    function loadBird(url) {
+      loader.load(url, (gltf) => {
+        if (currentModel) pivot.remove(currentModel);
+        currentModel = gltf.scene;
+        const box = new THREE.Box3().setFromObject(currentModel);
+        const center = box.getCenter(new THREE.Vector3());
+        currentModel.position.sub(center);
+        const size = box.getSize(new THREE.Vector3());
+        const maxDim = Math.max(size.x, size.y, size.z);
+        currentModel.scale.setScalar(2 / maxDim);
+        pivot.add(currentModel);
+      });
+    }
+
+    loadBird(models.kingfisher);
+
+    function onResize() {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      renderer.setSize(w, h);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    }
+    window.addEventListener('resize', onResize);
+    onResize();
+
+    let isDragging = false;
+    let prevX = 0, prevY = 0;
+    stage.addEventListener('pointerdown', (e) => {
+      isDragging = true;
+      prevX = e.clientX;
+      prevY = e.clientY;
+      stage.setPointerCapture(e.pointerId);
+    });
+    stage.addEventListener('pointermove', (e) => {
+      if (!isDragging) return;
+      const dx = e.clientX - prevX;
+      const dy = e.clientY - prevY;
+      pivot.rotation.y += dx * 0.01;
+      pivot.rotation.x += dy * 0.01;
+      prevX = e.clientX;
+      prevY = e.clientY;
+    });
+    stage.addEventListener('pointerup', (e) => {
+      isDragging = false;
+      try { stage.releasePointerCapture(e.pointerId); } catch(err){}
+    });
+
+    document.getElementById('turnCW').addEventListener('click', () => { pivot.rotation.y += Math.PI / 2; });
+    document.getElementById('turnCCW').addEventListener('click', () => { pivot.rotation.y -= Math.PI / 2; });
+    document.getElementById('btnLight').addEventListener('click', () => {
+      const cur = hero.getAttribute('data-light');
+      hero.setAttribute('data-light', cur === 'day' ? 'dusk' : 'day');
+    });
+
+    // Bird tab switching
+    const tabK = document.getElementById('tabKingfisher');
+    const tabH = document.getElementById('tabHoopoe');
+    tabK.addEventListener('click', () => {
+      tabK.setAttribute('aria-selected', 'true');
+      tabH.setAttribute('aria-selected', 'false');
+      loadBird(models.kingfisher);
+      document.getElementById('birdName').textContent = 'Kingfisher';
+      document.getElementById('caption').textContent = 'Blink, and the river keeps its secret.';
+    });
+    tabH.addEventListener('click', () => {
+      tabH.setAttribute('aria-selected', 'true');
+      tabK.setAttribute('aria-selected', 'false');
+      loadBird(models.hoopoe);
+      document.getElementById('birdName').textContent = 'Hoopoe';
+      document.getElementById('caption').textContent = 'A crown raised, and the orchard takes notice.';
+    });
+
+    function animate(t) {
+      requestAnimationFrame(animate);
+      if (!isDragging) {
+        pivot.rotation.y += 0.003;
+      }
+      renderer.render(scene, camera);
+    }
+    requestAnimationFrame(animate);
+  </script>
+</body>
+</html>

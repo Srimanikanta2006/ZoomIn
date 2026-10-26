@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"primary":"#032448","tertiary-fixed":"#d5e4f8","primary-fixed":"#d5e3ff","error":"#ba1a1a","on-primary-container":"#8ba4cf","inverse-surface":"#30312e","outline":"#74777f","inverse-primary":"#aec8f4","primary-fixed-dim":"#aec8f4","surface-container-lowest":"#ffffff","outline-variant":"#c4c6cf","on-tertiary-container":"#96a5b8","secondary-fixed-dim":"#ffb873","surface-container":"#f0eee9","on-error":"#ffffff","secondary":"#8c5000","surface-tint":"#465f86","tertiary":"#172534","secondary-fixed":"#ffdcbf","on-secondary-fixed-variant":"#6a3b00","on-tertiary-fixed":"#0e1d2b","background":"#fbf9f4","on-surface-variant":"#43474e","on-secondary-container":"#653800","surface-container-low":"#f5f3ee","on-secondary":"#ffffff","surface-container-high":"#eae8e3","surface-dim":"#dbdad5","surface":"#fbf9f4","on-tertiary-fixed-variant":"#3a4858","tertiary-fixed-dim":"#b9c8db","on-primary-fixed-variant":"#2d476d","on-primary-fixed":"#001c3b","surface-container-highest":"#e4e2dd","inverse-on-surface":"#f2f1ec","tertiary-container":"#2d3b4b","on-error-container":"#93000a","primary-container":"#1f3a5f","surface-variant":"#e4e2dd","on-background":"#1b1c19","on-secondary-fixed":"#2d1600","on-tertiary":"#ffffff","on-primary":"#ffffff","on-surface":"#1b1c19","surface-bright":"#fbf9f4","secondary-container":"#fc9923","error-container":"#ffdad6"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1.5rem","space-xl":"3rem","margin":"2.5rem","space-sm":"1rem","gutter-mobile":"1rem","space-lg":"2rem","space-md":"1.5rem","space-xs":"0.5rem","margin-mobile":"1rem"},"fontFamily":{"title-lg":["Inter"],"headline-sm":["Newsreader"],"body-sm":["Inter"],"code-sm":["JetBrains Mono"],"headline-md":["Newsreader"],"display-lg":["Newsreader"],"headline-lg-mobile":["Newsreader"],"title-md":["Inter"],"body-md":["Inter"],"code-md":["JetBrains Mono"],"display-lg-mobile":["Newsreader"],"headline-lg":["Newsreader"],"body-lg":["Inter"]},"fontSize":{"title-lg":["18px",{"lineHeight":"24px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"code-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"500"}],"display-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"600"}],"title-md":["15px",{"lineHeight":"20px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"code-md":["13px",{"lineHeight":"18px","fontWeight":"500"}],"display-lg-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-xs"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm"><span class="material-symbols-outlined text-[20px]">verified</span></div><div class="flex flex-col"><span class="font-title-lg text-title-lg tracking-tight text-primary leading-none">PreFlight</span><span class="font-code-sm text-code-sm uppercase text-on-surface-variant leading-none mt-1">AICTE Technical</span></div></div><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-code-sm text-code-sm">v2.4</span></div><nav class="px-space-xs pt-space-sm space-y-1" data-active-classes="bg-primary-container text-on-primary font-title-md text-title-md"><a aria-current="page" class="flex items-center gap-space-xs px-space-sm py-2.5 rounded-lg transition-colors bg-primary-container text-on-primary font-title-md text-title-md" data-path="queue" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Queue</span></a><a class="flex items-center gap-space-xs px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="trust-graph" href="#"><span class="material-symbols-outlined text-[20px]">hub</span><span>Trust Graph</span></a><a class="flex items-center gap-space-xs px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="rules" href="#"><span class="material-symbols-outlined text-[20px]">rule</span><span>Rules</span></a><a class="flex items-center gap-space-xs px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="metrics" href="#"><span class="material-symbols-outlined text-[20px]">query_stats</span><span>Metrics</span></a><a class="flex items-center gap-space-xs px-space-sm py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="audit" href="#"><span class="material-symbols-outlined text-[20px]">policy</span><span>Audit</span></a></nav></div><div class="p-space-sm m-space-xs rounded-lg bg-surface-container"><div class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-[20px] text-secondary mt-0.5">gavel</span><div class="flex flex-col flex-1"><span class="font-code-sm text-code-sm uppercase text-secondary font-semibold">Audit Mode Active</span><span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-tight">Official Scrutiny Session ID: #WRO-8821-X</span><div class="flex items-center gap-1.5 mt-2"><span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span><span class="font-code-sm text-code-sm text-on-surface-variant">Cryptographic Ledger On</span></div></div></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-md flex-1"><div class="flex flex-col"><span class="font-code-sm text-code-sm uppercase text-on-surface-variant font-medium">AICTE Regulatory Officer Workstation</span><span class="font-title-md text-title-md text-primary">Triage &amp; Scrutiny Queue</span></div><div class="relative max-w-md w-full ml-space-md"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[18px] text-outline">search</span><input class="w-full h-10 pl-9 pr-12 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Quick search application, cadastral ID, or college (⌘K)..." type="text"/><div class="absolute right-2.5 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-surface-container text-outline font-code-sm text-code-sm">⌘K</div></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center justify-center p-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></div><div class="flex items-center gap-space-xs pl-space-xs"><div class="flex flex-col text-right"><span class="font-title-md text-title-md text-on-surface leading-tight">Dr. Sunita V. Rao</span><span class="font-body-sm text-body-sm text-on-surface-variant">Senior Scrutiny Officer (WRO)</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative w-full pt-16 bg-surface px-space-md py-space-md"><div class="flex flex-col w-full">
+<!-- Top Operational Banner & Stats -->
+<div class="flex flex-col gap-space-md mb-space-md">
+<!-- Section Title & Meta Header -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-sm pb-space-xs">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary font-code-sm text-code-sm uppercase tracking-wide">Gazetted Workflow</span>
+<span class="text-on-surface-variant font-code-sm text-code-sm">Ref: AICTE/APH/2025-26/REG-WRO</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Application Triage Queue</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+          AY 2025–26 Scrutiny Cycle • Western Regional Office (WRO) • <span class="font-semibold text-on-surface">38 dossiers in triage</span>
+</p>
+</div>
+<!-- Quick Action Controls -->
+<div class="flex items-center gap-space-xs">
+<button class="flex items-center gap-1.5 px-space-sm py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-title-md transition-colors shadow-sm" id="btn-auto-triage">
+<span class="material-symbols-outlined text-[18px] text-secondary">bolt</span>
+<span>Auto-Triage Run</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-sm py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-title-md text-title-md transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Export Queue Summary</span>
+</button>
+</div>
+</div>
+<!-- 4 Compact Triage Stats Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm">
+<!-- Total -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<span class="font-code-sm text-code-sm uppercase text-on-surface-variant tracking-wider">Total in Triage</span>
+<span class="material-symbols-outlined text-outline text-[20px]">layers</span>
+</div>
+<div class="mt-space-xs flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight">38</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">+6 arrived today</span>
+</div>
+<div class="mt-3 w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<!-- Clean / Expedited -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-code-sm text-code-sm uppercase text-on-surface-variant tracking-wider">Clean / Expedited</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-code-sm text-code-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+            Norms Met
+          </span>
+</div>
+<div class="mt-space-xs flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-primary tracking-tight">18</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Avg. turnaround 1.2d</span>
+</div>
+<div class="mt-3 w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 47%"></div>
+</div>
+</div>
+<!-- Needs Clarification -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-code-sm text-code-sm uppercase text-on-surface-variant tracking-wider">Needs Clarification</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-code-sm text-code-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+            Defects (Minor)
+          </span>
+</div>
+<div class="mt-space-xs flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-secondary tracking-tight">12</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Pending officer memo</span>
+</div>
+<div class="mt-3 w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 32%"></div>
+</div>
+</div>
+<!-- Needs Investigation -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-code-sm text-code-sm uppercase text-on-surface-variant tracking-wider">Needs Investigation</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-code-sm text-code-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">report</span>
+            High Risk
+          </span>
+</div>
+<div class="mt-space-xs flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-error tracking-tight">8</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">High risk / EVC referral</span>
+</div>
+<div class="mt-3 w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 21%"></div>
+</div>
+</div>
+</div>
+<!-- Filter & Scrutiny Query Strip -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-sm">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[18px] text-outline">manage_search</span>
+<input class="w-full h-10 pl-10 pr-12 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary transition-all" id="queue-search-input" placeholder="Search by institution name, AICTE PID, application ID, or district..." type="text"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-surface-container text-outline font-code-sm text-code-sm select-none pointer-events-none">
+          ⌘K
+        </div>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<!-- Filter Dropdown 1 -->
+<div class="flex items-center gap-1 bg-surface-container-low px-3 py-1.5 rounded-lg text-on-surface font-body-sm text-body-sm hover:bg-surface-container cursor-pointer select-none">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">tune</span>
+<span class="font-medium">All Types</span>
+<span class="text-on-surface-variant font-code-sm text-code-sm">(EoA, New, Intake)</span>
+<span class="material-symbols-outlined text-[16px] text-outline">expand_more</span>
+</div>
+<!-- Filter Dropdown 2 -->
+<div class="flex items-center gap-1 bg-surface-container-low px-3 py-1.5 rounded-lg text-on-surface font-body-sm text-body-sm hover:bg-surface-container cursor-pointer select-none">
+<span class="font-medium">Region:</span>
+<span class="text-primary font-semibold">WRO (Mumbai)</span>
+</div>
+<!-- Filter Dropdown 3 -->
+<div class="flex items-center gap-1 bg-surface-container-low px-3 py-1.5 rounded-lg text-on-surface font-body-sm text-body-sm hover:bg-surface-container cursor-pointer select-none">
+<span class="font-medium">Cycle:</span>
+<span>Cycle 1</span>
+</div>
+<!-- Sort Pill -->
+<div class="flex items-center gap-1 bg-surface-container-low px-3 py-1.5 rounded-lg text-on-surface font-body-sm text-body-sm hover:bg-surface-container cursor-pointer select-none">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">sort</span>
+<span>Sort: <strong class="font-medium">Oldest First</strong></span>
+</div>
+<!-- Reset Button -->
+<button class="p-2 text-outline hover:text-on-surface rounded-lg hover:bg-surface-container transition-colors" title="Reset Filters">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Body: 3-Lane Kanban Triage Canvas -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md items-start">
+<!-- ==================== LANE 1: CLEAN / EXPEDITED ==================== -->
+<div class="flex flex-col bg-surface-container-low rounded-xl p-space-sm shadow-sm">
+<!-- Lane Header -->
+<div class="flex items-center justify-between pb-3 mb-2">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-md bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Clean</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary font-code-sm text-code-sm font-semibold">18</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm leading-snug">
+        Algorithmic verification passed with 0 discrepancies. Eligible for immediate LOA recommendation under Clause 4.1.
+      </p>
+<!-- Cards Container -->
+<div class="flex flex-col gap-space-sm" id="lane-clean-cards">
+<!-- Lane 1 - Card 1 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-space-xs group">
+<div>
+<div class="flex items-start justify-between gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container font-code-sm text-code-sm text-on-surface font-medium uppercase">
+                Extension of Approval (EoA)
+              </span>
+<span class="flex items-center gap-1 text-on-surface-variant font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                2d pending
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mt-2 group-hover:text-primary-container transition-colors line-clamp-2">
+              Sardar Vallabhbhai Institute of Technology
+            </h3>
+<!-- Monospace IDs -->
+<div class="flex flex-wrap items-center gap-x-2 gap-y-1 mt-1.5 font-code-sm text-code-sm text-on-surface-variant">
+<span>PID: <strong class="text-on-surface">1-4920194</strong></span>
+<span>•</span>
+<span>App: <span class="font-medium text-on-surface">AICTE-WRO-2025-0812</span></span>
+</div>
+<!-- Findings Chip -->
+<div class="mt-3 flex items-center gap-1.5 p-2 rounded-lg bg-tertiary-fixed/30 text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-body-sm text-body-sm font-medium">0 findings — 100% Rule Compliance</span>
+</div>
+<!-- Institutional Snapshot Micro-Specs -->
+<div class="grid grid-cols-2 gap-2 mt-2.5 pt-2 font-code-sm text-code-sm text-on-surface-variant bg-surface-container-low p-2 rounded-lg">
+<div>Approved Seats: <strong class="text-on-surface">720</strong></div>
+<div>Faculty Cadre: <strong class="text-on-surface">1:14.2</strong></div>
+<div>FAR Utilized: <strong class="text-on-surface">1.84 / 2.5</strong></div>
+<div>Fire NOC: <strong class="text-on-surface">Valid 2027</strong></div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 mt-2 pt-2">
+<button class="flex-1 py-1.5 px-3 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-title-md text-title-md flex items-center justify-center gap-1 shadow-sm transition-colors text-center">
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+<span>Approve to LOA</span>
+</button>
+<button class="p-1.5 px-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-title-md transition-colors" title="Inspect Dossier">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Lane 1 - Card 2 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-space-xs group">
+<div>
+<div class="flex items-start justify-between gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container font-code-sm text-code-sm text-on-surface font-medium uppercase">
+                Intake Variation
+              </span>
+<span class="flex items-center gap-1 text-on-surface-variant font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                3d pending
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mt-2 group-hover:text-primary-container transition-colors line-clamp-2">
+              Pimpri Chinchwad College of Architecture
+            </h3>
+<!-- Monospace IDs -->
+<div class="flex flex-wrap items-center gap-x-2 gap-y-1 mt-1.5 font-code-sm text-code-sm text-on-surface-variant">
+<span>PID: <strong class="text-on-surface">1-3819201</strong></span>
+<span>•</span>
+<span>App: <span class="font-medium text-on-surface">AICTE-WRO-2025-1104</span></span>
+</div>
+<!-- Findings Chip -->
+<div class="mt-3 flex items-center gap-1.5 p-2 rounded-lg bg-tertiary-fixed/30 text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-body-sm text-body-sm font-medium">0 findings — Faculty Cadre &amp; FSI OK</span>
+</div>
+<!-- Institutional Snapshot Micro-Specs -->
+<div class="grid grid-cols-2 gap-2 mt-2.5 pt-2 font-code-sm text-code-sm text-on-surface-variant bg-surface-container-low p-2 rounded-lg">
+<div>Proposed +40: <strong class="text-on-surface">Valid Studio</strong></div>
+<div>Council CoA: <strong class="text-on-surface">Endorsed</strong></div>
+<div>Built-up: <strong class="text-on-surface">6,240 sqm</strong></div>
+<div>Digital Sign: <strong class="text-on-surface">Class-3 OK</strong></div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 mt-2 pt-2">
+<button class="flex-1 py-1.5 px-3 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-title-md text-title-md flex items-center justify-center gap-1 shadow-sm transition-colors text-center">
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+<span>Approve to LOA</span>
+</button>
+<button class="p-1.5 px-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-title-md transition-colors" title="Inspect Dossier">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Lane 1 - Card 3 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-space-xs group">
+<div>
+<div class="flex items-start justify-between gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container font-code-sm text-code-sm text-on-surface font-medium uppercase">
+                Extension of Approval (EoA)
+              </span>
+<span class="flex items-center gap-1 text-on-surface-variant font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                1d pending
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mt-2 group-hover:text-primary-container transition-colors line-clamp-2">
+              Government Polytechnic Nagpur
+            </h3>
+<!-- Monospace IDs -->
+<div class="flex flex-wrap items-center gap-x-2 gap-y-1 mt-1.5 font-code-sm text-code-sm text-on-surface-variant">
+<span>PID: <strong class="text-on-surface">1-1029482</strong></span>
+<span>•</span>
+<span>App: <span class="font-medium text-on-surface">AICTE-WRO-2025-0419</span></span>
+</div>
+<!-- Findings Chip -->
+<div class="mt-3 flex items-center gap-1.5 p-2 rounded-lg bg-tertiary-fixed/30 text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-body-sm text-body-sm font-medium">0 findings — Digital Signatures Validated</span>
+</div>
+<!-- Institutional Snapshot Micro-Specs -->
+<div class="grid grid-cols-2 gap-2 mt-2.5 pt-2 font-code-sm text-code-sm text-on-surface-variant bg-surface-container-low p-2 rounded-lg">
+<div>Dept: <strong class="text-on-surface">Diploma (Mech)</strong></div>
+<div>Govt Grant: <strong class="text-on-surface">Direct Treasury</strong></div>
+<div>NBA Status: <strong class="text-on-surface">Accredited (Tier I)</strong></div>
+<div>Affiliation: <strong class="text-on-surface">MSBTE Valid</strong></div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 mt-2 pt-2">
+<button class="flex-1 py-1.5 px-3 rounded-lg bg-primary-container text-on-primary hover:bg-primary font-title-md text-title-md flex items-center justify-center gap-1 shadow-sm transition-colors text-center">
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+<span>Approve to LOA</span>
+</button>
+<button class="p-1.5 px-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-title-md transition-colors" title="Inspect Dossier">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ==================== LANE 2: NEEDS CLARIFICATION ==================== -->
+<div class="flex flex-col bg-surface-container-low rounded-xl p-space-sm shadow-sm">
+<!-- Lane Header -->
+<div class="flex items-center justify-between pb-3 mb-2">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-md bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-secondary">Needs Clarification</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-code-sm text-code-sm font-semibold">12</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm leading-snug">
+        Minor documentation gaps or expiring certificates. Issue regulatory inquiry memo with 72-hour cure period.
+      </p>
+<!-- Cards Container -->
+<div class="flex flex-col gap-space-sm" id="lane-warning-cards">
+<!-- Lane 2 - Card 1 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-space-xs group">
+<div>
+<div class="flex items-start justify-between gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container font-code-sm text-code-sm text-on-surface font-medium uppercase">
+                Intake Variation (M.Pharm)
+              </span>
+<span class="flex items-center gap-1 text-secondary font-code-sm text-code-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                5d pending
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mt-2 group-hover:text-secondary transition-colors line-clamp-2">
+              Deccan College of Pharmaceutical Sciences
+            </h3>
+<!-- Monospace IDs -->
+<div class="flex flex-wrap items-center gap-x-2 gap-y-1 mt-1.5 font-code-sm text-code-sm text-on-surface-variant">
+<span>PID: <strong class="text-on-surface">1-8472910</strong></span>
+<span>•</span>
+<span>App: <span class="font-medium text-on-surface">AICTE-WRO-2025-9104</span></span>
+</div>
+<!-- Findings Chip & Alerts -->
+<div class="mt-3 flex flex-col gap-1.5">
+<div class="flex items-start gap-1.5 p-2 rounded-lg bg-secondary-fixed/30 text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">priority_high</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium">2 findings flagged by OCR engine:</span>
+<span class="font-code-sm text-code-sm mt-0.5">• Fire NOC validity &lt; 90 days (Expires 14-Aug)</span>
+<span class="font-code-sm text-code-sm">• Affiliation letter seal unverified against Univ hash</span>
+</div>
+</div>
+</div>
+<div class="mt-2.5 flex items-center justify-between text-on-surface-variant font-code-sm text-code-sm px-1">
+<span>Cadre Ratio: <strong class="text-on-surface">1:15 OK</strong></span>
+<span>PCI Approval: <strong class="text-on-surface">Pending upload</strong></span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 mt-2 pt-2">
+<button class="flex-1 py-1.5 px-3 rounded-lg bg-secondary text-on-secondary hover:bg-on-secondary-container font-title-md text-title-md flex items-center justify-center gap-1 shadow-sm transition-colors text-center">
+<span class="material-symbols-outlined text-[16px]">outgoing_mail</span>
+<span>Issue Memo</span>
+</button>
+<button class="p-1.5 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-title-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">search</span>
+<span>Inspect</span>
+</button>
+</div>
+</div>
+<!-- Lane 2 - Card 2 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-space-xs group">
+<div>
+<div class="flex items-start justify-between gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container font-code-sm text-code-sm text-on-surface font-medium uppercase">
+                New Course Addition
+              </span>
+<span class="flex items-center gap-1 text-secondary font-code-sm text-code-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                7d pending
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mt-2 group-hover:text-secondary transition-colors line-clamp-2">
+              Vidya Pratishthan School of Engineering
+            </h3>
+<!-- Monospace IDs -->
+<div class="flex flex-wrap items-center gap-x-2 gap-y-1 mt-1.5 font-code-sm text-code-sm text-on-surface-variant">
+<span>PID: <strong class="text-on-surface">1-9284711</strong></span>
+<span>•</span>
+<span>App: <span class="font-medium text-on-surface">AICTE-WRO-2025-3382</span></span>
+</div>
+<!-- Findings Chip & Alerts -->
+<div class="mt-3 flex flex-col gap-1.5">
+<div class="flex items-start gap-1.5 p-2 rounded-lg bg-secondary-fixed/30 text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">priority_high</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium">1 finding under Clause 7.3:</span>
+<span class="font-code-sm text-code-sm mt-0.5">• Cadre ratio 1:2.4 vs 1:2 required in AI &amp; DS Dept</span>
+</div>
+</div>
+</div>
+<div class="mt-2.5 flex items-center justify-between text-on-surface-variant font-code-sm text-code-sm px-1">
+<span>Shortfall: <strong class="text-secondary font-semibold">1 Professor</strong></span>
+<span>Laboratory FAR: <strong class="text-on-surface">Sufficient</strong></span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 mt-2 pt-2">
+<button class="flex-1 py-1.5 px-3 rounded-lg bg-secondary text-on-secondary hover:bg-on-secondary-container font-title-md text-title-md flex items-center justify-center gap-1 shadow-sm transition-colors text-center">
+<span class="material-symbols-outlined text-[16px]">outgoing_mail</span>
+<span>Issue Memo</span>
+</button>
+<button class="p-1.5 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-title-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">search</span>
+<span>Inspect</span>
+</button>
+</div>
+</div>
+<!-- Lane 2 - Card 3 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-space-xs group">
+<div>
+<div class="flex items-start justify-between gap-2">
+<span class="px-2 py-0.5 rounded bg-surface-container font-code-sm text-code-sm text-on-surface font-medium uppercase">
+                Extension of Approval (EoA)
+              </span>
+<span class="flex items-center gap-1 text-secondary font-code-sm text-code-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                8d pending
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mt-2 group-hover:text-secondary transition-colors line-clamp-2">
+              Marathwada Institute of Technology, Sambhajinagar
+            </h3>
+<!-- Monospace IDs -->
+<div class="flex flex-wrap items-center gap-x-2 gap-y-1 mt-1.5 font-code-sm text-code-sm text-on-surface-variant">
+<span>PID: <strong class="text-on-surface">1-5541829</strong></span>
+<span>•</span>
+<span>App: <span class="font-medium text-on-surface">AICTE-WRO-2025-2241</span></span>
+</div>
+<!-- Findings Chip & Alerts -->
+<div class="mt-3 flex flex-col gap-1.5">
+<div class="flex items-start gap-1.5 p-2 rounded-lg bg-secondary-fixed/30 text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary mt-0.5">priority_high</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-medium">2 findings flagged in financial ledger:</span>
+<span class="font-code-sm text-code-sm mt-0.5">• FDR renewal lien missing bank countersignature</span>
+<span class="font-code-sm text-code-sm">• Hostel occupancy reported 18% over NOC capacity</span>
+</div>
+</div>
+</div>
+<div class="mt-2.5 flex items-center justify-between text-on-surface-variant font-code-sm text-code-sm px-1">
+<span>Corpus Fund: <strong class="text-on-surface">₹1.50 Cr OK</strong></span>
+<span>Land Title: <strong class="text-on-surface">Clear</strong></span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 mt-2 pt-2">
+<button class="flex-1 py-1.5 px-3 rounded-lg bg-secondary text-on-secondary hover:bg-on-secondary-container font-title-md text-title-md flex items-center justify-center gap-1 shadow-sm transition-colors text-center">
+<span class="material-symbols-outlined text-[16px]">outgoing_mail</span>
+<span>Issue Memo</span>
+</button>
+<button class="p-1.5 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-title-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">search</span>
+<span>Inspect</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ==================== LANE 3: NEEDS INVESTIGATION ==================== -->
+<div class="flex flex-col bg-surface-container-low rounded-xl p-space-sm shadow-sm">
+<!-- Lane Header -->
+<div class="flex items-center justify-between pb-3 mb-2">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-md bg-error-container flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined text-[16px]">error</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-error">Needs Investigation</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-error text-on-error font-code-sm text-code-sm font-semibold">8</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm leading-snug">
+        Severe compliance flags, cadastral boundary violations, or committee referral required. Impounds approval issuance.
+      </p>
+<!-- Cards Container -->
+<div class="flex flex-col gap-space-sm" id="lane-investigation-cards">
+<!-- Lane 3 - Card 1 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-space-xs group">
+<div>
+<div class="flex items-start justify-between gap-2">
+<span class="px-2 py-0.5 rounded bg-error-container/40 font-code-sm text-code-sm text-error font-semibold uppercase">
+                New Institution Approval
+              </span>
+<span class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-error text-on-error font-code-sm text-code-sm font-semibold animate-pulse">
+<span class="material-symbols-outlined text-[13px]">emergency</span>
+                14d pending
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mt-2 group-hover:text-error transition-colors line-clamp-2">
+              Konkan Technical Campus
+            </h3>
+<!-- Monospace IDs -->
+<div class="flex flex-wrap items-center gap-x-2 gap-y-1 mt-1.5 font-code-sm text-code-sm text-on-surface-variant">
+<span>PID: <strong class="text-on-surface">1-55418290</strong></span>
+<span>•</span>
+<span>App: <span class="font-medium text-on-surface">AICTE-WRO-2025-6302</span></span>
+</div>
+<!-- Findings Chip & Alerts -->
+<div class="mt-3 flex flex-col gap-1.5">
+<div class="flex items-start gap-1.5 p-2.5 rounded-lg bg-error-container/30 text-on-error-container">
+<span class="material-symbols-outlined text-[16px] text-error mt-0.5">report_problem</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-error">4 Critical Violations Detected:</span>
+<span class="font-code-sm text-code-sm mt-1 text-on-surface">• Land contiguity severed by NH-66 survey corridor</span>
+<span class="font-code-sm text-code-sm text-on-surface">• Zero Professor cadre verified (Only Lecturers uploaded)</span>
+<span class="font-code-sm text-code-sm text-on-surface">• Building Plan occupancy unendorsed by Collector</span>
+<span class="font-code-sm text-code-sm text-on-surface">• Geofencing GPS coordinates differ from land deed (2.4 km)</span>
+</div>
+</div>
+</div>
+<!-- Visual Geographic / Cadastral Risk Summary -->
+<div class="mt-2.5 p-2 rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-error">wrong_location</span>
+<span class="font-code-sm text-code-sm font-medium text-on-surface">GIS Discrepancy Index:</span>
+</div>
+<span class="font-code-sm text-code-sm font-bold text-error">High Risk (0.89)</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 mt-3 pt-2">
+<button class="flex-1 py-1.5 px-3 rounded-lg bg-error text-on-error hover:bg-on-error-container font-title-md text-title-md flex items-center justify-center gap-1 shadow-sm transition-colors text-center">
+<span class="material-symbols-outlined text-[16px]">assignment_late</span>
+<span>Refer to EVC</span>
+</button>
+<button class="p-1.5 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-title-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">policy</span>
+<span>Full Audit</span>
+</button>
+</div>
+</div>
+<!-- Lane 3 - Card 2 -->
+<div class="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-space-xs group">
+<div>
+<div class="flex items-start justify-between gap-2">
+<span class="px-2 py-0.5 rounded bg-error-container/40 font-code-sm text-code-sm text-error font-semibold uppercase">
+                New Course (Bio-Tech)
+              </span>
+<span class="flex items-center gap-1 text-error font-code-sm text-code-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">alarm</span>
+                11d pending
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-primary mt-2 group-hover:text-error transition-colors line-clamp-2">
+              Sahyadri Bio-Sciences Research Institute
+            </h3>
+<!-- Monospace IDs -->
+<div class="flex flex-wrap items-center gap-x-2 gap-y-1 mt-1.5 font-code-sm text-code-sm text-on-surface-variant">
+<span>PID: <strong class="text-on-surface">1-7719203</strong></span>
+<span>•</span>
+<span>App: <span class="font-medium text-on-surface">AICTE-WRO-2025-8819</span></span>
+</div>
+<!-- Findings Chip & Alerts -->
+<div class="mt-3 flex flex-col gap-1.5">
+<div class="flex items-start gap-1.5 p-2.5 rounded-lg bg-error-container/30 text-on-error-container">
+<span class="material-symbols-outlined text-[16px] text-error mt-0.5">report_problem</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-error">3 Critical Violations Detected:</span>
+<span class="font-code-sm text-code-sm mt-1 text-on-surface">• Wet-lab equipment invoices unverified on GST portal</span>
+<span class="font-code-sm text-code-sm text-on-surface">• Built-up instructional area shortfall of 14%</span>
+<span class="font-code-sm text-code-sm text-on-surface">• Effluent treatment plant NOC absent (MSPCB rule)</span>
+</div>
+</div>
+</div>
+<div class="mt-2.5 flex items-center justify-between text-on-surface-variant font-code-sm text-code-sm px-1">
+<span>Safety Clearance: <strong class="text-error font-semibold">Deficient</strong></span>
+<span>FSI Quota: <strong class="text-on-surface">Maxed Out</strong></span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 mt-3 pt-2">
+<button class="flex-1 py-1.5 px-3 rounded-lg bg-error text-on-error hover:bg-on-error-container font-title-md text-title-md flex items-center justify-center gap-1 shadow-sm transition-colors text-center">
+<span class="material-symbols-outlined text-[16px]">assignment_late</span>
+<span>Refer to EVC</span>
+</button>
+<button class="p-1.5 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-title-md transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">policy</span>
+<span>Full Audit</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Micro-interactions Script -->
+<script>
+    // Search Filter Micro-Interaction
+    const searchInput = document.getElementById('queue-search-input');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        const cards = document.querySelectorAll('#lane-clean-cards > div, #lane-warning-cards > div, #lane-investigation-cards > div');
+        cards.forEach((card) => {
+          const text = card.innerText.toLowerCase();
+          if (!query || text.includes(query)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+
+      // Quick shortcut Cmd+K / Ctrl+K focus
+      window.addEventListener('keydown', (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+          e.preventDefault();
+          searchInput.focus();
+        }
+      });
+    }
+
+    // Auto-triage pulse feedback
+    const btnAutoTriage = document.getElementById('btn-auto-triage');
+    if (btnAutoTriage) {
+      btnAutoTriage.addEventListener('click', () => {
+        btnAutoTriage.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin text-secondary">sync</span><span>Triaging...</span>';
+        setTimeout(() => {
+          btnAutoTriage.innerHTML = '<span class="material-symbols-outlined text-[18px] text-tertiary-fixed">done_all</span><span>All 38 Indexed</span>';
+          setTimeout(() => {
+            btnAutoTriage.innerHTML = '<span class="material-symbols-outlined text-[18px] text-secondary">bolt</span><span>Auto-Triage Run</span>';
+          }, 2400);
+        }, 1200);
+      });
+    }
+  </script>
+</div></main></div></body></html>

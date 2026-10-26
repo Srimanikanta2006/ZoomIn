@@ -1,0 +1,27 @@
+default_latency_ms: 80
+default_failure_status: null
+
+# These references and outcomes are fictional demo records.
+issuers:
+  aicte_registry:
+    records:
+      SYN-DOC-0001: verified
+      SYN-DOC-0002: verified
+      SYN-DOC-0003: verified
+      SYN-DOC-X0115: discrepancy
+      SYN-DOC-X0118: discrepancy
+      LOCAL/DEMO/0006: verified
+  ter_payment_registry:
+    records:
+      SYN-TER-0005: verified
+      SYN-TER-DUP-7771: discrepancy
+      SYN-TRX-0005: verified
+      SYN-TRX-DUP-7771: discrepancy
+
+status_reasons:
+  not_started: "This check has not started."
+  in_progress: "This check is still running."
+  verified: "The demo issuer returned a matching record."
+  discrepancy: "The demo issuer returned a mismatch. Human review is required."
+  inconclusive: "The demo issuer did not return enough information. Human review is required."
+  unable_to_verify: "The demo issuer is unavailable. Human review is required."

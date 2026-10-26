@@ -1,0 +1,31 @@
+# Relationship rules for the synthetic association graph.
+shared_faculty:
+  enabled: true
+  min_institutions: 2
+  type: shared_faculty
+  rule_id: graph.shared_faculty_reference
+  severity: high
+  reason: "The same salted faculty reference appears in {count} institutions."
+  evidence_label: faculty reference
+shared_address:
+  enabled: true
+  min_institutions: 2
+  min_applications: 2
+  type: shared_address
+  rule_id: graph.shared_address
+  severity: medium
+  reason: "The same address appears in {count} application records."
+  evidence_label: address
+shared_signatory:
+  enabled: false
+  min_institutions: 2
+duplicate_document:
+  enabled: true
+  min_institutions: 2
+  rule_id: graph.duplicate_document
+  severity: high
+  max_phash_distance: 3
+  max_text_hash_distance: 4
+  min_text_overlap: 0.97
+  reason_exact: "Two institutions submitted documents with matching file hashes."
+  reason_similar: "Two documents have closely matching page images and text."

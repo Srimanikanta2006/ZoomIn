@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-tint":"#465f86","on-secondary-fixed":"#2d1600","surface-container-lowest":"#ffffff","error-container":"#ffdad6","secondary":"#8c5000","surface-dim":"#dbdad5","inverse-primary":"#aec8f4","error":"#ba1a1a","on-secondary-container":"#653800","primary":"#032448","on-error":"#ffffff","on-tertiary":"#ffffff","surface":"#fbf9f4","on-primary-container":"#8ba4cf","surface-container":"#f0eee9","tertiary-fixed-dim":"#b9c8db","primary-container":"#1f3a5f","on-tertiary-fixed-variant":"#3a4858","inverse-on-surface":"#f2f1ec","on-surface-variant":"#43474e","surface-bright":"#fbf9f4","surface-container-highest":"#e4e2dd","on-tertiary-container":"#96a5b8","tertiary-container":"#2d3b4b","inverse-surface":"#30312e","tertiary-fixed":"#d5e4f8","outline":"#74777f","surface-container-low":"#f5f3ee","surface-variant":"#e4e2dd","on-primary-fixed":"#001c3b","on-secondary":"#ffffff","tertiary":"#172534","secondary-fixed":"#ffdcbf","secondary-fixed-dim":"#ffb873","on-secondary-fixed-variant":"#6a3b00","secondary-container":"#fc9923","on-tertiary-fixed":"#0e1d2b","on-surface":"#1b1c19","on-primary-fixed-variant":"#2d476d","surface-container-high":"#eae8e3","background":"#fbf9f4","outline-variant":"#c4c6cf","primary-fixed-dim":"#aec8f4","on-background":"#1b1c19","on-primary":"#ffffff","on-error-container":"#93000a","primary-fixed":"#d5e3ff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-mobile":"1rem",gutter:"1.5rem","space-xs":"0.5rem","space-md":"1.5rem","space-sm":"1rem","space-xl":"3rem","space-lg":"2rem",margin:"2.5rem","margin-mobile":"1rem"},fontFamily:{"code-sm":["JetBrains Mono"],"code-md":["JetBrains Mono"],"display-lg":["Newsreader"],"title-md":["Inter"],"display-lg-mobile":["Newsreader"],"title-lg":["Inter"],"headline-lg":["Newsreader"],"headline-sm":["Newsreader"],"headline-md":["Newsreader"],"body-md":["Inter"],"headline-lg-mobile":["Newsreader"],"body-sm":["Inter"],"body-lg":["Inter"]},fontSize:{"code-sm":["11px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"500"}],"code-md":["13px",{lineHeight:"18px",fontWeight:"500"}],"display-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"600"}],"title-md":["15px",{lineHeight:"20px",fontWeight:"600"}],"display-lg-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.01em",fontWeight:"600"}],"title-lg":["18px",{lineHeight:"24px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.015em",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"500"}],"headline-md":["24px",{lineHeight:"32px",fontWeight:"500"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-lg-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm min-w-max"><img alt="PreFlight Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xoz2uqV_R_gbFp4_bveXbs-XKUT8NjYIuD32J66a74un_4F55rO7tbe_jrnylWpjn8_b72jRtypH2wh8gdydVYubYRlwpdiiMmS-NP5hjEutyyu-pEEZ-n_6rwGs3HV6GhWFZYvDK4hB3m4_EkR6yb4GX3wXXW9_PRxnFRzJjc7ZpDK0hM4hNcqUYICZL-gZ4Yt7hB5fMW-b6Zo5Hodo2baT6trgzsZ331BY8wbON4A0-88YszEBQpo_k"/><div class="flex items-center gap-space-xs"><span class="font-title-lg text-title-lg font-bold text-primary tracking-tight">PreFlight</span><span class="font-body-sm text-body-sm text-on-surface-variant font-medium hidden xl:inline">— AICTE Regulatory Portal Approval Process Handbook 2025-26</span><span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium uppercase">AY 2025–26 Cycle 1</span></div></div><div class="flex items-center gap-space-md flex-1 max-w-xl justify-end"><button class="flex items-center justify-between w-64 px-space-sm py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface shadow-[0_1px_4px_rgba(0,0,0,0.02)] transition-colors text-left" type="button"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-sm">search</span><span class="font-body-sm text-body-sm">Application lookup</span></div><kbd class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-semibold">⌘K</kbd></button><div class="flex items-center gap-space-sm pl-space-xs"><button aria-label="Notifications" class="relative p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-error text-on-error font-code-sm text-[10px] font-bold leading-none">3</span></button><div class="h-6 w-px bg-surface-container-highest"></div><div class="flex items-center gap-space-xs"><div class="text-right hidden sm:block"><div class="font-title-md text-title-md font-semibold text-on-surface leading-tight">Dr. Sunita V. Rao</div><div class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Senior Regional Director (WRO)</div></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5P6Yw91SFBS68qVQPQTMAb3hAqy3bvQ10DJWiyTwjSVFylBBVJRY-oDF6s6CIZUtoWWcLdofRC9tvojo-KSmd6dPnyqTxsd0mdqpfysN5FmJgkiw0_Xw0cO4nhVqJyCrYTkGf_oO6SQMqJ1mbv5E-72xlGIHfCBaeEL1GwoFyC7ppgVyL1SgrEWc5LpJumF1M_VtOSyMC7VjqxoAbB-NA7Jj_Vh8V4MDWZIT7k4tL2odEd62LnBMK"/></div></div></div></div></header><aside class="fixed left-0 top-16 bottom-7 w-64 bg-surface-container-low z-40 flex flex-col py-space-md px-space-xs justify-between overflow-y-auto"><div class="flex flex-col gap-space-xs"><div class="px-space-xs pb-space-xs"><span class="font-code-sm text-code-sm uppercase text-on-surface-variant tracking-wider font-semibold">Regulatory Review</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm rounded-lg"><a aria-current="page" class="flex items-center justify-between px-space-sm py-2 transition-colors bg-primary-container text-on-primary font-semibold shadow-sm rounded-lg" data-path="application-review" href="#"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined">verified</span><span>Application Review</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="document-verification" href="#"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined">gpp_good</span><span>Document Verification</span></div><span class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-semibold">14 flagged</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="deficiency-reports" href="#"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined">warning</span><span>Deficiency Reports</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="inspection-schedules" href="#"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined">calendar_today</span><span>Inspection Schedules</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="institutional-registry" href="#"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined">account_balance</span><span>Institutional Registry</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="handbook-rules-and-norms" href="#"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined">menu_book</span><span>Handbook Rules &amp; Norms</span></div></a></nav></div><div class="p-space-xs rounded-lg bg-surface-container text-on-surface-variant"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-sm text-primary">verified_user</span><span class="font-code-sm text-code-sm font-semibold text-primary uppercase">AICTE Audit Mode</span></div><p class="font-body-sm text-body-sm mt-1 text-on-surface-variant">Scrutiny panel sessions are logged for gazette compliance.</p></div></aside><div class="pl-64"><main class="relative pt-16 min-h-screen pb-10 w-full px-gutter bg-surface"><div class="flex flex-col w-full">
+<!-- Top Command & Status Bar -->
+<section class="flex flex-col gap-space-sm mb-space-md">
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-space-md pb-space-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-code-sm text-code-sm">
+<span class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-secondary"></span>
+<span>COUNCIL DOSSIER WORKBENCH</span>
+<span>•</span>
+<span class="text-on-surface font-semibold">GAZETTE SCHEDULE B-IV</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Application Review Dashboard</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          Approval Process Cycle 2025–26 <span class="text-on-surface-variant/40">|</span> Western Regional Office (WRO) <span class="text-on-surface-variant/40">|</span>
+<span class="font-code-md text-code-md font-semibold text-primary">142</span> institutional dossiers currently assigned for regulatory scrutiny
+        </p>
+</div>
+<!-- Regulatory Action Trigger -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<button class="inline-flex items-center gap-space-xs px-space-sm py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-body-md text-body-md font-medium transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-sm">file_download</span>
+<span>Export Scrutiny Summary</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-sm py-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-body-md text-body-md font-medium transition-all shadow-sm group" type="button">
+<span class="material-symbols-outlined text-sm text-secondary-fixed animate-spin" style="animation-duration: 4s;">autorenew</span>
+<span>Batch Auto-Scrutiny Run</span>
+<span class="ml-1 font-code-sm text-code-sm px-1.5 py-0.2 rounded bg-primary-container text-on-primary-container font-medium">APH 25-26 v2.1</span>
+</button>
+</div>
+</div>
+<!-- Council Metric Digest (4 Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm">
+<!-- Metric 1 -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-code-sm text-code-sm text-on-surface-variant uppercase tracking-wider font-semibold">Total Assigned</span>
+<span class="material-symbols-outlined text-on-surface-variant text-base">folder_open</span>
+</div>
+<div class="flex items-baseline gap-space-xs my-1">
+<span class="font-headline-lg text-headline-lg text-primary font-semibold">142</span>
+<span class="font-code-sm text-code-sm text-secondary font-semibold">+18 this cycle</span>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="font-code-sm text-code-sm text-on-surface">94 Scrutinized</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">48 Pending</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 66.19%;"></div>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-code-sm text-code-sm text-error uppercase tracking-wider font-semibold">Deficiency Notices</span>
+<span class="inline-flex items-center gap-1 font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-semibold">
+<span class="material-symbols-outlined text-xs">error</span> 19 FLAGGED
+          </span>
+</div>
+<div class="flex items-baseline gap-space-xs my-1">
+<span class="font-headline-lg text-headline-lg text-error font-semibold">19</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Active hearing alerts</span>
+</div>
+<div class="pt-space-xs flex items-center justify-between font-code-sm text-code-sm">
+<span class="text-error font-semibold flex items-center gap-1">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-error"></span> 7 Land / FSI
+          </span>
+<span class="text-secondary font-semibold flex items-center gap-1">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span> 12 Faculty Cadre
+          </span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full mt-2 overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 36.8%;"></div>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-code-sm text-code-sm text-on-surface-variant uppercase tracking-wider font-semibold">Pre-Flight Clearance</span>
+<span class="inline-flex items-center gap-1 font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-primary font-semibold">
+<span class="material-symbols-outlined text-xs text-primary">verified</span> VERIFIED
+          </span>
+</div>
+<div class="flex items-baseline gap-space-xs my-1">
+<span class="font-headline-lg text-headline-lg text-primary font-semibold">82.4%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Compliance index</span>
+</div>
+<div class="pt-space-xs flex items-center justify-between font-code-sm text-code-sm text-on-surface-variant">
+<span class="text-on-surface font-medium">117 Auto-Passed</span>
+<span>25 Algorithmic Retries</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 82.4%;"></div>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-code-sm text-code-sm text-on-surface-variant uppercase tracking-wider font-semibold">Expert Committee (EVC)</span>
+<span class="inline-flex items-center gap-1 font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-semibold">
+<span class="material-symbols-outlined text-xs">event</span> IN REVIEW
+          </span>
+</div>
+<div class="flex items-baseline gap-space-xs my-1">
+<span class="font-headline-lg text-headline-lg text-primary font-semibold">08</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Visits scheduled</span>
+</div>
+<div class="pt-space-xs flex items-center justify-between font-code-sm text-code-sm text-on-surface">
+<span class="font-medium truncate">Next: 14 Oct • Pune Cluster</span>
+<span class="text-on-surface-variant">WRO-PUN-02</span>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full mt-2 overflow-hidden">
+<div class="bg-surface-tint h-full rounded-full" style="width: 50%;"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Operational Grid: Primary Ledger (8 Cols) + Right Inspection Intelligence (4 Cols) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md items-start">
+<!-- Primary Scrutiny Ledger Canvas (XL: 8 cols) -->
+<div class="xl:col-span-8 flex flex-col gap-space-sm">
+<!-- Quick Triage Tabs & Filters Toolbar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col gap-space-sm">
+<!-- Tab Row -->
+<div class="flex items-center gap-1 overflow-x-auto pb-1 scrollbar-none">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-on-primary font-body-md text-body-md font-medium text-nowrap shadow-sm" type="button">
+<span>All Assigned</span>
+<span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded bg-primary-container text-on-primary">142</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-error font-body-md text-body-md font-medium text-nowrap transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">error</span>
+<span>Critical Deficiencies</span>
+<span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded bg-error-container text-on-error-container font-semibold">19</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-secondary font-body-md text-body-md font-medium text-nowrap transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">group_off</span>
+<span>Faculty Cadre Alerts</span>
+<span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded bg-secondary-fixed text-on-secondary-fixed font-semibold">14</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-body-md text-body-md font-medium text-nowrap transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">square_foot</span>
+<span>Land &amp; Area Mismatches</span>
+<span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface font-semibold">8</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-body-md text-body-md font-medium text-nowrap transition-colors" type="button">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span>Ready for LOA</span>
+<span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded bg-surface-container-high text-on-surface font-semibold">46</span>
+</button>
+</div>
+<!-- Multi-factor Search & Selection Inputs -->
+<div class="grid grid-cols-1 sm:grid-cols-12 gap-space-xs pt-space-xs">
+<div class="sm:col-span-5 relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-base">search</span>
+<input class="w-full h-10 pl-9 pr-3 rounded-lg bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" placeholder="Filter PID, Application Key, Trust, District..." type="text"/>
+</div>
+<div class="sm:col-span-3">
+<select class="w-full h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-sm cursor-pointer">
+<option value="">Jurisdiction: Maharashtra</option>
+<option value="GUJ">Gujarat Division</option>
+<option value="GOA">Goa Division</option>
+<option value="ALL">All Western Region</option>
+</select>
+</div>
+<div class="sm:col-span-2">
+<select class="w-full h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-sm cursor-pointer">
+<option value="">Programme</option>
+<option value="ENG">UG / PG Engg</option>
+<option value="MGT">Management (MBA)</option>
+<option value="PHARM">Pharmacy</option>
+<option value="ARCH">Architecture</option>
+</select>
+</div>
+<div class="sm:col-span-2">
+<select class="w-full h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-1 focus:ring-primary shadow-sm cursor-pointer">
+<option value="">Scrutiny Tier</option>
+<option value="S1">Stage 1 (Docs)</option>
+<option value="S2">Stage 2 (Norms)</option>
+<option value="SH">Hearing Board</option>
+<option value="RC">Recommended</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Scrutiny Dossiers Ledger -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<!-- Table Legend / Action Header -->
+<div class="px-space-sm py-2.5 bg-surface-container flex items-center justify-between font-code-sm text-code-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="font-bold text-primary uppercase">Scrutiny Dossiers Ledger</span>
+<span>•</span>
+<span>Displaying 5 of 142 dossiers</span>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant">
+<button class="hover:text-primary transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-xs">tune</span> Field Toggles
+            </button>
+<button class="hover:text-primary transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-xs">refresh</span> Reload Sync
+            </button>
+</div>
+</div>
+<!-- Dossier List Rows -->
+<div class="divide-y divide-surface-container">
+<!-- Dossier 1 (Critical Cadre Deficit) -->
+<article class="p-space-sm hover:bg-surface transition-colors flex flex-col gap-space-xs group">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="font-code-md text-code-md font-semibold text-primary px-2 py-0.5 rounded bg-surface-container">AICTE-WRO-2025-8841</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant font-medium">PID: 1-39482910</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">warning</span> CRITICAL
+                </span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Stage:</span>
+<span class="font-title-md text-title-md font-semibold text-primary">Scrutiny Committee Stage 2</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-xs items-center pt-1">
+<div class="md:col-span-5">
+<h2 class="font-title-lg text-title-lg text-primary leading-snug font-bold group-hover:text-secondary transition-colors">
+                  Sardar Vallabhbhai College of Engineering &amp; Technology
+                </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Haveli, Pune District, Maharashtra • UG Engineering (Sanctioned Intake: <span class="font-semibold text-on-surface">420</span>)
+                </p>
+</div>
+<!-- AI Findings Pill Box -->
+<div class="md:col-span-5 bg-error-container/40 p-2.5 rounded-lg flex flex-col gap-1">
+<div class="flex items-center gap-1 text-error font-code-sm text-code-sm font-bold uppercase">
+<span class="material-symbols-outlined text-sm">gpp_bad</span>
+                  Cadre Ratio Deficit (APH Clause 7.3)
+                </div>
+<p class="font-body-sm text-body-sm text-on-error-container leading-tight">
+                  Professor shortfall of 3 in CSE department. Cadre ratio is 1:1:9 against mandatory 1:2:6 ratio for 240 CSE intake.
+                </p>
+</div>
+<!-- Documents Verification & Fast Actions -->
+<div class="md:col-span-2 flex flex-col items-end gap-2">
+<div class="flex items-center gap-1.5" title="4 of 5 Statutory Certificates Verified">
+<span class="font-code-sm text-code-sm font-semibold text-on-surface">4 / 5 Docs</span>
+<div class="w-16 bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 80%;"></div>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-error font-body-sm text-body-sm font-medium transition-colors" title="Issue formal defect notice" type="button">
+                    Issue Memo
+                  </button>
+<button class="px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-body-sm text-body-sm font-medium transition-colors shadow-sm" type="button">
+                    Open Dossier
+                  </button>
+</div>
+</div>
+</div>
+</article>
+<!-- Dossier 2 (OK / Recommended) -->
+<article class="p-space-sm hover:bg-surface transition-colors flex flex-col gap-space-xs group">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="font-code-md text-code-md font-semibold text-primary px-2 py-0.5 rounded bg-surface-container">AICTE-WRO-2025-7729</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant font-medium">PID: 1-10294821</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary">check_circle</span> VERIFIED
+                </span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Stage:</span>
+<span class="font-title-md text-title-md font-semibold text-on-surface">Recommended for LOA</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-xs items-center pt-1">
+<div class="md:col-span-5">
+<h2 class="font-title-lg text-title-lg text-primary leading-snug font-bold group-hover:text-secondary transition-colors">
+                  Sahyadri Institute of Management Studies
+                </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Gangapur Road, Nashik, Maharashtra • PG Management - MBA (Intake: <span class="font-semibold text-on-surface">180</span>)
+                </p>
+</div>
+<!-- AI Findings Pill Box -->
+<div class="md:col-span-5 bg-surface-container-low p-2.5 rounded-lg flex flex-col gap-1">
+<div class="flex items-center gap-1 text-primary font-code-sm text-code-sm font-bold uppercase">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+                  All Regulatory Norms Satisfied
+                </div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">
+                  Calculated FSI 1.84 meets municipal norms (min 1.5). Cadre ratio 1:2:6 verified. Digital signatures validated via Digilocker/NAD.
+                </p>
+</div>
+<!-- Documents Verification & Fast Actions -->
+<div class="md:col-span-2 flex flex-col items-end gap-2">
+<div class="flex items-center gap-1.5" title="5 of 5 Statutory Certificates Verified">
+<span class="font-code-sm text-code-sm font-semibold text-primary">5 / 5 Complete</span>
+<div class="w-16 bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium transition-colors" type="button">
+                    View Dossier
+                  </button>
+<button class="px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-body-sm text-body-sm font-medium transition-colors shadow-sm" type="button">
+                    Approve LOA
+                  </button>
+</div>
+</div>
+</div>
+</article>
+<!-- Dossier 3 (Warning Area Mismatch) -->
+<article class="p-space-sm hover:bg-surface transition-colors flex flex-col gap-space-xs group">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="font-code-md text-code-md font-semibold text-primary px-2 py-0.5 rounded bg-surface-container">AICTE-WRO-2025-9104</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant font-medium">PID: 1-84729103</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">warning_amber</span> FLAGGED
+                </span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Stage:</span>
+<span class="font-title-md text-title-md font-semibold text-secondary">Referred to Hearing Committee</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-xs items-center pt-1">
+<div class="md:col-span-5">
+<h2 class="font-title-lg text-title-lg text-primary leading-snug font-bold group-hover:text-secondary transition-colors">
+                  Deccan College of Pharmaceutical Sciences
+                </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Shirol, Kolhapur, Maharashtra • Pharmacy B.Pharm &amp; M.Pharm (Intake: <span class="font-semibold text-on-surface">120</span>)
+                </p>
+</div>
+<!-- AI Findings Pill Box -->
+<div class="md:col-span-5 bg-secondary-fixed/40 p-2.5 rounded-lg flex flex-col gap-1">
+<div class="flex items-center gap-1 text-on-secondary-fixed font-code-sm text-code-sm font-bold uppercase">
+<span class="material-symbols-outlined text-sm">satellite_alt</span>
+                  Built-up Area Discrepancy (-7.3%)
+                </div>
+<p class="font-body-sm text-body-sm text-on-surface leading-tight">
+                  Architect certificate declares 4,200 sq.m; Geo-spatial satellite boundary assessment yields 3,890 sq.m. Geotagged site check mandatory.
+                </p>
+</div>
+<!-- Documents Verification & Fast Actions -->
+<div class="md:col-span-2 flex flex-col items-end gap-2">
+<div class="flex items-center gap-1.5" title="3 of 5 Statutory Certificates Verified">
+<span class="font-code-sm text-code-sm font-semibold text-on-surface">3 / 5 Docs</span>
+<div class="w-16 bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 60%;"></div>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium transition-colors" type="button">
+                    Geo Data
+                  </button>
+<button class="px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-body-sm text-body-sm font-medium transition-colors shadow-sm" type="button">
+                    Open Dossier
+                  </button>
+</div>
+</div>
+</div>
+</article>
+<!-- Dossier 4 (Critical Financial Solvency) -->
+<article class="p-space-sm hover:bg-surface transition-colors flex flex-col gap-space-xs group">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="font-code-md text-code-md font-semibold text-primary px-2 py-0.5 rounded bg-surface-container">AICTE-WRO-2025-6302</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant font-medium">PID: 1-55418290</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">gpp_bad</span> CRITICAL
+                </span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Stage:</span>
+<span class="font-title-md text-title-md font-semibold text-error">Deficiency Notice Dispatched</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-xs items-center pt-1">
+<div class="md:col-span-5">
+<h2 class="font-title-lg text-title-lg text-primary leading-snug font-bold group-hover:text-secondary transition-colors">
+                  Konkan Technical Campus
+                </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Chiplun, Ratnagiri, Maharashtra • Diploma Mechanical &amp; Electrical (Intake: <span class="font-semibold text-on-surface">240</span>)
+                </p>
+</div>
+<!-- AI Findings Pill Box -->
+<div class="md:col-span-5 bg-error-container/40 p-2.5 rounded-lg flex flex-col gap-1">
+<div class="flex items-center gap-1 text-error font-code-sm text-code-sm font-bold uppercase">
+<span class="material-symbols-outlined text-sm">account_balance</span>
+                  Financial Solvency / FDR Non-Compliance
+                </div>
+<p class="font-body-sm text-body-sm text-on-error-container leading-tight">
+                  FDR bank guarantee lien certificate not countersigned by Lead District Manager (LDM). Security deposit deed unexecuted.
+                </p>
+</div>
+<!-- Documents Verification & Fast Actions -->
+<div class="md:col-span-2 flex flex-col items-end gap-2">
+<div class="flex items-center gap-1.5" title="2 of 5 Statutory Certificates Verified">
+<span class="font-code-sm text-code-sm font-semibold text-error">2 / 5 Docs</span>
+<div class="w-16 bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 40%;"></div>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium transition-colors" type="button">
+                    Audit Memo
+                  </button>
+<button class="px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-body-sm text-body-sm font-medium transition-colors shadow-sm" type="button">
+                    Send Reminder
+                  </button>
+</div>
+</div>
+</div>
+</article>
+<!-- Dossier 5 (Info / New Programme Addition) -->
+<article class="p-space-sm hover:bg-surface transition-colors flex flex-col gap-space-xs group">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="font-code-md text-code-md font-semibold text-primary px-2 py-0.5 rounded bg-surface-container">AICTE-WRO-2025-5519</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant font-medium">PID: 1-44910283</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">info</span> IN REVIEW
+                </span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Stage:</span>
+<span class="font-title-md text-title-md font-semibold text-primary">Expert Visit Committee (EVC) Assigned</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-xs items-center pt-1">
+<div class="md:col-span-5">
+<h2 class="font-title-lg text-title-lg text-primary leading-snug font-bold group-hover:text-secondary transition-colors">
+                  Symbiosis Centre for Advanced Poly-technics
+                </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Hingna Industrial Belt, Nagpur, Maharashtra • Emerging Area Wing (New Course)
+                </p>
+</div>
+<!-- AI Findings Pill Box -->
+<div class="md:col-span-5 bg-surface-container p-2.5 rounded-lg flex flex-col gap-1">
+<div class="flex items-center gap-1 text-on-surface font-code-sm text-code-sm font-bold uppercase">
+<span class="material-symbols-outlined text-sm">memory</span>
+                  New Programme Laboratory Audit
+                </div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-tight">
+                  High-performance computing cluster server invoices submitted. Physical validation of laboratory hardware scheduled for Oct 17.
+                </p>
+</div>
+<!-- Documents Verification & Fast Actions -->
+<div class="md:col-span-2 flex flex-col items-end gap-2">
+<div class="flex items-center gap-1.5" title="4 of 5 Statutory Certificates Verified">
+<span class="font-code-sm text-code-sm font-semibold text-on-surface">4 / 5 Docs</span>
+<div class="w-16 bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 80%;"></div>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium transition-colors" type="button">
+                    Itinerary
+                  </button>
+<button class="px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-body-sm text-body-sm font-medium transition-colors shadow-sm" type="button">
+                    Open Dossier
+                  </button>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- Ledger Pagination & Regulatory Footer -->
+<div class="p-space-sm bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-xs">
+<div class="font-code-sm text-code-sm text-on-surface-variant">
+            Records per page: <span class="text-on-surface font-bold">5</span> • Total: 142 records in Western Region docket
+          </div>
+<div class="flex items-center gap-1 font-body-sm text-body-sm">
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface hover:bg-surface-container-high disabled:opacity-50" disabled="" type="button">
+              Previous
+            </button>
+<span class="px-2 font-code-sm text-code-sm font-semibold text-primary">Page 1 of 29</span>
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface hover:bg-surface-container-high" type="button">
+              Next
+            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Regulatory Intelligence & Handbook Verification Tray (XL: 4 cols) -->
+<aside class="xl:col-span-4 flex flex-col gap-space-md">
+<!-- Panel Card A: Statutory Handbook Norms Benchmark -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm relative overflow-hidden">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-base">menu_book</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">APH 2025–26 Norm Reference</h3>
+</div>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-semibold">GAZETTE C-7</span>
+</div>
+<div class="space-y-space-xs text-on-surface font-body-md text-body-md">
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md font-semibold text-primary">Clause 7.3: Cadre Ratio</span>
+<span class="font-code-sm text-code-sm font-semibold text-secondary">Ratio 1:2:6</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Every technical department must maintain 1 Professor and 2 Associate Professors per 6 Assistant Professors for approved UG intake.
+            </p>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md font-semibold text-primary">Clause 4.1: Land Contiguity</span>
+<span class="font-code-sm text-code-sm font-semibold text-primary">Min 7.5 Acres</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Campus land must be continuous single plot, unencumbered by public highways or non-educational easement rights.
+            </p>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md font-semibold text-primary">Clause 12.2: Fire Safety NOC</span>
+<span class="font-code-sm text-code-sm font-semibold text-error">Valid &gt; 90 Days</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              State Directorate of Fire Services certificate must have minimum 90 calendar days validity remaining on scrutiny cutoff date.
+            </p>
+</div>
+</div>
+<button class="w-full py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-body-md text-body-md font-semibold transition-colors flex items-center justify-center gap-1" type="button">
+<span>Search Handbook Rulebook</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Panel Card B: Automated Flag Trends (Visual Analytics) -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-base">bar_chart</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Deficiency Breakdown</h3>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Cycle 1 Analytics</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Distribution of algorithmic verification flags across all 142 Western Region submissions:
+        </p>
+<!-- Inline SVG Visualization: Stacked Distribution Bar -->
+<div class="flex flex-col gap-space-xs">
+<div class="h-6 w-full rounded-md overflow-hidden flex bg-surface-container">
+<div class="bg-primary flex items-center justify-center text-on-primary font-code-sm text-[10px] font-bold" style="width: 38%;" title="Faculty Cadre 38%">38%</div>
+<div class="bg-secondary flex items-center justify-center text-on-secondary font-code-sm text-[10px] font-bold" style="width: 26%;" title="Fire/NOC 26%">26%</div>
+<div class="bg-error flex items-center justify-center text-on-error font-code-sm text-[10px] font-bold" style="width: 22%;" title="Bank Solvency 22%">22%</div>
+<div class="bg-surface-tint flex items-center justify-center text-surface-container-lowest font-code-sm text-[10px] font-bold" style="width: 14%;" title="Lab Equipment 14%">14%</div>
+</div>
+<!-- Legend Grid -->
+<div class="grid grid-cols-2 gap-2 pt-1 font-body-sm text-body-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-primary"></span>
+<span class="text-on-surface truncate">Faculty Cadres (38%)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-secondary"></span>
+<span class="text-on-surface truncate">Fire &amp; Bldg NOCs (26%)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-error"></span>
+<span class="text-on-surface truncate">Bank Solvency (22%)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-sm bg-surface-tint"></span>
+<span class="text-on-surface truncate">Lab Invoices (14%)</span>
+</div>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container flex items-center gap-2 text-on-surface-variant font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-primary text-base">psychology</span>
+<span>AI OCR parser confidence score: <strong>99.4%</strong> across land registry stamps and title deeds.</span>
+</div>
+</div>
+<!-- Panel Card C: Scrutiny Timeline & Statutory Deadlines -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-base">schedule</span>
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Regional Timelines</h3>
+</div>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-error-container text-on-error-container font-semibold">4 DAYS LEFT</span>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-semibold text-primary">Cycle 1 Scrutiny Cutoff</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">All initial dossier memos issued</span>
+</div>
+<span class="font-code-md text-code-md font-bold text-on-surface">18 Oct 2025</span>
+</div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-semibold text-primary">Hearing Board Conclave</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mumbai Headquarters WRO</span>
+</div>
+<span class="font-code-md text-code-md font-bold text-on-surface">24 Oct 2025</span>
+</div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-semibold text-primary">Gazette Transmission</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Final council ratification</span>
+</div>
+<span class="font-code-md text-code-md font-bold text-on-surface">02 Nov 2025</span>
+</div>
+</div>
+<div class="p-space-xs rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-1 font-code-sm text-code-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm">lock_clock</span>
+<span>Digital ledger closes at 23:59 IST</span>
+</div>
+<button class="text-primary font-code-sm text-code-sm font-semibold hover:underline" type="button">
+            View Schedule
+          </button>
+</div>
+</div>
+</aside>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for filter tabs state demonstration
+  document.querySelectorAll('button[type="button"]').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      if (this.classList.contains('group')) {
+        const icon = this.querySelector('.material-symbols-outlined');
+        if (icon && icon.textContent.includes('autorenew')) {
+          this.disabled = true;
+          const origText = this.innerHTML;
+          this.innerHTML = '<span class="material-symbols-outlined text-sm animate-spin">autorenew</span> Scrutinizing...';
+          setTimeout(() => {
+            this.innerHTML = origText;
+            this.disabled = false;
+          }, 1400);
+        }
+      }
+    });
+  });
+</script></main></div><footer class="fixed bottom-0 left-0 right-0 h-7 z-50 bg-surface-container-high text-on-surface-variant px-gutter flex items-center justify-between shadow-[0_-1px_6px_rgba(0,0,0,0.02)]"><div class="flex items-center gap-space-xs"><span class="inline-block w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span><span class="font-code-sm text-code-sm">Connected to National Academic Depository (NAD) &amp; Land Records API • Sync OK • Latency 42ms</span></div><div class="flex items-center gap-space-sm font-code-sm text-code-sm text-on-surface-variant"><span class="hidden md:inline">AICTE Act 1987 Sub-clause 10(k)</span><span>Node ID: WRO-INSP-04</span></div></footer></body></html>

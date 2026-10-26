@@ -1,0 +1,8 @@
+Faker==40.43.0
+Pillow==12.3.0
+ReportLab==4.4.9
+pypdf==6.10.0
+pyHanko==0.38.0
+cryptography==50.0.2
+PyMuPDF==2.0
+PyYAML==6.0.2

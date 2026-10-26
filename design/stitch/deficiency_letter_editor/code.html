@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container": "#f0eee9", "error-container": "#ffdad6", "on-error-container": "#93000a", "surface-variant": "#e4e2dd", "secondary-container": "#fc9923", "primary": "#032448", "on-primary-fixed-variant": "#2d476d", "outline": "#74777f", "outline-variant": "#c4c6cf", "on-primary": "#ffffff", "surface-dim": "#dbdad5", "surface-container-low": "#f5f3ee", "secondary-fixed": "#ffdcbf", "on-primary-container": "#8ba4cf", "inverse-on-surface": "#f2f1ec", "on-secondary-fixed": "#2d1600", "surface-container-lowest": "#ffffff", "tertiary-container": "#2d3b4b", "surface-bright": "#fbf9f4", "on-tertiary-fixed-variant": "#3a4858", "on-secondary-fixed-variant": "#6a3b00", "on-error": "#ffffff", "surface-container-highest": "#e4e2dd", "surface-tint": "#465f86", "on-background": "#1b1c19", "tertiary-fixed": "#d5e4f8", "on-secondary-container": "#653800", "on-tertiary-fixed": "#0e1d2b", "error": "#ba1a1a", "on-tertiary": "#ffffff", "tertiary": "#172534", "surface": "#fbf9f4", "secondary": "#8c5000", "surface-container-high": "#eae8e3", "primary-fixed-dim": "#aec8f4", "on-primary-fixed": "#001c3b", "background": "#fbf9f4", "inverse-surface": "#30312e", "on-tertiary-container": "#96a5b8", "secondary-fixed-dim": "#ffb873", "on-secondary": "#ffffff", "tertiary-fixed-dim": "#b9c8db", "primary-container": "#1f3a5f", "on-surface-variant": "#43474e", "primary-fixed": "#d5e3ff", "on-surface": "#1b1c19", "inverse-primary": "#aec8f4" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xl": "3rem", "margin-mobile": "1rem", "gutter": "1.5rem", "margin": "2.5rem", "space-lg": "2rem", "space-sm": "1rem", "space-md": "1.5rem", "gutter-mobile": "1rem", "space-xs": "0.5rem" }, "fontFamily": { "display-lg": [ "Newsreader" ], "headline-lg": [ "Newsreader" ], "headline-sm": [ "Newsreader" ], "display-lg-mobile": [ "Newsreader" ], "headline-md": [ "Newsreader" ], "title-lg": [ "Inter" ], "body-lg": [ "Inter" ], "title-md": [ "Inter" ], "body-sm": [ "Inter" ], "code-md": [ "JetBrains Mono" ], "code-sm": [ "JetBrains Mono" ], "body-md": [ "Inter" ], "headline-lg-mobile": [ "Newsreader" ] }, "fontSize": { "display-lg": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "fontWeight": "500" } ], "display-lg-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-md": [ "24px", { "lineHeight": "32px", "fontWeight": "500" } ], "title-lg": [ "18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-lg": [ "16px", { "lineHeight": "24px", "fontWeight": "400" } ], "title-md": [ "15px", { "lineHeight": "20px", "fontWeight": "600" } ], "body-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "code-md": [ "13px", { "lineHeight": "18px", "fontWeight": "500" } ], "code-sm": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" } ], "body-md": [ "14px", { "lineHeight": "20px", "fontWeight": "400" } ], "headline-lg-mobile": [ "26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center gap-space-xs bg-surface-container-low"><div class="w-7 h-7 rounded bg-primary flex items-center justify-center text-on-primary font-code-sm text-code-sm font-bold tracking-wider">AI</div><div class="flex flex-col"><span class="font-title-md text-title-md text-primary leading-tight">PreFlight</span><span class="font-code-sm text-code-sm text-on-surface-variant leading-none tracking-tight">AICTE SCRUTINY DESK</span></div></div><div class="px-space-md py-space-xs"><span class="font-code-sm text-code-sm uppercase tracking-wider text-outline">Operational Console</span></div><nav class="flex flex-col px-space-xs gap-1" data-active-classes="bg-primary-container text-on-primary font-title-md shadow-sm"><a class="flex items-center gap-space-xs px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[18px]">dashboard</span><span class="font-body-md text-body-md">Dashboard</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="queue" href="#"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px]">inbox</span><span class="font-body-md text-body-md">Queue</span></div><span class="font-code-sm text-code-sm bg-surface-variant px-1.5 py-0.5 rounded text-on-surface-variant">24</span></a><a class="flex items-center gap-space-xs px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="applications" href="#"><span class="material-symbols-outlined text-[18px]">folder_open</span><span class="font-body-md text-body-md">Applications</span></a><a class="flex items-center gap-space-xs px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="document-verification" href="#"><span class="material-symbols-outlined text-[18px]">fact_check</span><span class="font-body-md text-body-md">Document Verification</span></a><a class="flex items-center gap-space-xs px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="audit-log" href="#"><span class="material-symbols-outlined text-[18px]">history_edu</span><span class="font-body-md text-body-md">Audit Log</span></a><a aria-current="page" class="flex items-center gap-space-xs px-space-sm py-2 rounded transition-all bg-primary-container text-on-primary font-title-md shadow-sm" data-path="compliance-and-deficiency-letters" href="#"><span class="material-symbols-outlined text-[18px]">mark_email_unread</span><span class="font-body-md text-body-md">Compliance &amp; Deficiency</span></a><a class="flex items-center gap-space-xs px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="rules" href="#"><span class="material-symbols-outlined text-[18px]">gavel</span><span class="font-body-md text-body-md">Rules &amp; Norms</span></a><a class="flex items-center gap-space-xs px-space-sm py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="settings" href="#"><span class="material-symbols-outlined text-[18px]">settings</span><span class="font-body-md text-body-md">Settings</span></a></nav></div><div class="p-space-sm m-space-xs rounded bg-surface-container flex flex-col gap-1"><div class="flex items-center justify-between"><span class="font-code-sm text-code-sm text-outline uppercase">Registry Sync</span><span class="inline-flex items-center gap-1 font-code-sm text-code-sm text-on-surface-variant"><span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>Live</span></div><span class="font-code-sm text-code-sm text-on-surface-variant truncate">APH 2024-25 Core v4.18</span></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-md"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="relative w-full max-w-md"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full h-10 pl-9 pr-3 rounded bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" placeholder="Search Institute ID, File Ref, Mandate, or PID..." type="text"/></div><div class="flex items-center gap-2 px-space-xs py-1 rounded bg-surface-container font-code-sm text-code-sm text-on-surface-variant"><span class="material-symbols-outlined text-[15px] text-primary">verified</span><span>Gazette Reg: OK</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-2 pr-space-xs"><span class="material-symbols-outlined text-outline hover:text-on-surface cursor-pointer text-[20px]">notifications</span><span class="material-symbols-outlined text-outline hover:text-on-surface cursor-pointer text-[20px]">help_outline</span></div><div class="h-6 w-px bg-surface-variant"></div><div class="flex items-center gap-space-xs pl-space-xs"><div class="flex flex-col text-right"><span class="font-title-md text-title-md text-on-surface leading-none">Dr. R. K. Varma</span><span class="font-code-sm text-code-sm text-on-surface-variant">Scrutiny Officer | R-NW</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-16 w-full px-space-md py-space-md bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Operational Context & Sticky Action Bar -->
+<div class="flex flex-col gap-space-sm mb-space-md">
+<!-- Breadcrumb & System Trace -->
+<div class="flex flex-wrap items-center justify-between gap-y-2">
+<div class="flex items-center gap-2 font-code-sm text-code-sm text-outline">
+<a class="hover:text-primary transition-colors" href="#">Applications</a>
+<span>/</span>
+<span class="text-primary font-medium">Case #APP-2025-09412</span>
+<span class="text-outline-variant">•</span>
+<span class="text-on-surface truncate max-w-xs md:max-w-md">Saraswati Institute of Technology, Greater Noida</span>
+<span>/</span>
+<span class="text-secondary font-semibold">Compliance &amp; Deficiency Letter</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-secondary-fixed/50 text-on-secondary-fixed font-code-sm text-code-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+          Draft Ready (v1.3)
+        </span>
+<span class="font-code-sm text-code-sm text-outline">Ref: REG-NWRO-8821</span>
+</div>
+</div>
+<!-- Title and Executive Controls -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md pb-space-sm">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[28px]">mark_email_unread</span>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Deficiency Letter Editor &amp; Regulatory Notice Composer</h1>
+</div>
+<div class="flex flex-wrap items-center gap-x-3 gap-y-1 font-body-sm text-body-sm text-on-surface-variant">
+<span class="font-medium text-on-surface">Application Type:</span>
+<span class="bg-surface-container-high px-2 py-0.5 rounded text-primary font-medium">Extension of Approval (EoA) 2025-26</span>
+<span class="text-outline-variant">|</span>
+<span class="font-medium text-on-surface">Scrutiny Officer:</span>
+<span>Dr. A. P. Sharma (NWRO Grade-I)</span>
+<span class="text-outline-variant">|</span>
+<span class="font-medium text-on-surface">Council Portal Hash:</span>
+<span class="font-code-sm text-code-sm text-outline">0x8F92...B41E</span>
+</div>
+</div>
+<!-- Action Panel -->
+<div class="flex items-center gap-space-xs self-start xl:self-auto">
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded bg-surface-container-lowest text-primary hover:bg-surface-container-high font-title-md text-title-md shadow-sm transition-all duration-150" id="saveDraftBtn">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Save Draft</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded bg-surface-container text-on-surface-variant hover:text-on-surface font-title-md text-title-md transition-all" id="previewPdfBtn">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span class="hidden sm:inline">Preview Signed Sheet</span>
+</button>
+<button class="inline-flex items-center gap-2 px-5 py-2.5 rounded bg-primary text-on-primary hover:bg-primary-container shadow-md hover:shadow-lg font-title-md text-title-md transition-all duration-150" id="openApproveModalBtn">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">send</span>
+<span>Approve &amp; Dispatch Notice</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Workspace Grid: 2-Column Split Pane -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-start">
+<!-- LEFT PANE: Accepted Scrutiny Findings (38-40% col span: 5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-sm">
+<!-- Findings Control Card -->
+<div class="p-space-sm rounded-lg bg-surface-container-low shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-primary">Accepted Scrutiny Findings</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-code-sm font-code-sm bg-primary text-on-primary font-semibold">3 Active</span>
+</div>
+<span class="font-code-sm text-code-sm text-secondary font-medium bg-secondary-fixed/30 px-2 py-0.5 rounded">Auto-compiled v4.18</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Council Scrutiny Committee findings verified by technical examiners. Deselecting an item will remove it from the statutory notice draft in real-time.
+        </p>
+<!-- Search / Filter Mini Bar -->
+<div class="relative mt-1">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-outline text-[16px]">filter_list</span>
+<input class="w-full h-8 pl-8 pr-3 rounded bg-surface-container-lowest font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="findingSearch" placeholder="Filter by Clause, Department, or Severity..." type="text"/>
+</div>
+</div>
+<!-- Findings List -->
+<div class="flex flex-col gap-space-sm" id="findingsContainer">
+<!-- CARD 1: Critical / Fire NOC -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative flex flex-col gap-space-xs" data-clause="Clause 2.14.3" data-target="deficiency-item-1">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-2">
+<input checked="" class="finding-checkbox mt-1 w-4 h-4 rounded text-primary focus:ring-primary cursor-pointer accent-primary" data-item="deficiency-item-1" id="checkFinding1" type="checkbox"/>
+<div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 font-code-sm text-code-sm px-2 py-0.5 rounded bg-error-container text-on-error-container font-semibold">
+<span class="material-symbols-outlined text-[13px]">block</span>
+                    Statutory Defect #01
+                  </span>
+<span class="font-code-sm text-code-sm text-error font-medium">Critical / Mandatory</span>
+</div>
+<h2 class="font-title-md text-title-md text-primary mt-1">Fire &amp; Life Safety NOC Certificate Expired</h2>
+</div>
+</div>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-outline font-medium whitespace-nowrap">APH Cl. 2.14.3</span>
+</div>
+<div class="pl-6 flex flex-col gap-2 font-body-sm text-body-sm text-on-surface">
+<p class="text-on-surface-variant leading-snug">
+              Fire Safety NOC issued by UP Fire Services expired on <strong>12 Mar 2025</strong>. Renewal application acknowledgment does not substitute the final operational clearance required for high-occupancy engineering institutions.
+            </p>
+<!-- Evidence Attachment Block -->
+<div class="p-2 rounded bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2 overflow-hidden">
+<span class="material-symbols-outlined text-secondary text-[18px]">attachment</span>
+<span class="font-code-sm text-code-sm text-primary truncate">Fire_NOC_Renewal_2024.pdf</span>
+<span class="font-code-sm text-code-sm text-outline shrink-0">(Pg 2, Validity Expired)</span>
+</div>
+<button class="font-code-sm text-code-sm text-primary hover:underline shrink-0 flex items-center gap-0.5">
+<span>Inspect</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</button>
+</div>
+<!-- Custom Officer Annotation Textarea -->
+<div class="flex flex-col gap-1 mt-1">
+<div class="flex items-center justify-between">
+<label class="font-code-sm text-code-sm text-on-surface-variant uppercase tracking-wider" for="officerRemark1">Officer Specific Directive (Inserted in Notice)</label>
+<span class="font-code-sm text-code-sm text-outline">Field 01</span>
+</div>
+<textarea class="w-full p-2 rounded bg-surface-container text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="officerRemark1" placeholder="Add specific mandate or instruction to institute..." rows="2">Submit renewed valid Fire Safety NOC issued by Chief Fire Officer or authorized district revenue commissioner within the cure period without exception.</textarea>
+</div>
+</div>
+</div>
+<!-- CARD 2: Major / Cadre Ratio -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative flex flex-col gap-space-xs" data-clause="Clause 7.1" data-target="deficiency-item-2">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-2">
+<input checked="" class="finding-checkbox mt-1 w-4 h-4 rounded text-primary focus:ring-primary cursor-pointer accent-primary" data-item="deficiency-item-2" id="checkFinding2" type="checkbox"/>
+<div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 font-code-sm text-code-sm px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-semibold">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+                    Academic Defect #02
+                  </span>
+<span class="font-code-sm text-code-sm text-secondary font-medium">Major Cadre Ratio</span>
+</div>
+<h2 class="font-title-md text-title-md text-primary mt-1">Cadre Ratio Deficit in Computer Science &amp; Engg</h2>
+</div>
+</div>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-outline font-medium whitespace-nowrap">APH Cl. 7.1 Table 7(A)</span>
+</div>
+<div class="pl-6 flex flex-col gap-2 font-body-sm text-body-sm text-on-surface">
+<p class="text-on-surface-variant leading-snug">
+              Required cadre ratio for approved intake of 180 seats is <strong>1:2:6</strong> (Professor:Associate Professor:Assistant Professor). Institute roster demonstrates <strong>0:1:7</strong>. The Cadre of Professor has remained unfulfilled for &gt;180 days.
+            </p>
+<!-- Metric Comparison Pill -->
+<div class="grid grid-cols-2 gap-2 p-2 rounded bg-surface-container-low font-code-sm text-code-sm">
+<div class="flex flex-col">
+<span class="text-outline uppercase text-[10px]">Statutory Required</span>
+<span class="text-primary font-semibold">02 Prof / 04 Assoc / 12 Asst</span>
+</div>
+<div class="flex flex-col">
+<span class="text-outline uppercase text-[10px]">Verified On-Roll</span>
+<span class="text-error font-semibold">00 Prof / 01 Assoc / 07 Asst</span>
+</div>
+</div>
+<!-- Custom Officer Directive -->
+<div class="flex flex-col gap-1 mt-1">
+<label class="font-code-sm text-code-sm text-on-surface-variant uppercase tracking-wider" for="officerRemark2">Officer Directive</label>
+<textarea class="w-full p-2 rounded bg-surface-container text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary shadow-sm" id="officerRemark2" placeholder="Provide recruitment resolution or committee roster..." rows="2">Furnish University Selection Committee minutes demonstrating recruitment initiation or appointment orders for regular Professor cadre in CSE.</textarea>
+</div>
+</div>
+</div>
+<!-- CARD 3: Moderate / LUCC -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative flex flex-col gap-space-xs" data-clause="Appendix 4 Item 8" data-target="deficiency-item-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-2">
+<input checked="" class="finding-checkbox mt-1 w-4 h-4 rounded text-primary focus:ring-primary cursor-pointer accent-primary" data-item="deficiency-item-3" id="checkFinding3" type="checkbox"/>
+<div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-semibold">
+<span class="material-symbols-outlined text-[13px]">gavel</span>
+                    Documentation Defect #03
+                  </span>
+<span class="font-code-sm text-code-sm text-outline font-medium">Moderate / Compliance</span>
+</div>
+<h2 class="font-title-md text-title-md text-primary mt-1">Land Use Conversion Certificate (LUCC) Seal Illegible</h2>
+</div>
+</div>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-outline font-medium whitespace-nowrap">App. 4 Item 8</span>
+</div>
+<div class="pl-6 flex flex-col gap-2 font-body-sm text-body-sm text-on-surface">
+<p class="text-on-surface-variant leading-snug">
+              Submitted LUCC (Khasra No. 412/1 &amp; 412/2, Greater Noida) lacks authentic Sub-Divisional Magistrate (SDM) / Competent District Revenue Authority embossed notary verification seal on Page 4.
+            </p>
+<div class="p-2 rounded bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2 overflow-hidden">
+<span class="material-symbols-outlined text-outline text-[18px]">verified</span>
+<span class="font-code-sm text-code-sm text-primary truncate">Land_Title_Deed_Scan.pdf</span>
+<span class="font-code-sm text-code-sm text-error shrink-0">(Resolution Low / No Seal)</span>
+</div>
+<button class="font-code-sm text-code-sm text-primary hover:underline shrink-0">Examine</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Collapsed Resolved / Dismissed Observations Section for Audit Trail -->
+<details class="group p-space-sm rounded-lg bg-surface-container-high/60 transition-all cursor-pointer">
+<summary class="flex items-center justify-between font-title-md text-title-md text-on-surface select-none">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px] group-open:rotate-90 transition-transform">chevron_right</span>
+<span>Dismissed / Resolved Observations</span>
+<span class="font-code-sm text-code-sm px-2 py-0.2 rounded bg-surface-container-highest text-on-surface-variant">2 Items</span>
+</div>
+<span class="font-code-sm text-code-sm text-outline">Audit Log Attached</span>
+</summary>
+<div class="mt-3 pt-3 flex flex-col gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<div class="p-2 rounded bg-surface-container-lowest flex items-start justify-between">
+<div>
+<p class="font-medium text-on-surface">Library E-Journal Subscription Renewal Gap</p>
+<p class="text-[12px] text-outline">Resolved: Ingestion verified via DELNET invoice sync on 28 Mar 2025.</p>
+</div>
+<span class="inline-flex items-center gap-1 font-code-sm text-code-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Verified
+            </span>
+</div>
+<div class="p-2 rounded bg-surface-container-lowest flex items-start justify-between">
+<div>
+<p class="font-medium text-on-surface">Barrier-Free Ramp Slope Ratio Discrepancy</p>
+<p class="text-[12px] text-outline">Dismissed: Geotagged site photograph confirmed 1:12 regulatory gradient.</p>
+</div>
+<span class="inline-flex items-center gap-1 font-code-sm text-code-sm text-secondary font-medium">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Cleared
+            </span>
+</div>
+</div>
+</details>
+<!-- Council Legal Notice Guidelines Card -->
+<div class="p-space-sm rounded-lg bg-primary-container text-on-primary shadow-sm flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">policy</span>
+<span class="font-title-md text-title-md text-primary-fixed">Statutory Notice Period Rules</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container leading-relaxed">
+          Pursuant to Section 10(k) of the AICTE Act 1987, the institution is entitled to exactly <strong>15 calendar days</strong> from the receipt of this show-cause communication to rectify noted deficiencies or appear before the Standing Hearing Committee (SHC).
+        </p>
+</div>
+</div>
+<!-- RIGHT PANE: Clean Official Letter Preview (60-62% col span: 7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-sm">
+<!-- Preview Header Controls Strip -->
+<div class="p-space-sm rounded-lg bg-surface-container-low shadow-sm flex flex-wrap items-center justify-between gap-y-3">
+<!-- Bilingual Switcher -->
+<div class="flex items-center gap-2">
+<span class="font-code-sm text-code-sm text-outline uppercase tracking-wider">Language:</span>
+<div class="inline-flex rounded bg-surface-container p-0.5 shadow-inner" id="languageToggleGroup">
+<button class="px-3 py-1 rounded font-code-sm text-code-sm font-semibold bg-surface-container-lowest text-primary shadow-sm transition-all" id="langEnBtn">
+              English
+            </button>
+<button class="px-3 py-1 rounded font-code-sm text-code-sm font-semibold text-outline hover:text-on-surface transition-all" id="langHiBtn">
+              हिन्दी (Hindi)
+            </button>
+<button class="px-3 py-1 rounded font-code-sm text-code-sm font-semibold text-outline hover:text-on-surface transition-all" id="langBiBtn">
+              Bilingual (द्विभाषी)
+            </button>
+</div>
+</div>
+<!-- Template Selector -->
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">description</span>
+<select class="h-8 px-2 py-0.5 rounded bg-surface-container-lowest font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-1 focus:ring-primary shadow-sm">
+<option>Form AICTE-DN-2025 (Standard Deficiency Show-Cause)</option>
+<option>Form AICTE-INT-2025 (Intimation of Shortfall - Urgent)</option>
+<option>Form AICTE-SHC-Hearing (Notice with Personal Hearing Date)</option>
+</select>
+</div>
+<!-- Utility Action Icons -->
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-primary transition-colors" title="Print Official Sheet">
+<span class="material-symbols-outlined text-[20px]">print</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-primary transition-colors" title="Download PDF Preview">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-outline hover:text-primary transition-colors" title="Expand Full View">
+<span class="material-symbols-outlined text-[20px]">fullscreen</span>
+</button>
+</div>
+</div>
+<!-- The Official Government Letterhead Sheet -->
+<div class="w-full bg-surface-container-lowest p-space-md sm:p-space-lg rounded-xl shadow-md flex flex-col gap-space-md transition-all duration-200" id="officialSheet">
+<!-- Institutional Letterhead Header -->
+<div class="flex flex-col items-center text-center pb-space-sm">
+<!-- Official AICTE Crest / SVG Seal -->
+<div class="flex items-center justify-center gap-4 mb-2">
+<div class="w-14 h-14 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm">
+<svg class="w-9 h-9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24">
+<path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+<path d="M2 17l10 5 10-5"></path>
+<path d="M2 12l10 5 10-5"></path>
+</svg>
+</div>
+<div class="flex flex-col text-left">
+<span class="font-headline-sm text-headline-sm text-primary tracking-tight font-semibold">अखिल भारतीय तकनीकी शिक्षा परिषद</span>
+<span class="font-title-lg text-title-lg text-primary tracking-wide uppercase font-bold">All India Council for Technical Education</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">A Statutory Body Under Ministry of Education, Govt. of India | Nelson Mandela Marg, Vasant Kunj, New Delhi - 110070</span>
+</div>
+</div>
+<div class="w-full h-0.5 bg-primary mt-2"></div>
+<div class="w-full h-px bg-secondary mt-0.5"></div>
+</div>
+<!-- Regional Dispatch Coordinates -->
+<div class="flex flex-wrap items-start justify-between gap-2 font-code-sm text-code-sm text-on-surface">
+<div class="flex flex-col">
+<span class="font-bold text-primary">NORTHERN REGIONAL OFFICE (NWRO)</span>
+<span class="text-outline">Vikas Nagar, Kanpur / Sub-Desk New Delhi</span>
+<span class="font-medium mt-1 text-on-surface">SPEED POST / SPEED E-GOV NOTIFICATION</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-semibold text-primary">F.No. AICTE/NWRO/APP-2025-09412/DEF-01</span>
+<span class="text-on-surface font-medium">Date: 29 March 2025</span>
+<span class="text-outline">Digital Dispatch Reference ID: 2025-E094-1109</span>
+</div>
+</div>
+<!-- Addressee Section -->
+<div class="flex flex-col font-body-md text-body-md text-on-surface">
+<span class="font-medium text-outline">To,</span>
+<span class="font-bold text-primary">The Chairman / Principal,</span>
+<span class="font-semibold">Saraswati Institute of Technology,</span>
+<span>Knowledge Park III, Plot No. 18-B,</span>
+<span>Greater Noida, District Gautam Buddha Nagar,</span>
+<span>Uttar Pradesh - 201310 (Permanent Institute ID: 1-94021841)</span>
+</div>
+<!-- Bilingual Subject Block -->
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-1">
+<!-- English Subject -->
+<div class="font-body-md text-body-md text-primary font-bold" id="subjectEnBlock">
+<span class="uppercase font-code-sm text-code-sm text-secondary block font-semibold mb-0.5">Subject:</span>
+            Scrutiny Findings &amp; Regulatory Show-Cause Notice for Removal of Deficiencies for Grant of Extension of Approval (EoA) for Academic Year 2025-26 - reg.
+          </div>
+<!-- Hindi Subject (Bilingual Display) -->
+<div class="font-body-md text-body-md text-primary font-bold mt-1" id="subjectHiBlock">
+<span class="uppercase font-code-sm text-code-sm text-secondary block font-semibold mb-0.5">विषय:</span>
+            शैक्षणिक सत्र २०२५-२६ हेतु अनुमोदन विस्तार (EoA) प्रदान करने बाबत संवीक्षा निष्कर्ष एवं कमियों को दूर करने हेतु कारण बताओ नोटिस।
+          </div>
+</div>
+<!-- Opening Formal Citation Paragraph -->
+<div class="flex flex-col gap-2 font-body-md text-body-md text-on-surface leading-relaxed text-justify">
+<p id="openingEnText">
+            Sir / Madam,<br/>
+            This has reference to your Council Online Application Reference No. <strong>APP-2025-09412</strong> submitted under the provisions of the All India Council for Technical Education (Grant of Approvals for Technical Institutions) Regulations, 2020 and subsequent amendments notified by the Council from time to time, and norms stipulated in the Approval Process Handbook (APH) 2025-26.
+          </p>
+<p class="text-on-surface-variant italic" id="openingHiText">
+            महोदय / महोदया,<br/>
+            उपर्युक्त विषय के संदर्भ में आपके द्वारा शैक्षणिक सत्र २०२५-२६ हेतु परिषद के ऑनलाइन पोर्टल पर प्रस्तुत आवेदन पत्र संदर्भ संख्या <strong>APP-2025-09412</strong> की क्षेत्रीय संवीक्षा समिति द्वारा की गई प्राथमिक जांच के आधार पर निम्नलिखित वैधानिक एवं विनियामक कमियां पाई गई हैं।
+          </p>
+<p>
+            Upon comprehensive algorithmic and expert technical scrutiny of the statutory documentation, infrastructural compliance metrics, and faculty registers uploaded by your institution, the Scrutiny Committee has recorded the following critical non-compliances and deficiencies:
+          </p>
+</div>
+<!-- DYNAMIC DEFICIENCY LIST (Synchronized with Accepted Findings) -->
+<div class="flex flex-col gap-space-sm" id="letterDeficienciesList">
+<!-- DEFICIENCY ITEM 1 -->
+<div class="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col gap-2" id="letterItem1">
+<div class="flex items-start justify-between">
+<span class="font-title-md text-title-md font-bold text-primary">
+                1. Non-Submission of Valid Fire &amp; Life Safety Certificate (Statutory Clearance)
+              </span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-error-container text-on-error-container font-bold">
+                APH Cl. 2.14.3
+              </span>
+</div>
+<div class="font-body-md text-body-md text-on-surface space-y-1">
+<p>
+<strong>Finding Details:</strong> The Fire Safety NOC submitted during document submission was issued by the District Fire Officer on 13.03.2022 and lapsed on 12.03.2025. In accordance with Clause 2.14.3 of APH 2025-26, no technical institution shall be granted Extension of Approval without a live and unconditional Fire Safety Certificate for student-occupied premises.
+              </p>
+<p class="font-body-sm text-body-sm text-primary bg-surface-container-high/60 p-2 rounded">
+<strong>Prescribed Regulatory Directive:</strong> <span id="letterRemark1Text">Submit renewed valid Fire Safety NOC issued by Chief Fire Officer or authorized district revenue commissioner within the cure period without exception.</span>
+</p>
+<div class="hindi-preview-snippet text-on-surface-variant font-body-sm text-body-sm italic pt-1">
+<strong>हिन्दी अनुवाद:</strong> संस्थान द्वारा प्रस्तुत अग्नि सुरक्षा अनापत्ति प्रमाण पत्र (NOC) दिनांक १२ मार्च २०२५ को समाप्त हो चुका है। वैध अनापत्ति प्रमाण पत्र प्रस्तुत किया जाना अनिवार्य है।
+              </div>
+</div>
+</div>
+<!-- DEFICIENCY ITEM 2 -->
+<div class="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col gap-2" id="letterItem2">
+<div class="flex items-start justify-between">
+<span class="font-title-md text-title-md font-bold text-primary">
+                2. Academic Cadre Ratio Deficit in Department of Computer Science &amp; Engineering
+              </span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-bold">
+                APH Cl. 7.1 / Table 7(A)
+              </span>
+</div>
+<div class="font-body-md text-body-md text-on-surface space-y-1">
+<p>
+<strong>Finding Details:</strong> For the sanctioned intake of 180 seats in CSE, the statutory cadre distribution requires a ratio of 1:2:6 (Cadre Requirement: 2 Professors, 4 Associate Professors, and 12 Assistant Professors). The scrutiny roster indicates zero (0) Professors and only one (1) Associate Professor on regular cadre rolls.
+              </p>
+<p class="font-body-sm text-body-sm text-primary bg-surface-container-high/60 p-2 rounded">
+<strong>Prescribed Regulatory Directive:</strong> <span id="letterRemark2Text">Furnish University Selection Committee minutes demonstrating recruitment initiation or appointment orders for regular Professor cadre in CSE.</span>
+</p>
+<div class="hindi-preview-snippet text-on-surface-variant font-body-sm text-body-sm italic pt-1">
+<strong>हिन्दी अनुवाद:</strong> कंप्यूटर विज्ञान एवं अभियांत्रिकी विभाग में प्राध्यापक एवं सह-प्राध्यापक कैडर अनुपात विहित मानकों (१:२:६) से कम पाया गया है।
+              </div>
+</div>
+</div>
+<!-- DEFICIENCY ITEM 3 -->
+<div class="p-space-sm rounded bg-surface-container-lowest shadow-sm flex flex-col gap-2" id="letterItem3">
+<div class="flex items-start justify-between">
+<span class="font-title-md text-title-md font-bold text-primary">
+                3. Absence of Competent Revenue Authority Seal on Land Use Conversion Certificate
+              </span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-bold">
+                APH Appendix 4, Item 8
+              </span>
+</div>
+<div class="font-body-md text-body-md text-on-surface space-y-1">
+<p>
+<strong>Finding Details:</strong> The document uploaded towards Institutional Land Use Certificate for Survey Khasra Nos. 412/1 and 412/2 does not show an authenticated, legible stamp/seal from the Sub-Divisional Magistrate (SDM) / Competent District Revenue Authority on Page 4.
+              </p>
+<p class="font-body-sm text-body-sm text-primary bg-surface-container-high/60 p-2 rounded">
+<strong>Prescribed Regulatory Directive:</strong> Upload a high-resolution, certified true copy of the official land conversion order carrying the verified district seal and registration index.
+              </p>
+<div class="hindi-preview-snippet text-on-surface-variant font-body-sm text-body-sm italic pt-1">
+<strong>हिन्दी अनुवाद:</strong> प्रस्तुत भू-उपयोग परिवर्तन प्रमाण पत्र पर सक्षम राजस्व अधिकारी की सुपाठ्य मुहर अनुपस्थित पाई गई है।
+              </div>
+</div>
+</div>
+</div>
+<!-- Strict Statutory Cure Clause & Deadline -->
+<div class="p-space-sm rounded bg-secondary-fixed/30 flex flex-col gap-1 text-on-surface font-body-md text-body-md">
+<div class="flex items-center gap-2 text-secondary font-bold">
+<span class="material-symbols-outlined text-[20px]">event_repeat</span>
+<span>MANDATORY RECTIFICATION CURE WINDOW (15 CALENDAR DAYS)</span>
+</div>
+<p class="leading-relaxed">
+            You are hereby provided an opportunity to rectify the above-stated deficiencies and upload authentic evidentiary records on the AICTE Approval Web Portal within <strong>15 (fifteen) calendar days</strong> from the date of issuance of this notice (i.e. on or before <strong>13 April 2025, 23:59 IST</strong>).
+          </p>
+<p class="text-body-sm text-body-sm text-outline">
+            Failure to redress these deficiencies within the prescribed timeline shall compel the Council to proceed with punitive action including Reduction in Sanctioned Intake, No Admission Category, or Withdrawal of Approval as per Chapter VIII of APH 2025-26.
+          </p>
+</div>
+<!-- Signature & Execution Desk -->
+<div class="pt-space-md flex flex-wrap items-end justify-between gap-space-md">
+<div class="flex flex-col font-code-sm text-code-sm text-outline">
+<span>Security Hash: SHA256:7b91...ea42</span>
+<span>Generated By: PreFlight Automated Engine v4.18</span>
+<span>Verified By: Scrutiny Officer Grade-I (ID: AICTE-NW-7704)</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-36 h-12 flex items-center justify-center font-display-lg text-display-lg text-primary italic opacity-75 select-none font-serif">
+              A.P. Sharma
+            </div>
+<div class="w-48 h-px bg-on-surface-variant my-1"></div>
+<span class="font-bold text-primary font-body-md text-body-md">Authorized Signatory</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Regional Officer, Northern Regional Office (NWRO)</span>
+<span class="font-code-sm text-code-sm text-outline">All India Council for Technical Education</span>
+</div>
+</div>
+<!-- Statutory Footer Seal -->
+<div class="pt-space-sm border-t border-surface-container flex flex-col items-center text-center gap-1">
+<span class="font-code-sm text-code-sm text-outline uppercase tracking-wider">
+            Copy to: 1. The Secretary (Higher Technical Education), Govt. of Uttar Pradesh | 2. The Registrar, Dr. A.P.J. Abdul Kalam Technical University, Lucknow | 3. Guard File.
+          </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant font-medium">
+            This is a cryptographically validated, system-authenticated regulatory notice under AICTE e-Governance Rules, 2020. No manual physical signature is required.
+          </span>
+</div>
+</div>
+</div>
+</div>
+<!-- APPROVAL CONFIRMATION MODAL (Hidden by default, triggered by primary CTA) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-primary/60 backdrop-blur-sm hidden p-4" id="approveModal">
+<div class="w-full max-w-xl rounded-xl bg-surface-container-lowest p-space-md sm:p-space-lg shadow-xl flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-2">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed/50 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-title-lg text-title-lg text-primary">Dispatch Regulatory Show-Cause Notice?</h3>
+<span class="font-code-sm text-code-sm text-outline">Action: Official Council Communication Dispatch</span>
+</div>
+</div>
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container" id="closeModalBtn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low flex flex-col gap-2 font-body-sm text-body-sm text-on-surface">
+<div class="flex items-center justify-between font-medium">
+<span class="text-on-surface-variant">Recipient Institution:</span>
+<span class="text-primary font-bold">Saraswati Institute of Technology (PID: 1-94021841)</span>
+</div>
+<div class="flex items-center justify-between font-medium">
+<span class="text-on-surface-variant">Active Deficiencies Attached:</span>
+<span class="font-code-sm text-code-sm font-bold text-error" id="modalDeficiencyCount">3 Statutory Items</span>
+</div>
+<div class="flex items-center justify-between font-medium">
+<span class="text-on-surface-variant">Statutory Cure Window:</span>
+<span class="font-bold text-secondary">15 Days (Closing 13 April 2025)</span>
+</div>
+<div class="flex items-center justify-between font-medium">
+<span class="text-on-surface-variant">Delivery Channels:</span>
+<span class="text-on-surface">Registered Institutional Email &amp; AICTE PreFlight Portal</span>
+</div>
+</div>
+<div class="p-3 rounded bg-error-container/30 text-on-error-container font-body-sm text-body-sm flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-error shrink-0 mt-0.5">warning</span>
+<span>
+<strong>Legal Disclaimer:</strong> Once approved, this document is formally registered in the Central Council Gazette index and an irrevocable show-cause clock starts. An SMS dispatch will also be triggered to the institute trustees.
+        </span>
+</div>
+<!-- Action Confirmation Buttons -->
+<div class="flex items-center justify-end gap-space-xs pt-space-xs">
+<button class="px-4 py-2 rounded font-title-md text-title-md text-on-surface-variant hover:bg-surface-container" id="cancelModalBtn">
+          Cancel &amp; Review
+        </button>
+<button class="inline-flex items-center gap-2 px-5 py-2.5 rounded bg-primary text-on-primary hover:bg-primary-container shadow font-title-md text-title-md" id="confirmSendBtn">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Sign with DSC &amp; Send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Notification Toast (Hidden by default) -->
+<div class="fixed bottom-6 right-6 z-50 hidden items-center gap-3 px-4 py-3 rounded-lg bg-primary text-on-primary shadow-xl font-body-sm text-body-sm" id="toastMessage">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">check_circle</span>
+<span id="toastText">Draft successfully synchronized with central audit logs.</span>
+</div>
+<!-- Interactive Logic for Real-Time Sync & Bilingual Toggling -->
+<script>
+    (function initDeficiencyEditor() {
+      // Elements
+      const checkboxes = document.querySelectorAll('.finding-checkbox');
+      const letterItem1 = document.getElementById('letterItem1');
+      const letterItem2 = document.getElementById('letterItem2');
+      const letterItem3 = document.getElementById('letterItem3');
+      const officerRemark1 = document.getElementById('officerRemark1');
+      const officerRemark2 = document.getElementById('officerRemark2');
+      const letterRemark1Text = document.getElementById('letterRemark1Text');
+      const letterRemark2Text = document.getElementById('letterRemark2Text');
+      
+      const langEnBtn = document.getElementById('langEnBtn');
+      const langHiBtn = document.getElementById('langHiBtn');
+      const langBiBtn = document.getElementById('langBiBtn');
+      const subjectEnBlock = document.getElementById('subjectEnBlock');
+      const subjectHiBlock = document.getElementById('subjectHiBlock');
+      const openingEnText = document.getElementById('openingEnText');
+      const openingHiText = document.getElementById('openingHiText');
+      const hindiSnippets = document.querySelectorAll('.hindi-preview-snippet');
+
+      const openApproveModalBtn = document.getElementById('openApproveModalBtn');
+      const approveModal = document.getElementById('approveModal');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const cancelModalBtn = document.getElementById('cancelModalBtn');
+      const confirmSendBtn = document.getElementById('confirmSendBtn');
+      const modalDeficiencyCount = document.getElementById('modalDeficiencyCount');
+
+      const saveDraftBtn = document.getElementById('saveDraftBtn');
+      const toastMessage = document.getElementById('toastMessage');
+      const toastText = document.getElementById('toastText');
+      const findingSearch = document.getElementById('findingSearch');
+      const findingsContainer = document.getElementById('findingsContainer');
+
+      // Helper: Show toast
+      function showToast(text) {
+        if (!toastMessage) return;
+        toastText.textContent = text;
+        toastMessage.classList.remove('hidden');
+        toastMessage.classList.add('flex');
+        setTimeout(() => {
+          toastMessage.classList.add('hidden');
+          toastMessage.classList.remove('flex');
+        }, 3200);
+      }
+
+      // 1. Synchronize Checkbox Toggles with Official Letter Items
+      checkboxes.forEach(chk => {
+        chk.addEventListener('change', (e) => {
+          const targetId = e.target.dataset.item;
+          let correspondingItem = null;
+          if (targetId === 'deficiency-item-1') correspondingItem = letterItem1;
+          if (targetId === 'deficiency-item-2') correspondingItem = letterItem2;
+          if (targetId === 'deficiency-item-3') correspondingItem = letterItem3;
+
+          if (correspondingItem) {
+            if (e.target.checked) {
+              correspondingItem.classList.remove('hidden');
+            } else {
+              correspondingItem.classList.add('hidden');
+            }
+          }
+          updateActiveCount();
+        });
+      });
+
+      function updateActiveCount() {
+        const activeCount = Array.from(checkboxes).filter(c => c.checked).length;
+        if (modalDeficiencyCount) {
+          modalDeficiencyCount.textContent = activeCount + ' Statutory ' + (activeCount === 1 ? 'Item' : 'Items');
+        }
+      }
+
+      // 2. Real-Time Dynamic Reflection of Officer Directives into Letter Preview
+      if (officerRemark1 && letterRemark1Text) {
+        officerRemark1.addEventListener('input', (e) => {
+          letterRemark1Text.textContent = e.target.value.trim() || 'No specific directive entered.';
+        });
+      }
+
+      if (officerRemark2 && letterRemark2Text) {
+        officerRemark2.addEventListener('input', (e) => {
+          letterRemark2Text.textContent = e.target.value.trim() || 'No specific directive entered.';
+        });
+      }
+
+      // 3. Language Preview Toggles (English, Hindi, Bilingual)
+      function setLanguageMode(mode) {
+        // Reset classes
+        [langEnBtn, langHiBtn, langBiBtn].forEach(btn => {
+          btn.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+          btn.classList.add('text-outline');
+        });
+
+        if (mode === 'en') {
+          langEnBtn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+          langEnBtn.classList.remove('text-outline');
+          subjectEnBlock.classList.remove('hidden');
+          subjectHiBlock.classList.add('hidden');
+          openingEnText.classList.remove('hidden');
+          openingHiText.classList.add('hidden');
+          hindiSnippets.forEach(el => el.classList.add('hidden'));
+        } else if (mode === 'hi') {
+          langHiBtn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+          langHiBtn.classList.remove('text-outline');
+          subjectEnBlock.classList.add('hidden');
+          subjectHiBlock.classList.remove('hidden');
+          openingEnText.classList.add('hidden');
+          openingHiText.classList.remove('hidden');
+          hindiSnippets.forEach(el => el.classList.remove('hidden'));
+        } else if (mode === 'bi') {
+          langBiBtn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+          langBiBtn.classList.remove('text-outline');
+          subjectEnBlock.classList.remove('hidden');
+          subjectHiBlock.classList.remove('hidden');
+          openingEnText.classList.remove('hidden');
+          openingHiText.classList.remove('hidden');
+          hindiSnippets.forEach(el => el.classList.remove('hidden'));
+        }
+      }
+
+      langEnBtn.addEventListener('click', () => setLanguageMode('en'));
+      langHiBtn.addEventListener('click', () => setLanguageMode('hi'));
+      langBiBtn.addEventListener('click', () => setLanguageMode('bi'));
+
+      // 4. Modal Interactions
+      if (openApproveModalBtn && approveModal) {
+        openApproveModalBtn.addEventListener('click', () => {
+          updateActiveCount();
+          approveModal.classList.remove('hidden');
+        });
+      }
+
+      function hideModal() {
+        if (approveModal) approveModal.classList.add('hidden');
+      }
+
+      if (closeModalBtn) closeModalBtn.addEventListener('click', hideModal);
+      if (cancelModalBtn) cancelModalBtn.addEventListener('click', hideModal);
+
+      if (confirmSendBtn) {
+        confirmSendBtn.addEventListener('click', () => {
+          hideModal();
+          showToast('Notice formally signed with Digital Token and dispatched via speed e-Gov gateway.');
+        });
+      }
+
+      // 5. Save Draft Action
+      if (saveDraftBtn) {
+        saveDraftBtn.addEventListener('click', () => {
+          showToast('Letter draft saved. Hash updated in AICTE audit ledger.');
+        });
+      }
+
+      // 6. Search Filter for Findings
+      if (findingSearch && findingsContainer) {
+        findingSearch.addEventListener('input', (e) => {
+          const val = e.target.value.toLowerCase();
+          const cards = findingsContainer.children;
+          Array.from(cards).forEach(card => {
+            const text = card.textContent.toLowerCase();
+            if (text.includes(val)) {
+              card.style.display = '';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      }
+
+      // Initial Call
+      updateActiveCount();
+    })();
+  </script>
+</div></main></div></body></html>

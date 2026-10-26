@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-tint":"#465f86","on-secondary-fixed":"#2d1600","surface-container-lowest":"#ffffff","error-container":"#ffdad6","secondary":"#8c5000","surface-dim":"#dbdad5","inverse-primary":"#aec8f4","error":"#ba1a1a","on-secondary-container":"#653800","primary":"#032448","on-error":"#ffffff","on-tertiary":"#ffffff","surface":"#fbf9f4","on-primary-container":"#8ba4cf","surface-container":"#f0eee9","tertiary-fixed-dim":"#b9c8db","primary-container":"#1f3a5f","on-tertiary-fixed-variant":"#3a4858","inverse-on-surface":"#f2f1ec","on-surface-variant":"#43474e","surface-bright":"#fbf9f4","surface-container-highest":"#e4e2dd","on-tertiary-container":"#96a5b8","tertiary-container":"#2d3b4b","inverse-surface":"#30312e","tertiary-fixed":"#d5e4f8","outline":"#74777f","surface-container-low":"#f5f3ee","surface-variant":"#e4e2dd","on-primary-fixed":"#001c3b","on-secondary":"#ffffff","tertiary":"#172534","secondary-fixed":"#ffdcbf","secondary-fixed-dim":"#ffb873","on-secondary-fixed-variant":"#6a3b00","secondary-container":"#fc9923","on-tertiary-fixed":"#0e1d2b","on-surface":"#1b1c19","on-primary-fixed-variant":"#2d476d","surface-container-high":"#eae8e3","background":"#fbf9f4","outline-variant":"#c4c6cf","primary-fixed-dim":"#aec8f4","on-background":"#1b1c19","on-primary":"#ffffff","on-error-container":"#93000a","primary-fixed":"#d5e3ff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-mobile":"1rem",gutter:"1.5rem","space-xs":"0.5rem","space-md":"1.5rem","space-sm":"1rem","space-xl":"3rem","space-lg":"2rem",margin:"2.5rem","margin-mobile":"1rem"},fontFamily:{"code-sm":["JetBrains Mono"],"code-md":["JetBrains Mono"],"display-lg":["Newsreader"],"title-md":["Inter"],"display-lg-mobile":["Newsreader"],"title-lg":["Inter"],"headline-lg":["Newsreader"],"headline-sm":["Newsreader"],"headline-md":["Newsreader"],"body-md":["Inter"],"headline-lg-mobile":["Newsreader"],"body-sm":["Inter"],"body-lg":["Inter"]},fontSize:{"code-sm":["11px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"500"}],"code-md":["13px",{lineHeight:"18px",fontWeight:"500"}],"display-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"600"}],"title-md":["15px",{lineHeight:"20px",fontWeight:"600"}],"display-lg-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.01em",fontWeight:"600"}],"title-lg":["18px",{lineHeight:"24px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.015em",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"500"}],"headline-md":["24px",{lineHeight:"32px",fontWeight:"500"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-lg-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 z-50 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_4px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm min-w-max"><img alt="AICTE PreFlight Verification Portal" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xoz2uqV_R_gbFp4_bveXbs-XKUT8NjYIuD32J66a74un_4F55rO7tbe_jrnylWpjn8_b72jRtypH2wh8gdydVYubYRlwpdiiMmS-NP5hjEutyyu-pEEZ-n_6rwGs3HV6GhWFZYvDK4hB3m4_EkR6yb4GX3wXXW9_PRxnFRzJjc7ZpDK0hM4hNcqUYICZL-gZ4Yt7hB5fMW-b6Zo5Hodo2baT6trgzsZ331BY8wbON4A0-88YszEBQpo_k"/><div class="flex items-center gap-space-xs"><span class="font-title-lg text-title-lg font-bold text-primary tracking-tight">PreFlight</span><span class="font-body-sm text-body-sm text-on-surface-variant font-medium hidden lg:inline">— AICTE Trust &amp; Compliance Directorate</span><span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-primary font-semibold uppercase">APH 2025–26</span></div></div><div class="flex items-center gap-space-md flex-1 max-w-2xl justify-end"><button class="flex items-center justify-between w-72 px-space-sm py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface shadow-[0_1px_3px_rgba(0,0,0,0.02)] transition-colors text-left" type="button"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-sm">search</span><span class="font-body-sm text-body-sm">Search institutions, land deed, survey IDs…</span></div><kbd class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-semibold">⌘K</kbd></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-code-sm text-code-sm font-semibold"><span class="w-2 h-2 rounded-full bg-error animate-pulse"></span><span>14 Critical Discrepancies</span></div><button aria-label="Notifications and Regulatory Broadcasts" class="relative p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-error text-on-error font-code-sm text-[10px] font-bold leading-none">6</span></button><div class="h-6 w-px bg-surface-container-highest"></div><div class="flex items-center gap-space-xs"><div class="text-right hidden sm:block"><div class="font-title-md text-title-md font-semibold text-on-surface leading-tight">Dr. Sunita V. Rao</div><div class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Senior Regulatory Scrutiny Officer (WRO)</div></div><img alt="Officer Dr. Sunita V. Rao Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5P6Yw91SFBS68qVQPQTMAb3hAqy3bvQ10DJWiyTwjSVFylBBVJRY-oDF6s6CIZUtoWWcLdofRC9tvojo-KSmd6dPnyqTxsd0mdqpfysN5FmJgkiw0_Xw0cO4nhVqJyCrYTkGf_oO6SQMqJ1mbv5E-72xlGIHfCBaeEL1GwoFyC7ppgVyL1SgrEWc5LpJumF1M_VtOSyMC7VjqxoAbB-NA7Jj_Vh8V4MDWZIT7k4tL2odEd62LnBMK"/></div></div></div></div></header><aside class="fixed left-0 top-16 bottom-7 w-64 bg-surface-container-low z-40 flex flex-col py-space-md px-space-xs justify-between overflow-y-auto"><div class="flex flex-col gap-space-xs"><div class="px-space-xs pb-space-xs"><span class="font-code-sm text-code-sm uppercase text-on-surface-variant tracking-wider font-semibold">Directorate Console</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm rounded-lg"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="dashboard" href="#"><span>Dashboard</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="queue" href="#"><span>Queue</span><span class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-semibold">42 Active</span></a><a aria-current="page" class="flex items-center justify-between px-space-sm py-2 transition-colors bg-primary-container text-on-primary font-semibold shadow-sm rounded-lg" data-path="trust-graph" href="#"><span>Trust Graph</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="rules-engine" href="#"><span>Rules Engine</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="metrics-and-analytics" href="#"><span>Metrics &amp; Analytics</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="audit-trail" href="#"><span>Audit Trail</span></a></nav></div><div class="p-space-xs rounded-lg bg-surface-container text-on-surface-variant"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-sm text-primary">verified_user</span><span class="font-code-sm text-code-sm font-semibold text-primary uppercase">AICTE Trust Engine v4.2</span></div><p class="font-body-sm text-body-sm mt-1 text-on-surface-variant">Cryptographic state hashes synced with Digilocker &amp; Land Registry node WRO-04.</p></div></aside><div class="pl-64"><main class="relative pt-16 min-h-screen pb-7 w-full bg-surface"><div class="flex flex-col w-full font-body-md text-on-surface antialiased select-none">
+<!-- Top Operational Control Strip -->
+<div class="w-full bg-surface-container-low px-gutter py-space-sm shadow-sm flex flex-col gap-space-sm z-30">
+<!-- Breadcrumb & Scrutiny Context -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<span class="font-code-sm text-code-sm text-on-surface-variant uppercase tracking-wider">AICTE PreFlight Intelligence</span>
+<span class="text-outline-variant font-code-sm">/</span>
+<span class="font-title-lg text-title-lg text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-xl">hub</span>
+          Trust Graph &amp; Cross-Entity Association Network
+        </span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded-full bg-error text-on-error font-semibold flex items-center gap-1 shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest animate-ping"></span>
+          1 Active Collision
+        </span>
+</div>
+<div class="flex items-center gap-space-xs">
+<div class="relative">
+<select class="appearance-none font-code-sm text-code-sm bg-surface-container-lowest text-primary px-3 py-1.5 pr-8 rounded-lg shadow-sm focus:outline-none cursor-pointer">
+<option>AY 2025–26 Approval Cycle (National)</option>
+<option>AY 2024–25 Retrospective Scrutiny</option>
+<option>Western Regional Office (WRO) Fast-Track</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-2 text-xs text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+<div class="relative w-64 lg:w-80">
+<input class="w-full font-code-sm text-code-sm pl-8 pr-3 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface placeholder:text-outline shadow-sm focus:outline-none" placeholder="Search Aadhaar Hash / DIN / PAN / FAC-ID..." type="text" value="FAC-DL-9821"/>
+<span class="material-symbols-outlined text-sm text-on-surface-variant absolute left-2.5 top-2">fingerprint</span>
+</div>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-primary shadow-sm transition-colors" title="Export Association Ledger">
+<span class="material-symbols-outlined text-base">file_download</span>
+</button>
+</div>
+</div>
+<!-- Filter Chips & Graph Controls -->
+<div class="flex flex-wrap items-center justify-between gap-space-xs pt-1">
+<div class="flex flex-wrap items-center gap-1.5">
+<button class="px-2.5 py-1 rounded-full bg-primary text-on-primary font-code-sm text-code-sm flex items-center gap-1 shadow-sm">
+<span>All Nodes</span>
+<span class="px-1.5 py-0.2 rounded-full bg-primary-container text-on-primary-container text-[10px]">142</span>
+</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-code-sm text-code-sm flex items-center gap-1 shadow-sm transition-colors">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>Institutions</span>
+<span class="text-on-surface-variant">28</span>
+</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-code-sm text-code-sm flex items-center gap-1 shadow-sm transition-colors">
+<span class="w-2 h-2 rounded-full bg-surface-tint"></span>
+<span>Faculty IDs</span>
+<span class="text-on-surface-variant">64</span>
+</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-code-sm text-code-sm flex items-center gap-1 shadow-sm transition-colors">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Documents</span>
+<span class="text-on-surface-variant">32</span>
+</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-code-sm text-code-sm flex items-center gap-1 shadow-sm transition-colors">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Shared Addresses</span>
+<span class="text-on-surface-variant">18</span>
+</button>
+<div class="h-4 w-px bg-surface-container-highest mx-1"></div>
+<button class="px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-code-sm text-code-sm flex items-center gap-1 shadow-sm font-semibold">
+<span class="material-symbols-outlined text-xs text-error">warning</span>
+<span>Critical Collisions (1)</span>
+</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-code-sm text-code-sm flex items-center gap-1 shadow-sm">
+<span>Warnings (3)</span>
+</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-code-sm text-code-sm flex items-center gap-1 shadow-sm">
+<span>Resolved</span>
+</button>
+</div>
+<!-- Graph Transformation Tools -->
+<div class="flex items-center gap-1 bg-surface-container-lowest p-0.5 rounded-lg shadow-sm">
+<button class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" id="zoom-in" title="Zoom In">
+<span class="material-symbols-outlined text-sm">zoom_in</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" id="zoom-out" title="Zoom Out">
+<span class="material-symbols-outlined text-sm">zoom_out</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" id="reset-view" title="Reset Viewport">
+<span class="material-symbols-outlined text-sm">restart_alt</span>
+</button>
+<div class="h-3 w-px bg-surface-container-highest"></div>
+<button class="px-2 py-0.5 rounded text-primary bg-surface-container font-code-sm text-code-sm font-semibold">Force-directed</button>
+<button class="px-2 py-0.5 rounded text-on-surface-variant hover:text-primary font-code-sm text-code-sm">Hierarchical</button>
+<button class="px-2 py-0.5 rounded text-on-surface-variant hover:text-primary font-code-sm text-code-sm">Radial</button>
+<div class="h-3 w-px bg-surface-container-highest"></div>
+<button class="px-2 py-0.5 rounded bg-tertiary-container text-on-tertiary font-code-sm text-code-sm flex items-center gap-1" id="toggle-drawer">
+<span class="material-symbols-outlined text-xs">dock_to_right</span>
+<span>Dossier Tray</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Primary Network Canvas Area & Integrated Slide-over Tray -->
+<div class="relative w-full h-[calc(100vh-140px)] bg-surface overflow-hidden flex">
+<!-- SVG Network Graph Interactive Stage -->
+<div class="relative flex-1 h-full w-full overflow-hidden cursor-grab active:cursor-grabbing bg-[radial-gradient(#d5dadf_1px,transparent_1px)] [background-size:24px_24px]" id="graph-stage">
+<!-- Coordinate System Grid Overlay (Archival Micro Details) -->
+<div class="absolute top-3 left-4 pointer-events-none flex flex-col gap-0.5 font-code-sm text-[10px] text-outline font-semibold tracking-wider">
+<span>AICTE GRAPH SECTOR: WRO-NORTH-WEST-09</span>
+<span>LATENCY: 14MS • GRAPH SEED: 0x90F2C • ENCRYPTED LEDGER</span>
+</div>
+<svg class="w-full h-full" id="network-canvas" preserveaspectratio="xMidYMid meet" viewbox="0 0 1440 900">
+<defs>
+<!-- Glowing Pulsating Red Vector Filters -->
+<filter height="140%" id="red-glow" width="140%" x="-20%" y="-20%">
+<fegaussianblur result="blur" stddeviation="5"></fegaussianblur>
+<fecomposite in="SourceGraphic" in2="blur" operator="over"></fecomposite>
+</filter>
+<lineargradient id="conflict-gradient" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#ba1a1a" stop-opacity="0.9"></stop>
+<stop offset="50%" stop-color="#fc9923" stop-opacity="0.8"></stop>
+<stop offset="100%" stop-color="#ba1a1a" stop-opacity="0.9"></stop>
+</lineargradient>
+<!-- Marker End Arrow for Regulatory Tracing -->
+<marker id="arrow-conflict" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="28" refy="5" viewbox="0 0 10 10">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#ba1a1a"></path>
+</marker>
+<marker id="arrow-neutral" markerheight="5" markerwidth="5" orient="auto-start-reverse" refx="26" refy="5" viewbox="0 0 10 10">
+<path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#74777f"></path>
+</marker>
+</defs>
+<!-- BACKGROUND NORMAL CONNECTIONS (Subtle neutral lines) -->
+<g id="neutral-edges" stroke="#c4c6cf" stroke-opacity="0.6" stroke-width="1.2">
+<!-- Institute 4 & Clusters -->
+<line x1="120" x2="260" y1="180" y2="110"></line>
+<line x1="260" x2="380" y1="110" y2="130"></line>
+<line x1="260" x2="220" y1="110" y2="240"></line>
+<line x1="220" x2="160" y1="240" y2="340"></line>
+<line x1="220" x2="290" y1="240" y2="310"></line>
+<!-- Normal cluster east side -->
+<line marker-end="url(#arrow-neutral)" x1="840" x2="980" y1="160" y2="140"></line>
+<line x1="980" x2="1080" y1="140" y2="80"></line>
+<line x1="980" x2="1120" y1="140" y2="200"></line>
+<line x1="980" x2="940" y1="140" y2="260"></line>
+<line x1="940" x2="840" y1="260" y2="320"></line>
+<line x1="940" x2="1060" y1="260" y2="340"></line>
+<!-- Bottom south-central legitimate cluster -->
+<line x1="720" x2="880" y1="640" y2="680"></line>
+<line x1="880" x2="960" y1="680" y2="620"></line>
+<line x1="880" x2="1020" y1="680" y2="740"></line>
+<line x1="880" x2="820" y1="680" y2="800"></line>
+</g>
+<!-- CRITICAL COLLISION GLOW RAYS & CONNECTION VECTORS -->
+<g id="collision-edges">
+<!-- Vector 1: Rajesh Verma to Apex Institute of Tech -->
+<line class="animate-pulse" filter="url(#red-glow)" stroke="#ba1a1a" stroke-dasharray="6,4" stroke-linecap="round" stroke-width="3" x1="430" x2="280" y1="470" y2="580"></line>
+<!-- Vector 2: Rajesh Verma to Vanguard College of Engg -->
+<line class="animate-pulse" filter="url(#red-glow)" stroke="#ba1a1a" stroke-dasharray="6,4" stroke-linecap="round" stroke-width="3" x1="430" x2="490" y1="470" y2="260"></line>
+<!-- Vector 3: Rajesh Verma to Horizon Polytechnic -->
+<line class="animate-pulse" filter="url(#red-glow)" stroke="#ba1a1a" stroke-dasharray="6,4" stroke-linecap="round" stroke-width="3" x1="430" x2="680" y1="470" y2="440"></line>
+<!-- Shared Address connection vector from Apex to Horizon -->
+<line stroke="#74777f" stroke-dasharray="3,3" stroke-width="1.5" x1="280" x2="480" y1="580" y2="720"></line>
+<line stroke="#74777f" stroke-dasharray="3,3" stroke-width="1.5" x1="680" x2="480" y1="440" y2="720"></line>
+<!-- Secondary conflict links to affidavits -->
+<line stroke="#8c5000" stroke-width="1.5" x1="430" x2="330" y1="470" y2="380"></line>
+<line stroke="#8c5000" stroke-width="1.5" x1="430" x2="560" y1="470" y2="580"></line>
+</g>
+<!-- NEUTRAL NODES (Institutions, Docs, Addresses, Faculty) -->
+<g id="neutral-nodes">
+<!-- Northwest Legitimate Cluster -->
+<g class="cursor-pointer" transform="translate(260, 110)">
+<circle fill="#032448" r="26"></circle>
+<text dy="4" fill="#ffffff" font-family="Inter" font-size="11" font-weight="600" text-anchor="middle">NIT-D</text>
+<text dy="42" fill="#1b1c19" font-family="Inter" font-size="10" font-weight="600" text-anchor="middle">National Inst. of Tech (Delhi)</text>
+</g>
+<g transform="translate(120, 180)">
+<rect fill="#8c5000" height="24" rx="4" transform="rotate(45)" width="24" x="-12" y="-12"></rect>
+<text dy="25" fill="#43474e" font-family="JetBrains Mono" font-size="9" text-anchor="middle">LAND-DEED-882</text>
+</g>
+<g transform="translate(380, 130)">
+<circle fill="#465f86" r="12"></circle>
+<text dy="22" fill="#43474e" font-family="JetBrains Mono" font-size="9" text-anchor="middle">FAC-DL-1092</text>
+</g>
+<g transform="translate(220, 240)">
+<circle fill="#465f86" r="12"></circle>
+<text dy="22" fill="#43474e" font-family="JetBrains Mono" font-size="9" text-anchor="middle">FAC-DL-3991</text>
+</g>
+<g transform="translate(160, 340)">
+<polygon fill="#172534" points="0,-12 11,-6 11,6 0,12 -11,6 -11,-6"></polygon>
+<text dy="24" fill="#43474e" font-family="JetBrains Mono" font-size="9" text-anchor="middle">ADDR-PL-491</text>
+</g>
+<g transform="translate(290, 310)">
+<rect fill="#8c5000" height="20" rx="3" transform="rotate(45)" width="20" x="-10" y="-10"></rect>
+<text dy="22" fill="#43474e" font-family="JetBrains Mono" font-size="9" text-anchor="middle">FIRE-NOC-2025</text>
+</g>
+<!-- East Valid Cluster -->
+<g class="cursor-pointer" transform="translate(980, 140)">
+<circle fill="#032448" r="28"></circle>
+<text dy="4" fill="#ffffff" font-family="Inter" font-size="11" font-weight="600" text-anchor="middle">SIET</text>
+<text dy="44" fill="#1b1c19" font-family="Inter" font-size="10" font-weight="600" text-anchor="middle">Symbiosis Inst. of Eng. &amp; Tech</text>
+</g>
+<g transform="translate(840, 160)">
+<rect fill="#8c5000" height="20" rx="3" transform="rotate(45)" width="20" x="-10" y="-10"></rect>
+<text dy="22" fill="#43474e" font-family="JetBrains Mono" font-size="9" text-anchor="middle">AFFIDAVIT-618</text>
+</g>
+<g transform="translate(1080, 80)">
+<circle fill="#465f86" r="12"></circle>
+<text dy="22" fill="#43474e" font-family="JetBrains Mono" font-size="9" text-anchor="middle">FAC-MH-4421</text>
+</g>
+<g transform="translate(1120, 200)">
+<polygon fill="#172534" points="0,-12 11,-6 11,6 0,12 -11,6 -11,-6"></polygon>
+<text dy="24" fill="#43474e" font-family="JetBrains Mono" font-size="9" text-anchor="middle">ADDR-PU-882</text>
+</g>
+<g transform="translate(940, 260)">
+<circle fill="#465f86" r="12"></circle>
+<text dy="22" fill="#43474e" font-family="JetBrains Mono" font-size="9" text-anchor="middle">FAC-MH-9021</text>
+</g>
+<g transform="translate(840, 320)">
+<circle fill="#465f86" r="12"></circle>
+<text dy="22" fill="#43474e" font-family="JetBrains Mono" font-size="9" text-anchor="middle">FAC-MH-1193</text>
+</g>
+<g transform="translate(1060, 340)">
+<rect fill="#8c5000" height="20" rx="3" transform="rotate(45)" width="20" x="-10" y="-10"></rect>
+<text dy="22" fill="#43474e" font-family="JetBrains Mono" font-size="9" text-anchor="middle">BLDG-PLAN-2024</text>
+</g>
+<!-- South Valid Cluster -->
+<g class="cursor-pointer" transform="translate(880, 680)">
+<circle fill="#032448" r="26"></circle>
+<text dy="4" fill="#ffffff" font-family="Inter" font-size="11" font-weight="600" text-anchor="middle">GEC-G</text>
+<text dy="42" fill="#1b1c19" font-family="Inter" font-size="10" font-weight="600" text-anchor="middle">Govt. Engg. College (Gandhinagar)</text>
+</g>
+<g transform="translate(720, 640)">
+<polygon fill="#172534" points="0,-12 11,-6 11,6 0,12 -11,6 -11,-6"></polygon>
+<text dy="24" fill="#43474e" font-family="JetBrains Mono" font-size="9" text-anchor="middle">ADDR-GJ-109</text>
+</g>
+<g transform="translate(960, 620)">
+<circle fill="#465f86" r="12"></circle>
+<text dy="22" fill="#43474e" font-family="JetBrains Mono" font-size="9" text-anchor="middle">FAC-GJ-0032</text>
+</g>
+<g transform="translate(1020, 740)">
+<rect fill="#8c5000" height="20" rx="3" transform="rotate(45)" width="20" x="-10" y="-10"></rect>
+<text dy="22" fill="#43474e" font-family="JetBrains Mono" font-size="9" text-anchor="middle">NOC-AFFIL-92</text>
+</g>
+<g transform="translate(820, 800)">
+<circle fill="#465f86" r="12"></circle>
+<text dy="22" fill="#43474e" font-family="JetBrains Mono" font-size="9" text-anchor="middle">FAC-GJ-9831</text>
+</g>
+</g>
+<!-- CONFLICT CLUSTER NODES (Institutions & Target Anchor) -->
+<g id="conflict-nodes">
+<!-- Ancillary Affidavits for Rajesh Verma -->
+<g transform="translate(330, 380)">
+<rect fill="#fc9923" height="24" rx="4" transform="rotate(45)" width="24" x="-12" y="-12"></rect>
+<text dy="25" fill="#653800" font-family="JetBrains Mono" font-size="9" font-weight="600" text-anchor="middle">AFFID-16B-DELHI</text>
+</g>
+<g transform="translate(560, 580)">
+<rect fill="#fc9923" height="24" rx="4" transform="rotate(45)" width="24" x="-12" y="-12"></rect>
+<text dy="25" fill="#653800" font-family="JetBrains Mono" font-size="9" font-weight="600" text-anchor="middle">EXP-CERT-PUNE</text>
+</g>
+<!-- Shared Address Entity Node (Plot 48-A) -->
+<g transform="translate(480, 720)">
+<polygon fill="#172534" points="0,-16 14,-8 14,8 0,16 -14,8 -14,-8"></polygon>
+<text dy="4" fill="#ffffff" font-family="Material Symbols Outlined" font-size="12" text-anchor="middle">location_city</text>
+<text dy="32" fill="#1b1c19" font-family="Inter" font-size="10" font-weight="600" text-anchor="middle">Shared Campus: Sector 62, Noida</text>
+</g>
+<!-- Institution 1: Apex Institute of Technology -->
+<g class="cursor-pointer group" transform="translate(280, 580)">
+<circle class="group-hover:fill-primary transition-colors" fill="#1f3a5f" r="36"></circle>
+<circle fill="none" r="40" stroke="#ba1a1a" stroke-dasharray="4,4" stroke-width="2"></circle>
+<text dy="-4" fill="#ffffff" font-family="Newsreader" font-size="15" font-weight="600" text-anchor="middle">AIT</text>
+<text dy="12" fill="#aec8f4" font-family="JetBrains Mono" font-size="8" text-anchor="middle">AICTE-1-8492041</text>
+<rect class="shadow-md" fill="#ffffff" height="28" rx="4" width="140" x="-70" y="46"></rect>
+<text dy="60" fill="#032448" font-family="Inter" font-size="10" font-weight="600" text-anchor="middle">Apex Inst. of Technology</text>
+<text dy="70" fill="#ba1a1a" font-family="JetBrains Mono" font-size="8" text-anchor="middle">Claims: HOD &amp; Professor</text>
+</g>
+<!-- Institution 2: Vanguard College of Engineering -->
+<g class="cursor-pointer group" transform="translate(490, 260)">
+<circle class="group-hover:fill-primary transition-colors" fill="#1f3a5f" r="36"></circle>
+<circle fill="none" r="40" stroke="#ba1a1a" stroke-dasharray="4,4" stroke-width="2"></circle>
+<text dy="-4" fill="#ffffff" font-family="Newsreader" font-size="15" font-weight="600" text-anchor="middle">VCE</text>
+<text dy="12" fill="#aec8f4" font-family="JetBrains Mono" font-size="8" text-anchor="middle">AICTE-1-9281923</text>
+<rect class="shadow-md" fill="#ffffff" height="28" rx="4" width="160" x="-80" y="46"></rect>
+<text dy="60" fill="#032448" font-family="Inter" font-size="10" font-weight="600" text-anchor="middle">Vanguard College of Engg</text>
+<text dy="70" fill="#ba1a1a" font-family="JetBrains Mono" font-size="8" text-anchor="middle">Claims: Dean Academic Affairs</text>
+</g>
+<!-- Institution 3: Horizon Polytechnic Institute -->
+<g class="cursor-pointer group" transform="translate(680, 440)">
+<circle class="group-hover:fill-primary transition-colors" fill="#1f3a5f" r="36"></circle>
+<circle fill="none" r="40" stroke="#ba1a1a" stroke-dasharray="4,4" stroke-width="2"></circle>
+<text dy="-4" fill="#ffffff" font-family="Newsreader" font-size="15" font-weight="600" text-anchor="middle">HPI</text>
+<text dy="12" fill="#aec8f4" font-family="JetBrains Mono" font-size="8" text-anchor="middle">AICTE-1-3920182</text>
+<rect class="shadow-md" fill="#ffffff" height="28" rx="4" width="150" x="-75" y="46"></rect>
+<text dy="60" fill="#032448" font-family="Inter" font-size="10" font-weight="600" text-anchor="middle">Horizon Polytechnic Inst.</text>
+<text dy="70" fill="#ba1a1a" font-family="JetBrains Mono" font-size="8" text-anchor="middle">Claims: Principal &amp; Prof</text>
+</g>
+<!-- TARGET CONFLICT NODE: Dr. Rajesh Verma (FAC-DL-9821) -->
+<g class="cursor-pointer" id="target-node" transform="translate(430, 470)">
+<!-- Radar Pulsing Echo Rings -->
+<circle class="animate-ping" fill="#ba1a1a" fill-opacity="0.12" r="52"></circle>
+<circle fill="#ffdad6" r="42" stroke="#ba1a1a" stroke-width="2.5"></circle>
+<!-- Faculty Core Circle -->
+<circle fill="#ba1a1a" r="32"></circle>
+<text dy="-3" fill="#ffffff" font-family="Material Symbols Outlined" font-size="18" text-anchor="middle">person_alert</text>
+<text dy="11" fill="#ffffff" font-family="JetBrains Mono" font-size="8" font-weight="600" text-anchor="middle">TRIPLE COLLISION</text>
+<!-- Callout Pill Tag -->
+<rect fill="#ba1a1a" height="24" rx="12" width="180" x="-90" y="-58"></rect>
+<text dy="-42" fill="#ffffff" font-family="Inter" font-size="10" font-weight="700" text-anchor="middle">Dr. Rajesh Verma (FAC-DL-9821)</text>
+<!-- Aadhaar Hash Indicator below -->
+<rect fill="#032448" height="18" rx="9" width="130" x="-65" y="38"></rect>
+<text dy="50" fill="#aec8f4" font-family="JetBrains Mono" font-size="8" text-anchor="middle">AADHAAR: ****-8192</text>
+</g>
+</g>
+</svg>
+<!-- Graph Floating Legend (Bottom-Left) -->
+<div class="absolute bottom-5 left-5 bg-surface-container-lowest/95 backdrop-blur-sm p-space-sm rounded-xl shadow-lg z-20 flex flex-col gap-2 max-w-xs">
+<div class="flex items-center justify-between pb-1">
+<span class="font-code-sm text-code-sm font-bold text-primary uppercase tracking-wider">Node &amp; Edge Semantics</span>
+<span class="font-code-sm text-[10px] text-on-surface-variant">GRAPH v4.2</span>
+</div>
+<div class="grid grid-cols-2 gap-x-space-sm gap-y-1.5 font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-3.5 rounded-full bg-primary flex items-center justify-center text-[8px] text-on-primary font-bold">I</span>
+<span>Institutions (28)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-surface-tint"></span>
+<span>Faculty IDs (64)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rotate-45 rounded-[2px] bg-secondary"></span>
+<span>Regulatory Docs (32)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-3.5 rounded-sm bg-tertiary flex items-center justify-center text-[8px] text-on-tertiary">#</span>
+<span>Shared Address (18)</span>
+</div>
+</div>
+<div class="mt-1 pt-1.5 flex items-center gap-2">
+<div class="w-5 h-0.5 bg-error stroke-dasharray"></div>
+<span class="font-code-sm text-code-sm font-semibold text-error">Simultaneous Appointment Collision</span>
+</div>
+</div>
+<!-- Quick Telemetry Mini-Card (Top-Right Floating) -->
+<div class="absolute top-5 right-5 pointer-events-none hidden xl:flex flex-col gap-1 bg-surface-container-lowest/90 backdrop-blur-md p-space-xs px-space-sm rounded-lg shadow-sm font-code-sm text-code-sm">
+<div class="flex items-center justify-between gap-4 text-on-surface-variant">
+<span>Cross-Entity Multi-Homing Index:</span>
+<span class="font-semibold text-error">98.4% (Definite)</span>
+</div>
+<div class="flex items-center justify-between gap-4 text-on-surface-variant">
+<span>Biometric Overlap Window:</span>
+<span class="text-on-surface">AY 2025–26 Submissions</span>
+</div>
+</div>
+</div>
+<!-- Right Regulatory Inspection Dossier Drawer (420px Docked) -->
+<aside class="w-[420px] h-full bg-surface-container-lowest shadow-xl z-30 flex flex-col justify-between transition-all duration-300" id="inspector-drawer">
+<!-- Drawer Header Bar -->
+<div class="p-space-sm bg-surface-container-low flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-error text-on-error font-code-sm text-code-sm font-semibold shadow-sm">
+<span class="material-symbols-outlined text-xs">warning</span>
+<span>CRITICAL COLLISION DETECTED</span>
+</div>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" id="close-drawer-btn" title="Collapse Inspector">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold leading-tight">Dr. Rajesh Verma, Ph.D.</h2>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-code-sm text-code-sm text-on-surface-variant">FAC-DL-9821</span>
+<span class="text-outline-variant">•</span>
+<span class="font-code-sm text-code-sm px-1.5 py-0.2 rounded bg-surface-container text-on-surface">Aadhaar Token: #7492-****-8192</span>
+</div>
+</div>
+</div>
+<!-- Drawer Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-space-sm flex flex-col gap-space-md">
+<!-- SECTION 1: Why Flagged (Direct Official Statement) -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-1 font-title-md text-title-md text-primary font-bold">
+<span class="material-symbols-outlined text-error text-base">gavel</span>
+<h3>Regulatory Discrepancy Findings</h3>
+</div>
+<div class="p-space-sm rounded-lg bg-error-container text-on-error-container font-body-sm text-body-sm flex flex-col gap-2">
+<div class="flex items-start gap-2">
+<span class="font-code-sm text-code-sm font-bold text-error mt-0.5">01</span>
+<p class="leading-snug">Simultaneous full-time employment claimed across <strong>3 active AICTE affiliation applications</strong> for Academic Year 2025–26.</p>
+</div>
+<div class="flex items-start gap-2">
+<span class="font-code-sm text-code-sm font-bold text-error mt-0.5">02</span>
+<p class="leading-snug">Contradictory biometrics &amp; payroll ledger timestamps detected between Delhi NCR and Pune regional institutions.</p>
+</div>
+<div class="flex items-start gap-2">
+<span class="font-code-sm text-code-sm font-bold text-error mt-0.5">03</span>
+<p class="leading-snug">Violates <strong>AICTE Approval Process Handbook Sec 4.2</strong>: Absolute prohibition of concurrent full-time appointments.</p>
+</div>
+</div>
+</div>
+<!-- SECTION 2: Anchor of Collision (The Shared Item) -->
+<div class="flex flex-col gap-2">
+<span class="font-code-sm text-code-sm text-on-surface-variant uppercase font-semibold tracking-wider">Identified Cryptographic Anchor</span>
+<div class="p-space-sm rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between pb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">verified</span>
+<span class="font-title-md text-title-md text-primary font-semibold">Central KYC &amp; UID Match</span>
+</div>
+<span class="font-code-sm text-[10px] px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-semibold">CONFIDENCE 100%</span>
+</div>
+<div class="grid grid-cols-2 gap-2 font-code-sm text-code-sm pt-1">
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[10px] uppercase">Aadhaar Vault Hash</span>
+<span class="font-semibold text-primary truncate" title="8b4a72d9e1124cae8192">8b4a...e92f</span>
+</div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant text-[10px] uppercase">Income Tax PAN</span>
+<span class="font-semibold text-primary">ABCPV****K</span>
+</div>
+<div class="flex flex-col col-span-2">
+<span class="text-on-surface-variant text-[10px] uppercase">Primary Verification Affidavit</span>
+<span class="font-body-sm text-body-sm text-on-surface">Form 16-B &amp; Notarized Affidavit submitted 14 Feb 2025</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 3: Involved Institutions Breakdown -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-code-sm text-code-sm text-on-surface-variant uppercase font-semibold tracking-wider">Compromised Applications (3)</span>
+<span class="font-code-sm text-code-sm text-primary font-semibold">Total ₹5.60L / mo</span>
+</div>
+<div class="flex flex-col gap-2">
+<!-- Institution 1 Card -->
+<div class="p-space-sm rounded-xl bg-surface-container-low shadow-sm hover:shadow-md transition-shadow flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div>
+<h4 class="font-title-md text-title-md font-semibold text-primary leading-tight">Apex Institute of Technology</h4>
+<span class="font-code-sm text-[11px] text-on-surface-variant">App #APP-2025-9921 • Greater Noida</span>
+</div>
+<span class="font-code-sm text-[10px] px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-semibold whitespace-nowrap">Pending Scrutiny</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm pt-1">
+<div class="text-on-surface-variant">Designation: <span class="font-semibold text-on-surface">Prof &amp; HOD (CSE)</span></div>
+<div class="font-code-sm text-code-sm font-semibold text-primary">₹1,85,000 / mo</div>
+</div>
+</div>
+<!-- Institution 2 Card -->
+<div class="p-space-sm rounded-xl bg-surface-container-low shadow-sm hover:shadow-md transition-shadow flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div>
+<h4 class="font-title-md text-title-md font-semibold text-primary leading-tight">Vanguard College of Engineering</h4>
+<span class="font-code-sm text-[11px] text-on-surface-variant">App #APP-2025-4102 • Pune, MH</span>
+</div>
+<span class="font-code-sm text-[10px] px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-semibold whitespace-nowrap">In Verification</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm pt-1">
+<div class="text-on-surface-variant">Designation: <span class="font-semibold text-on-surface">Dean of Academics</span></div>
+<div class="font-code-sm text-code-sm font-semibold text-primary">₹2,10,000 / mo</div>
+</div>
+</div>
+<!-- Institution 3 Card -->
+<div class="p-space-sm rounded-xl bg-surface-container-low shadow-sm hover:shadow-md transition-shadow flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div>
+<h4 class="font-title-md text-title-md font-semibold text-primary leading-tight">Horizon Polytechnic Institute</h4>
+<span class="font-code-sm text-[11px] text-on-surface-variant">App #APP-2025-1883 • Ghaziabad</span>
+</div>
+<span class="font-code-sm text-[10px] px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-semibold whitespace-nowrap">Approved (Revocable)</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm pt-1">
+<div class="text-on-surface-variant">Designation: <span class="font-semibold text-on-surface">Principal &amp; Prof</span></div>
+<div class="font-code-sm text-code-sm font-semibold text-primary">₹1,65,000 / mo</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Geospatial Proximity Anomaly Notice -->
+<div class="p-space-xs px-space-sm rounded-lg bg-surface-container flex items-center gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-sm">distance</span>
+<span class="font-code-sm text-code-sm leading-tight">Distance between Noida &amp; Pune institutes: 1,420 km. Physical attendance overlap physically impossible.</span>
+</div>
+</div>
+<!-- Drawer Bottom Sticky Action Bar -->
+<div class="p-space-sm bg-surface-container-low shadow-lg flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<button class="flex-1 py-2 px-3 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-title-md text-title-md font-semibold flex items-center justify-center gap-1.5 shadow-sm transition-colors">
+<span>Open Applications (3)</span>
+<span class="material-symbols-outlined text-base">open_in_new</span>
+</button>
+<button class="py-2 px-3 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-title-md text-title-md font-semibold shadow-sm transition-colors flex items-center gap-1" title="Mark preliminary scrutiny as completed">
+<span class="material-symbols-outlined text-base text-primary">check_circle</span>
+<span class="hidden sm:inline">Mark Reviewed</span>
+</button>
+</div>
+<button class="w-full py-1.5 px-3 rounded-lg bg-error-container hover:bg-error text-on-error-container hover:text-on-error font-code-sm text-code-sm font-semibold flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-xs">gavel</span>
+<span>Issue Show Cause Notice (AICTE Act Sec 10-K)</span>
+</button>
+</div>
+</aside>
+</div>
+</div>
+<script>
+  // Micro-interactions for interactive canvas zoom and drawer toggling
+  const stage = document.getElementById('graph-stage');
+  const canvas = document.getElementById('network-canvas');
+  const drawer = document.getElementById('inspector-drawer');
+  const closeBtn = document.getElementById('close-drawer-btn');
+  const toggleBtn = document.getElementById('toggle-drawer');
+  const targetNode = document.getElementById('target-node');
+
+  let scale = 1;
+  const zoomInBtn = document.getElementById('zoom-in');
+  const zoomOutBtn = document.getElementById('zoom-out');
+  const resetViewBtn = document.getElementById('reset-view');
+
+  zoomInBtn?.addEventListener('click', () => {
+    scale = Math.min(scale + 0.15, 2.2);
+    canvas.style.transform = `scale(${scale})`;
+    canvas.style.transformOrigin = '430px 470px';
+  });
+
+  zoomOutBtn?.addEventListener('click', () => {
+    scale = Math.max(scale - 0.15, 0.7);
+    canvas.style.transform = `scale(${scale})`;
+    canvas.style.transformOrigin = '430px 470px';
+  });
+
+  resetViewBtn?.addEventListener('click', () => {
+    scale = 1;
+    canvas.style.transform = 'scale(1)';
+  });
+
+  const toggleDrawer = () => {
+    if (drawer.classList.contains('hidden')) {
+      drawer.classList.remove('hidden');
+    } else {
+      drawer.classList.add('hidden');
+    }
+  };
+
+  closeBtn?.addEventListener('click', () => drawer.classList.add('hidden'));
+  toggleBtn?.addEventListener('click', toggleDrawer);
+  targetNode?.addEventListener('click', () => {
+    drawer.classList.remove('hidden');
+  });
+</script></main></div><footer class="fixed bottom-0 left-0 right-0 h-7 z-50 bg-surface-container-high text-on-surface-variant px-gutter flex items-center justify-between shadow-[0_-1px_6px_rgba(0,0,0,0.02)]"><div class="flex items-center gap-space-xs"><span class="inline-block w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span><span class="font-code-sm text-code-sm">Connected to National Academic Depository (NAD) &amp; Land Records API • Sync OK • Latency 38ms</span></div><div class="flex items-center gap-space-sm font-code-sm text-code-sm text-on-surface-variant"><span class="hidden md:inline">AICTE Act 1987 Sub-clause 10(k)</span><span>Node ID: WRO-VERIFY-04</span></div></footer></body></html>

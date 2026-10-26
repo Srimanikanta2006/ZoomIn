@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-tint":"#465f86","on-secondary-fixed":"#2d1600","surface-container-lowest":"#ffffff","error-container":"#ffdad6","secondary":"#8c5000","surface-dim":"#dbdad5","inverse-primary":"#aec8f4","error":"#ba1a1a","on-secondary-container":"#653800","primary":"#032448","on-error":"#ffffff","on-tertiary":"#ffffff","surface":"#fbf9f4","on-primary-container":"#8ba4cf","surface-container":"#f0eee9","tertiary-fixed-dim":"#b9c8db","primary-container":"#1f3a5f","on-tertiary-fixed-variant":"#3a4858","inverse-on-surface":"#f2f1ec","on-surface-variant":"#43474e","surface-bright":"#fbf9f4","surface-container-highest":"#e4e2dd","on-tertiary-container":"#96a5b8","tertiary-container":"#2d3b4b","inverse-surface":"#30312e","tertiary-fixed":"#d5e4f8","outline":"#74777f","surface-container-low":"#f5f3ee","surface-variant":"#e4e2dd","on-primary-fixed":"#001c3b","on-secondary":"#ffffff","tertiary":"#172534","secondary-fixed":"#ffdcbf","secondary-fixed-dim":"#ffb873","on-secondary-fixed-variant":"#6a3b00","secondary-container":"#fc9923","on-tertiary-fixed":"#0e1d2b","on-surface":"#1b1c19","on-primary-fixed-variant":"#2d476d","surface-container-high":"#eae8e3","background":"#fbf9f4","outline-variant":"#c4c6cf","primary-fixed-dim":"#aec8f4","on-background":"#1b1c19","on-primary":"#ffffff","on-error-container":"#93000a","primary-fixed":"#d5e3ff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-mobile":"1rem",gutter:"1.5rem","space-xs":"0.5rem","space-md":"1.5rem","space-sm":"1rem","space-xl":"3rem","space-lg":"2rem",margin:"2.5rem","margin-mobile":"1rem"},fontFamily:{"code-sm":["JetBrains Mono"],"code-md":["JetBrains Mono"],"display-lg":["Newsreader"],"title-md":["Inter"],"display-lg-mobile":["Newsreader"],"title-lg":["Inter"],"headline-lg":["Newsreader"],"headline-sm":["Newsreader"],"headline-md":["Newsreader"],"body-md":["Inter"],"headline-lg-mobile":["Newsreader"],"body-sm":["Inter"],"body-lg":["Inter"]},fontSize:{"code-sm":["11px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"500"}],"code-md":["13px",{lineHeight:"18px",fontWeight:"500"}],"display-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"600"}],"title-md":["15px",{lineHeight:"20px",fontWeight:"600"}],"display-lg-mobile":["30px",{lineHeight:"38px",letterSpacing:"-0.01em",fontWeight:"600"}],"title-lg":["18px",{lineHeight:"24px",letterSpacing:"-0.01em",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.015em",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"500"}],"headline-md":["24px",{lineHeight:"32px",fontWeight:"500"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-lg-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm min-w-max"><img alt="PreFlight Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xoz2uqV_R_gbFp4_bveXbs-XKUT8NjYIuD32J66a74un_4F55rO7tbe_jrnylWpjn8_b72jRtypH2wh8gdydVYubYRlwpdiiMmS-NP5hjEutyyu-pEEZ-n_6rwGs3HV6GhWFZYvDK4hB3m4_EkR6yb4GX3wXXW9_PRxnFRzJjc7ZpDK0hM4hNcqUYICZL-gZ4Yt7hB5fMW-b6Zo5Hodo2baT6trgzsZ331BY8wbON4A0-88YszEBQpo_k"/><div class="flex items-center gap-space-xs"><span class="font-title-lg text-title-lg font-bold text-primary tracking-tight">PreFlight</span><span class="font-body-sm text-body-sm text-on-surface-variant font-medium hidden xl:inline">— AICTE Regulatory Portal Approval Process Handbook 2025-26</span><span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium uppercase">AY 2025–26 Cycle 1</span></div></div><div class="flex items-center gap-space-md flex-1 max-w-xl justify-end"><button class="flex items-center justify-between w-64 px-space-sm py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface shadow-[0_1px_4px_rgba(0,0,0,0.02)] transition-colors text-left" type="button"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-sm">search</span><span class="font-body-sm text-body-sm">Application lookup</span></div><kbd class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-semibold">⌘K</kbd></button><div class="flex items-center gap-space-sm pl-space-xs"><button aria-label="Notifications" class="relative p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined">notifications</span><span class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-error text-on-error font-code-sm text-[10px] font-bold leading-none">3</span></button><div class="h-6 w-px bg-surface-container-highest"></div><div class="flex items-center gap-space-xs"><div class="text-right hidden sm:block"><div class="font-title-md text-title-md font-semibold text-on-surface leading-tight">Dr. Sunita V. Rao</div><div class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Senior Regional Director (WRO)</div></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5P6Yw91SFBS68qVQPQTMAb3hAqy3bvQ10DJWiyTwjSVFylBBVJRY-oDF6s6CIZUtoWWcLdofRC9tvojo-KSmd6dPnyqTxsd0mdqpfysN5FmJgkiw0_Xw0cO4nhVqJyCrYTkGf_oO6SQMqJ1mbv5E-72xlGIHfCBaeEL1GwoFyC7ppgVyL1SgrEWc5LpJumF1M_VtOSyMC7VjqxoAbB-NA7Jj_Vh8V4MDWZIT7k4tL2odEd62LnBMK"/></div></div></div></div></header><aside class="fixed left-0 top-16 bottom-7 w-64 bg-surface-container-low z-40 flex flex-col py-space-md px-space-xs justify-between overflow-y-auto"><div class="flex flex-col gap-space-xs"><div class="px-space-xs pb-space-xs"><span class="font-code-sm text-code-sm uppercase text-on-surface-variant tracking-wider font-semibold">Regulatory Review</span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm rounded-lg"><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="application-review" href="#"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined">verified</span><span>Application Review</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="document-verification" href="#"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined">gpp_good</span><span>Document Verification</span></div><span class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-semibold">14 flagged</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="deficiency-reports" href="#"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined">warning</span><span>Deficiency Reports</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="inspection-schedules" href="#"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined">calendar_today</span><span>Inspection Schedules</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="institutional-registry" href="#"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined">account_balance</span><span>Institutional Registry</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-md text-body-md" data-path="handbook-rules-and-norms" href="#"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined">menu_book</span><span>Handbook Rules &amp; Norms</span></div></a></nav></div><div class="p-space-xs rounded-lg bg-surface-container text-on-surface-variant"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-sm text-primary">verified_user</span><span class="font-code-sm text-code-sm font-semibold text-primary uppercase">AICTE Audit Mode</span></div><p class="font-body-sm text-body-sm mt-1 text-on-surface-variant">Scrutiny panel sessions are logged for gazette compliance.</p></div></aside><div class="pl-64"><main class="relative pt-16 min-h-screen pb-10 w-full px-gutter bg-surface"><div class="flex flex-col w-full">
+<!-- SVG Hatch Patterns Definitions (Embedded invisibly for background fills) -->
+<svg aria-hidden="true" class="absolute w-0 h-0 overflow-hidden" focusable="false">
+<defs>
+<pattern height="8" id="red-diagonal-hatch" patterntransform="rotate(45 0 0)" patternunits="userSpaceOnUse" width="8">
+<line stroke="#ba1a1a" stroke-width="2.5" x1="0" x2="0" y1="0" y2="8"></line>
+</pattern>
+<pattern height="8" id="amber-diagonal-hatch" patterntransform="rotate(45 0 0)" patternunits="userSpaceOnUse" width="8">
+<line stroke="#8c5000" stroke-width="2" x1="0" x2="0" y1="0" y2="8"></line>
+</pattern>
+<pattern height="6" id="empty-subtle-hatch" patterntransform="rotate(45 0 0)" patternunits="userSpaceOnUse" width="6">
+<line stroke="#c4c6cf" stroke-width="1" x1="0" x2="0" y1="0" y2="6"></line>
+</pattern>
+</defs>
+</svg>
+<!-- Top Breadcrumbs & Operational Status Row -->
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-space-xs gap-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-code-sm text-code-sm">
+<span class="hover:text-primary cursor-pointer transition-colors">Applications</span>
+<span class="text-outline-variant">/</span>
+<span class="font-code-md text-code-md text-primary font-semibold">APP-2025-AICTE-8841</span>
+<span class="text-outline-variant">/</span>
+<span>Document Compliance</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-semibold bg-surface-container px-2 py-0.5 rounded">Validity Timeline Analysis</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-code-sm text-code-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-surface-tint">verified_user</span>
+        Gazette Norm: APH 2025-26 Ch. II
+      </span>
+<span class="px-2.5 py-1 rounded bg-error-container text-on-error-container font-code-sm text-code-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">gpp_bad</span>
+        2 Statutory Deficiencies Identified
+      </span>
+</div>
+</div>
+<!-- Institutional Dossier Identification Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-md mt-space-xs">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-2xl">account_balance</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-space-xs mb-1">
+<h1 class="font-headline-md text-headline-md text-primary font-semibold tracking-tight">K.J. Somaiya Institute of Engineering &amp; Technology</h1>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium">AICTE ID: 1-429810481</span>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-surface-container-high text-primary font-semibold">WRO • Mumbai Suburban</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span>Extension of Approval (EoA) &amp; Additional Course Intake (AY 2025–26)</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="font-code-sm text-code-sm text-primary font-medium">Scrutiny Stage: Statutory Certificate Validity Cross-Check</span>
+</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 self-end lg:self-center">
+<button class="flex items-center gap-1.5 px-space-sm py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-title-md text-title-md shadow-sm transition-colors" id="exportDossierBtn" type="button">
+<span class="material-symbols-outlined text-sm text-primary">download</span>
+<span>Export Audit Dossier</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-sm py-2 rounded-lg bg-primary text-on-primary font-title-md text-title-md shadow-sm hover:bg-primary-container transition-colors" id="flagPanelBtn" type="button">
+<span class="material-symbols-outlined text-sm">assignment_late</span>
+<span>Generate Form-8 Defect Notice</span>
+</button>
+</div>
+</div>
+<!-- Scrutiny Benchmark Strip -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-sm mt-space-md pt-space-sm bg-surface-container-low rounded-lg p-space-sm">
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm text-on-surface-variant uppercase tracking-wider font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-error">push_pin</span>
+          Submission Cutoff
+        </span>
+<div class="flex items-baseline gap-1.5 mt-0.5">
+<span class="font-title-lg text-title-lg text-on-surface font-bold">14 Feb 2025</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">(Strict Norm Datum)</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm text-on-surface-variant uppercase tracking-wider font-semibold">Statutory Registry</span>
+<div class="flex items-baseline gap-2 mt-0.5">
+<span class="font-title-lg text-title-lg text-on-surface font-bold">9 Certificates</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Mandatory Core</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-code-sm text-code-sm text-on-surface-variant uppercase tracking-wider font-semibold">Validation Ledger</span>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-code-sm text-code-sm font-semibold">4 Valid</span>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-code-sm text-code-sm font-semibold">3 Expiring</span>
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-code-sm text-code-sm font-semibold">2 Critical</span>
+</div>
+</div>
+<div class="flex flex-col justify-center">
+<div class="flex items-center gap-2 p-2 rounded bg-error-container/80 text-on-error-container">
+<span class="material-symbols-outlined text-base text-error">error</span>
+<span class="font-code-sm text-code-sm font-bold leading-tight">Blocked: Expired Mandatory NOC &amp; Missing Floor Plans</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Control Ribbon & Interactive Filter Deck -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-xs">
+<div class="flex flex-wrap items-center gap-1.5 bg-surface-container-low p-1 rounded-lg">
+<button class="filter-chip active-filter px-3 py-1.5 rounded-md font-code-sm text-code-sm font-semibold bg-surface-container-lowest text-primary shadow-sm" data-filter="all">
+        All Documents (9)
+      </button>
+<button class="filter-chip px-3 py-1.5 rounded-md font-code-sm text-code-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-filter="critical">
+        Critical Deficiencies (2)
+      </button>
+<button class="filter-chip px-3 py-1.5 rounded-md font-code-sm text-code-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-filter="expiring">
+        Near Expiry &lt;6 Mos (3)
+      </button>
+<button class="filter-chip px-3 py-1.5 rounded-md font-code-sm text-code-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" data-filter="compliant">
+        Fully Valid (4)
+      </button>
+</div>
+<!-- Timeline Window & Legend Key -->
+<div class="flex flex-wrap items-center gap-space-sm text-on-surface-variant font-code-sm text-code-sm">
+<div class="flex items-center gap-3 bg-surface-container-lowest px-3 py-1.5 rounded-lg shadow-sm">
+<span class="flex items-center gap-1.5">
+<span class="w-3.5 h-3 rounded bg-primary-container inline-block"></span>
+<span>Valid Document</span>
+</span>
+<span class="flex items-center gap-1.5">
+<span class="w-3.5 h-3 rounded bg-secondary-container inline-block"></span>
+<span>Expiring &lt;180 Days</span>
+</span>
+<span class="flex items-center gap-1.5">
+<span class="w-3.5 h-3 rounded inline-block bg-error-container" style="background-image: repeating-linear-gradient(45deg, #ba1a1a, #ba1a1a 2px, transparent 2px, transparent 5px);"></span>
+<span>Expired / Missing at Submission</span>
+</span>
+<span class="flex items-center gap-1.5">
+<span class="w-2.5 h-3 inline-block bg-error"></span>
+<span class="text-error font-semibold">14 Feb 2025 Cutoff</span>
+</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-lowest px-2.5 py-1 rounded-lg text-primary font-semibold shadow-sm">
+<span class="material-symbols-outlined text-sm">date_range</span>
+<span>Timeline: 2023 – 2027 (5-Year Window)</span>
+</div>
+</div>
+</div>
+<!-- Primary Work Canvas: Asymmetric Split View (Gantt Ledger 70% + Audit Inspector 30%) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-md items-start mt-2">
+<!-- Left Timeline Column (12-col base, 8-col XL) -->
+<div class="xl:col-span-8 flex flex-col bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- Timeline Visual Container -->
+<div class="relative w-full overflow-x-auto select-none">
+<div class="min-w-[840px] flex flex-col relative pb-space-sm">
+<!-- Timeline Header / Time Axis Scale (2023 to 2027) -->
+<!-- 0% = Jan 2023, 100% = Dec 2027 (60 months total). 
+               14 Feb 2025 is month index 25.5 -> ~42.5% of timeline -->
+<div class="flex items-stretch h-14 bg-surface-container text-on-surface-variant font-code-sm text-code-sm font-semibold">
+<div class="w-64 p-3 flex items-center justify-between text-primary font-bold shrink-0 bg-surface-container-high shadow-[1px_0_0_0_rgba(0,0,0,0.06)]">
+<span>Statutory Instrument</span>
+<span class="text-xs uppercase text-on-surface-variant">Type</span>
+</div>
+<div class="flex-1 grid grid-cols-5 relative">
+<!-- Year blocks -->
+<div class="flex flex-col justify-between p-2 pl-3 bg-surface-container">
+<span class="text-on-surface font-bold">2023</span>
+<span class="text-[10px] text-outline tracking-wider flex justify-between pr-2">
+<span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span>
+</span>
+</div>
+<div class="flex flex-col justify-between p-2 pl-3 bg-surface-container-low">
+<span class="text-on-surface font-bold">2024</span>
+<span class="text-[10px] text-outline tracking-wider flex justify-between pr-2">
+<span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span>
+</span>
+</div>
+<div class="flex flex-col justify-between p-2 pl-3 bg-surface-container relative">
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold">2025 (Audit Year)</span>
+</div>
+<span class="text-[10px] text-outline tracking-wider flex justify-between pr-2">
+<span>Jan</span><span class="text-error font-bold underline">Feb</span><span>Jun</span><span>Dec</span>
+</span>
+</div>
+<div class="flex flex-col justify-between p-2 pl-3 bg-surface-container-low">
+<span class="text-on-surface font-bold">2026</span>
+<span class="text-[10px] text-outline tracking-wider flex justify-between pr-2">
+<span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span>
+</span>
+</div>
+<div class="flex flex-col justify-between p-2 pl-3 bg-surface-container">
+<span class="text-on-surface font-bold">2027</span>
+<span class="text-[10px] text-outline tracking-wider flex justify-between pr-2">
+<span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Strict Submission Benchmark Guideline Overlay -->
+<!-- Absolute vertical guide at ~42.5% (approx for 14 Feb 2025) -->
+<div class="absolute top-0 bottom-0 left-[calc(16rem+((100%-16rem)*0.425))] z-20 pointer-events-none flex flex-col items-center">
+<div class="sticky top-16 z-30 -translate-x-1/2 flex items-center gap-1 px-2 py-1 rounded bg-error text-on-error font-code-sm text-code-sm font-bold shadow-md">
+<span class="material-symbols-outlined text-xs">event_note</span>
+<span>14 Feb 2025</span>
+</div>
+<div class="w-0.5 h-full bg-error/80 shadow-[0_0_8px_rgba(186,26,26,0.3)]"></div>
+</div>
+<!-- Document Gantt Rows -->
+<div class="flex flex-col divide-y divide-surface-container" id="ganttDocumentList">
+<!-- ROW 1: Land Ownership / Registered Sale Deed (Perpetual) -->
+<div class="doc-row flex items-center hover:bg-surface-container-low transition-colors cursor-pointer group" data-category="compliant" data-doc-id="DOC-LND-01">
+<div class="w-64 p-3 shrink-0 flex flex-col justify-center bg-surface-container-lowest group-hover:bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-on-surface font-semibold group-hover:text-primary">Land Registered Deed</span>
+<span class="material-symbols-outlined text-sm text-surface-tint">verified</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-code-sm text-code-sm text-on-surface-variant">Reg #BOM/KRL/9214</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant font-bold">• 7.42 Acres</span>
+</div>
+</div>
+<div class="flex-1 py-3 px-2 relative h-16 flex items-center">
+<!-- Span bar (Perpetual: from 0% to 100%) -->
+<div class="w-full h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-between px-3 shadow-sm hover:brightness-110 transition-all">
+<div class="flex items-center gap-1.5 font-code-sm text-code-sm">
+<span class="font-semibold">Registered: 18 Nov 2012</span>
+<span class="text-on-primary-container font-medium">— Title in absolute possession</span>
+</div>
+<div class="flex items-center gap-1 text-on-primary-fixed bg-surface/20 px-2 py-0.5 rounded font-code-sm text-code-sm font-semibold">
+<span>Perpetual Validity</span>
+<span class="material-symbols-outlined text-xs">all_inclusive</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ROW 2: Municipal Building Occupancy Certificate (BCC) -->
+<div class="doc-row flex items-center hover:bg-surface-container-low transition-colors cursor-pointer group" data-category="compliant" data-doc-id="DOC-BCC-02">
+<div class="w-64 p-3 shrink-0 flex flex-col justify-center bg-surface-container-lowest group-hover:bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-on-surface font-semibold group-hover:text-primary">Municipal Building BCC</span>
+<span class="material-symbols-outlined text-sm text-surface-tint">check_circle</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-code-sm text-code-sm text-on-surface-variant">MCGM/BP-7740/E</span>
+<span class="font-code-sm text-code-sm text-surface-tint font-semibold">• Valid to 2031</span>
+</div>
+</div>
+<div class="flex-1 py-3 px-2 relative h-16 flex items-center">
+<!-- Spans from 2021 through 2031 (entire visible 5-year canvas) -->
+<div class="w-full h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-between px-3 shadow-sm hover:brightness-110 transition-all">
+<span class="font-code-sm text-code-sm font-semibold">Valid: 15 Jan 2021 – 15 Jan 2031 (10-Yr Cycle)</span>
+<span class="font-code-sm text-code-sm bg-surface/20 px-2 py-0.5 rounded text-on-primary">Full Compliance Met</span>
+</div>
+</div>
+</div>
+<!-- ROW 3: State Fire Safety NOC (CRITICAL EXPIRED) -->
+<div class="doc-row flex items-center bg-error-container/20 hover:bg-error-container/30 transition-colors cursor-pointer group" data-category="critical" data-doc-id="DOC-FIR-03">
+<div class="w-64 p-3 shrink-0 flex flex-col justify-center bg-error-container/30 group-hover:bg-error-container/40">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-error font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-base">emergency</span>
+                    Fire Safety NOC
+                  </span>
+<span class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-error text-on-error font-bold">BLOCKER</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-code-sm text-code-sm text-on-error-container">MH-FS/2022/9904</span>
+<span class="font-code-sm text-code-sm text-error font-bold">• Expired 11 mos prior</span>
+</div>
+</div>
+<div class="flex-1 py-3 px-2 relative h-16 flex items-center">
+<div class="w-full h-8 flex items-center">
+<!-- Valid segment: Mar 2022 to 12 Mar 2024 (~24% of timeline) -->
+<div class="w-[24%] h-full rounded-l-lg bg-surface-container-highest text-on-surface-variant flex items-center px-2 font-code-sm text-code-sm truncate">
+<span>Issued 10 Mar 2022</span>
+</div>
+<!-- Expired Gap: 12 Mar 2024 to beyond cutoff (18.5% up to Feb 2025, and continues) -->
+<div class="flex-1 h-full rounded-r-lg bg-error-container relative overflow-hidden flex items-center justify-between px-3 shadow-inner" style="background-image: repeating-linear-gradient(45deg, #ba1a1a, #ba1a1a 2.5px, transparent 2.5px, transparent 8px);">
+<div class="bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-0.5 rounded text-error font-code-sm text-code-sm font-bold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-xs">cancel</span>
+<span>Lapsed 12 Mar 2024 (11 months before 14 Feb submission)</span>
+</div>
+<span class="bg-error text-on-error px-2 py-0.5 rounded font-code-sm text-code-sm font-bold shadow-sm">
+                      APH 2025-26 Cl. 2.4.1 Violation
+                    </span>
+</div>
+</div>
+</div>
+</div>
+<!-- ROW 4: Structural Stability Certificate -->
+<div class="doc-row flex items-center hover:bg-surface-container-low transition-colors cursor-pointer group" data-category="compliant" data-doc-id="DOC-STR-04">
+<div class="w-64 p-3 shrink-0 flex flex-col justify-center bg-surface-container-lowest group-hover:bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-on-surface font-semibold group-hover:text-primary">Structural Stability</span>
+<span class="material-symbols-outlined text-sm text-surface-tint">check_circle</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-code-sm text-code-sm text-on-surface-variant">PWD-STR-4410-B</span>
+<span class="font-code-sm text-code-sm text-surface-tint font-medium">• Valid thru Jul 2026</span>
+</div>
+</div>
+<div class="flex-1 py-3 px-2 relative h-16 flex items-center">
+<!-- Valid through mid 2026: ~71% of timeline -->
+<div class="w-[71%] h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-between px-3 shadow-sm hover:brightness-110 transition-all">
+<span class="font-code-sm text-code-sm font-semibold">Chartered Engineer Cert • Valid till 30 Jul 2026</span>
+<span class="font-code-sm text-code-sm bg-surface/20 px-2 py-0.5 rounded text-on-primary">+17 mos buffer</span>
+</div>
+</div>
+</div>
+<!-- ROW 5: Environmental Clearance / Pollution Control Board (EXPIRING < 6 MOS) -->
+<div class="doc-row flex items-center hover:bg-surface-container-low transition-colors cursor-pointer group" data-category="expiring" data-doc-id="DOC-ENV-05">
+<div class="w-64 p-3 shrink-0 flex flex-col justify-center bg-surface-container-lowest group-hover:bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-secondary font-semibold group-hover:text-primary">Pollution Control Consent</span>
+<span class="material-symbols-outlined text-sm text-secondary">warning</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-code-sm text-code-sm text-on-surface-variant">MPCB/CONSENT/20-25</span>
+<span class="font-code-sm text-code-sm text-secondary font-semibold">• Expires 15 Jun 2025</span>
+</div>
+</div>
+<div class="flex-1 py-3 px-2 relative h-16 flex items-center">
+<!-- Starts 2020 (0%). Up to Feb 2025 (~42.5%) valid, then from Feb to Jun 2025 (~49%) amber buffer -->
+<div class="w-[49%] h-8 flex items-center">
+<div class="w-[86%] h-full rounded-l-lg bg-primary-container text-on-primary flex items-center px-3 font-code-sm text-code-sm">
+<span>Valid Consent under Water/Air Acts</span>
+</div>
+<div class="w-[14%] h-full rounded-r-lg bg-secondary-container flex items-center justify-center text-on-secondary-container shadow-sm hover:brightness-105" title="Expires within 121 days">
+<span class="font-code-sm text-code-sm font-bold tracking-tight px-1">121d</span>
+</div>
+</div>
+<span class="ml-2 font-code-sm text-code-sm text-secondary font-semibold bg-secondary-fixed/50 px-2 py-0.5 rounded">
+                  Expiry: 15 Jun 2025
+                </span>
+</div>
+</div>
+<!-- ROW 6: University Affiliation Letter (EXPIRING < 6 MOS) -->
+<div class="doc-row flex items-center hover:bg-surface-container-low transition-colors cursor-pointer group" data-category="expiring" data-doc-id="DOC-AFF-06">
+<div class="w-64 p-3 shrink-0 flex flex-col justify-center bg-surface-container-lowest group-hover:bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-on-surface font-semibold group-hover:text-primary">University Affiliation</span>
+<span class="material-symbols-outlined text-sm text-secondary">hourglass_bottom</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-code-sm text-code-sm text-on-surface-variant">MU/AFF-ENG/2024-25</span>
+<span class="font-code-sm text-code-sm text-secondary font-semibold">• Valid to 30 Jun 2025</span>
+</div>
+</div>
+<div class="flex-1 py-3 px-2 relative h-16 flex items-center">
+<!-- Span: Jul 2024 (30%) to Jun 2025 (50%) -->
+<div class="ml-[30%] w-[20%] h-8 flex items-center shadow-sm">
+<div class="w-[62%] h-full rounded-l-lg bg-primary-container text-on-primary flex items-center px-2 font-code-sm text-code-sm">
+<span>AY 2024-25</span>
+</div>
+<div class="w-[38%] h-full rounded-r-lg bg-secondary-container flex items-center justify-center text-on-secondary-container font-code-sm text-code-sm font-bold">
+<span>Renewal Due</span>
+</div>
+</div>
+<span class="ml-2 font-code-sm text-code-sm text-on-surface-variant">University of Mumbai Annual Continuance</span>
+</div>
+</div>
+<!-- ROW 7: Approved Floor Plans & Building Sanction (MISSING / NOT UPLOADED) -->
+<div class="doc-row flex items-center bg-error-container/20 hover:bg-error-container/30 transition-colors cursor-pointer group" data-category="critical" data-doc-id="DOC-PLN-07">
+<div class="w-64 p-3 shrink-0 flex flex-col justify-center bg-error-container/30 group-hover:bg-error-container/40">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-error font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-base">architecture</span>
+                    Approved Floor Plans
+                  </span>
+<span class="font-code-sm text-code-sm px-1.5 py-0.5 rounded bg-error text-on-error font-bold">MISSING</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-code-sm text-code-sm text-on-error-container">Sanctioned Blueprints</span>
+<span class="font-code-sm text-code-sm text-error font-bold">• Zero Uploads</span>
+</div>
+</div>
+<div class="flex-1 py-3 px-2 relative h-16 flex items-center">
+<!-- Full red hatch row symbolizing complete statutory absence at deadline -->
+<div class="w-full h-8 rounded-lg bg-error-container flex items-center justify-between px-3 shadow-inner" style="background-image: repeating-linear-gradient(45deg, #ba1a1a, #ba1a1a 2.5px, transparent 2.5px, transparent 8px);">
+<div class="bg-surface-container-lowest/90 backdrop-blur-sm px-2.5 py-0.5 rounded text-error font-code-sm text-code-sm font-bold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-xs">folder_off</span>
+<span>Document Slot Empty — Mandatory Architect Verified CAD/FAR Plans Not Found</span>
+</div>
+<span class="bg-error text-on-error font-code-sm text-code-sm font-bold px-2 py-0.5 rounded shadow-sm">
+                    APH 2025-26 Appx. 14 Requirement
+                  </span>
+</div>
+</div>
+</div>
+<!-- ROW 8: Faculty Cadre & Pay Band Verification -->
+<div class="doc-row flex items-center hover:bg-surface-container-low transition-colors cursor-pointer group" data-category="compliant" data-doc-id="DOC-FAC-08">
+<div class="w-64 p-3 shrink-0 flex flex-col justify-center bg-surface-container-lowest group-hover:bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-on-surface font-semibold group-hover:text-primary">Faculty Roster &amp; Form 16</span>
+<span class="material-symbols-outlined text-sm text-surface-tint">check_circle</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-code-sm text-code-sm text-on-surface-variant">7th CPC Audit #910</span>
+<span class="font-code-sm text-code-sm text-surface-tint font-medium">• Valid thru Dec 2025</span>
+</div>
+</div>
+<div class="flex-1 py-3 px-2 relative h-16 flex items-center">
+<!-- Span: Jan 2024 (20%) to Dec 2025 (60%) -->
+<div class="ml-[20%] w-[40%] h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-between px-3 shadow-sm hover:brightness-110 transition-all">
+<span class="font-code-sm text-code-sm font-semibold">1:15 Faculty Cadre Compliant (7th CPC Verified)</span>
+<span class="font-code-sm text-code-sm bg-surface/20 px-2 py-0.5 rounded text-on-primary">Valid till 31 Dec 2025</span>
+</div>
+</div>
+</div>
+<!-- ROW 9: Pharmacy / Council Registration Renewal -->
+<div class="doc-row flex items-center hover:bg-surface-container-low transition-colors cursor-pointer group" data-category="expiring" data-doc-id="DOC-PCI-09">
+<div class="w-64 p-3 shrink-0 flex flex-col justify-center bg-surface-container-lowest group-hover:bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-secondary font-semibold group-hover:text-primary">Council Clearance / PCI</span>
+<span class="material-symbols-outlined text-sm text-secondary">schedule</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-code-sm text-code-sm text-on-surface-variant">PCI/MH-821/2024</span>
+<span class="font-code-sm text-code-sm text-secondary font-bold">• 45 Days to Expiry</span>
+</div>
+</div>
+<div class="flex-1 py-3 px-2 relative h-16 flex items-center">
+<!-- Span: Oct 2024 (35%) to 31 Mar 2025 (44.5%) -->
+<div class="ml-[35%] w-[9.5%] h-8 flex items-center shadow-sm">
+<div class="w-[60%] h-full rounded-l-lg bg-primary-container text-on-primary flex items-center justify-center font-code-sm text-code-sm">
+<span>Valid</span>
+</div>
+<div class="w-[40%] h-full rounded-r-lg bg-secondary-container flex items-center justify-center text-on-secondary-container font-code-sm text-code-sm font-bold" title="Critical: 45 Days remaining">
+<span>45d</span>
+</div>
+</div>
+<span class="ml-2 font-code-sm text-code-sm text-secondary font-semibold bg-secondary-fixed/50 px-2 py-0.5 rounded">
+                  Expires 31 Mar 2025
+                </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Timeline Footer Note -->
+<div class="p-3 bg-surface-container-low text-on-surface-variant font-code-sm text-code-sm flex items-center justify-between border-t-0">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-surface-tint">info</span>
+          Click on any document row to view cryptographic hash, municipal seal, and regulatory remediation options.
+        </span>
+<span class="text-outline font-medium">Timestamp: 2025-02-14T11:42:09+05:30 (WRO Digital Scrutiny Engine)</span>
+</div>
+</div>
+<!-- Right Column: Interactive Statutory Verification & Remediation Inspector (4-col XL) -->
+<div class="xl:col-span-4 flex flex-col gap-space-sm" id="detailInspectorPanel">
+<!-- Primary Active Selection Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-error animate-pulse"></span>
+<span class="font-code-sm text-code-sm uppercase tracking-wider text-error font-bold">Active Audit Focus</span>
+</div>
+<span class="font-code-sm text-code-sm px-2 py-0.5 rounded bg-error-container text-on-error-container font-semibold" id="inspectorBadge">Non-Compliant</span>
+</div>
+<div class="mt-2">
+<h2 class="font-headline-sm text-headline-sm text-primary font-semibold leading-snug" id="inspectorTitle">
+            State Fire &amp; Rescue Services NOC
+          </h2>
+<p class="font-code-sm text-code-sm text-on-surface-variant mt-1" id="inspectorDocCode">
+            Certificate Ref: MH-FS/2022/9904 (Issued by CFO Mumbai Fire Brigade)
+          </p>
+</div>
+<!-- Document Preview / Status Visual -->
+<div class="mt-space-sm rounded-lg bg-surface-container-low p-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Validity Period Recorded:</span>
+<span class="font-code-sm text-code-sm font-bold text-on-surface" id="inspectorSpan">10 Mar 2022 – 12 Mar 2024</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Status on 14 Feb 2025:</span>
+<span class="font-code-sm text-code-sm font-bold text-error" id="inspectorLapse">Expired (-339 Days)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mandatory Statute:</span>
+<span class="font-code-sm text-code-sm text-primary font-semibold">APH 2025-26 Cl. 2.4.1</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Digital Signature Seal:</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-error">lock_clock</span>
+              Expired Cert Authority
+            </span>
+</div>
+</div>
+<!-- Gazette Regulatory Assessment Box -->
+<div class="mt-space-sm p-space-sm rounded-lg bg-surface-container text-on-surface">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-error text-base mt-0.5">policy</span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-semibold text-primary">Council Legal Mandate</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed" id="inspectorRuleText">
+                As per Chapter II, Clause 2.4.1 of the Approval Process Handbook, an institution applying for Extension of Approval or Intake Variation MUST possess a valid, non-lapsed Fire Safety NOC as of the portal submission cutoff date. Possession of an expired certificate triggers an automated deficiency and freezes Committee approval.
+              </p>
+</div>
+</div>
+</div>
+<!-- Recommended Remediation Actions -->
+<div class="mt-space-md flex flex-col gap-2">
+<span class="font-code-sm text-code-sm uppercase tracking-wider text-on-surface-variant font-semibold">
+            Council Scrutiny Officer Action
+          </span>
+<button class="w-full flex items-center justify-between px-space-sm py-2.5 rounded-lg bg-error text-on-error font-title-md text-title-md shadow-sm hover:brightness-110 transition-all text-left">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">outgoing_mail</span>
+<span>Issue Mandatory Defect Notice</span>
+</div>
+<span class="font-code-sm text-code-sm bg-surface-container-lowest/20 px-1.5 py-0.5 rounded">Form-8</span>
+</button>
+<button class="w-full flex items-center justify-between px-space-sm py-2 rounded-lg bg-surface-container text-on-surface font-title-md text-title-md hover:bg-surface-container-high transition-colors text-left">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-secondary">upload_file</span>
+<span>Request Fresh CFO Endorsement</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-surface-variant">7-day grace</span>
+</button>
+<button class="w-full flex items-center justify-between px-space-sm py-2 rounded-lg bg-surface-container text-on-surface-variant font-title-md text-title-md hover:bg-surface-container-high transition-colors text-left">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">visibility</span>
+<span>Inspect Raw Subscribed Dossier PDF</span>
+</div>
+<span class="material-symbols-outlined text-xs">open_in_new</span>
+</button>
+</div>
+</div>
+<!-- Scrutiny Officer Notes & Audit Trail -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base">history_edu</span>
+            Scrutiny Officer Log
+          </span>
+<span class="font-code-sm text-code-sm text-on-surface-variant">Session #4928</span>
+</div>
+<div class="flex flex-col gap-2 mt-1">
+<div class="p-2.5 rounded-lg bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center justify-between font-code-sm text-code-sm text-on-surface-variant mb-1">
+<span class="font-semibold text-primary">Dr. Sunita V. Rao (SRD-WRO)</span>
+<span>14 Feb 11:15</span>
+</div>
+<p>Automatic verification flag confirmed: MPCB clearance will also require an undertaking regarding the upcoming June expiry prior to issuing final EoA.</p>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<input class="flex-1 h-9 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary shadow-inner" placeholder="Add confidential scrutiny observation..." type="text"/>
+<button class="h-9 px-3 rounded-lg bg-primary-container text-on-primary font-title-md text-title-md hover:bg-primary transition-colors shrink-0">
+              Post
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Client-side Interactive Filter & Document Selection Script -->
+<script>
+    (function initValidityAuditTimeline() {
+      const docRows = document.querySelectorAll('.doc-row');
+      const filterChips = document.querySelectorAll('.filter-chip');
+      const inspectorTitle = document.getElementById('inspectorTitle');
+      const inspectorDocCode = document.getElementById('inspectorDocCode');
+      const inspectorSpan = document.getElementById('inspectorSpan');
+      const inspectorLapse = document.getElementById('inspectorLapse');
+      const inspectorBadge = document.getElementById('inspectorBadge');
+      const inspectorRuleText = document.getElementById('inspectorRuleText');
+
+      const documentDatabase = {
+        'DOC-LND-01': {
+          title: 'Land Ownership / Registered Sale Deed',
+          code: 'Certificate Ref: BOM/KRL/9214 • Sub-Registrar Kurla',
+          span: '18 Nov 2012 – Perpetual (Undisputed Title)',
+          lapse: 'Valid Indefinitely',
+          badge: 'Fully Compliant',
+          badgeClass: 'bg-surface-container-highest text-primary',
+          rule: 'APH 2025-26 Chapter I requires continuous unencumbered freehold or government-leased land for a minimum period of 30 years. All verified cadastral survey records confirm non-disputed boundary markers.'
+        },
+        'DOC-BCC-02': {
+          title: 'Municipal Building Occupancy Certificate (BCC)',
+          code: 'Certificate Ref: MCGM/BP-7740/E • Executive Engineer Bldg Props',
+          span: '15 Jan 2021 – 15 Jan 2031 (10-Yr Operational Validity)',
+          lapse: 'Valid (+2,162 Days Buffer)',
+          badge: 'Fully Compliant',
+          badgeClass: 'bg-surface-container-highest text-primary',
+          rule: 'BCC issued under Section 353-A of Mumbai Municipal Corporation Act confirms compliance with designated FSI and educational institutional occupancy classification.'
+        },
+        'DOC-FIR-03': {
+          title: 'State Fire & Rescue Services NOC',
+          code: 'Certificate Ref: MH-FS/2022/9904 (Issued by CFO Mumbai Fire Brigade)',
+          span: '10 Mar 2022 – 12 Mar 2024',
+          lapse: 'Expired (-339 Days)',
+          badge: 'Non-Compliant (Defect)',
+          badgeClass: 'bg-error-container text-on-error-container',
+          rule: 'As per Chapter II, Clause 2.4.1 of the Approval Process Handbook, an institution applying for Extension of Approval or Intake Variation MUST possess a valid, non-lapsed Fire Safety NOC as of the portal submission cutoff date.'
+        },
+        'DOC-STR-04': {
+          title: 'Structural Stability Certificate',
+          code: 'Certificate Ref: PWD-STR-4410-B (Registered Structural Engineer)',
+          span: '01 Aug 2021 – 30 Jul 2026',
+          lapse: 'Valid (+532 Days Remaining)',
+          badge: 'Fully Compliant',
+          badgeClass: 'bg-surface-container-highest text-primary',
+          rule: 'Certified safe for structural seismic resistance Zone III for academic assemblies and heavy laboratory vibrations under National Building Code (NBC) 2016.'
+        },
+        'DOC-ENV-05': {
+          title: 'Pollution Control Board Consent (MPCB)',
+          code: 'Certificate Ref: MPCB/CONSENT/20-25 • Maharashtra SPCB',
+          span: '10 Jun 2020 – 15 Jun 2025',
+          lapse: 'Expires in 121 Days',
+          badge: 'Warning: Expiry Imminent',
+          badgeClass: 'bg-secondary-fixed text-on-secondary-fixed-variant',
+          rule: 'Valid on application date, but expires within the first quarter of AY 2025-26. A conditional letter of approval requires an affidavit of ongoing renewal submission before 15 May 2025.'
+        },
+        'DOC-AFF-06': {
+          title: 'University Affiliation Continuation Order',
+          code: 'Order Ref: MU/AFF-ENG/2024-25 • University of Mumbai',
+          span: '01 Jul 2024 – 30 Jun 2025',
+          lapse: 'Expires in 136 Days',
+          badge: 'Warning: Annual Renewal Due',
+          badgeClass: 'bg-secondary-fixed text-on-secondary-fixed-variant',
+          rule: 'AICTE EoA is co-terminus with affiliating university sanction. Academic council continuity committee must receive the 2025-26 order copy prior to commencement of centralized admissions.'
+        },
+        'DOC-PLN-07': {
+          title: 'Approved Floor Plans & Sanctioned Blueprints',
+          code: 'CAD/FAR Blueprints • Architect Council Registry Missing',
+          span: 'Zero Uploads Identified in Dossier Slot',
+          lapse: 'Mandatory Doc Missing',
+          badge: 'Critical Blocker',
+          badgeClass: 'bg-error-container text-on-error-container',
+          rule: 'APH Appendix 14 mandates submission of digitally sealed municipal building plans showing instructional, administrative, and amenities carpet areas.'
+        },
+        'DOC-FAC-08': {
+          title: 'Faculty Roster & 7th CPC Salary Endorsement',
+          code: 'Audit Ref: WRO/FAC-7CPC/910 • Joint Director DTE',
+          span: '01 Jan 2024 – 31 Dec 2025',
+          lapse: 'Valid (+320 Days)',
+          badge: 'Fully Compliant',
+          badgeClass: 'bg-surface-container-highest text-primary',
+          rule: 'Cadre ratio 1:15 satisfied with 14 Professors, 28 Associate Professors, and 98 Assistant Professors on verified PF & Form 16 rolls.'
+        },
+        'DOC-PCI-09': {
+          title: 'Council Clearance / Professional Body Registration',
+          code: 'Certificate Ref: PCI/MH-821/2024 • Pharmacy Council of India',
+          span: '01 Oct 2024 – 31 Mar 2025',
+          lapse: 'Expires in 45 Days',
+          badge: 'Urgent Expiry Alert',
+          badgeClass: 'bg-secondary-fixed text-on-secondary-fixed-variant',
+          rule: 'Crucial 45-day window before expiration. Must provide proof of renewal application fee submission or clearance receipt to prevent statutory intake restriction.'
+        }
+      };
+
+      // Filter Toggle Logic
+      filterChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          filterChips.forEach(c => {
+            c.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+            c.classList.add('text-on-surface-variant');
+          });
+          chip.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm', 'font-semibold');
+          chip.classList.remove('text-on-surface-variant');
+
+          const filter = chip.getAttribute('data-filter');
+          docRows.forEach(row => {
+            if (filter === 'all' || row.getAttribute('data-category') === filter) {
+              row.style.display = 'flex';
+            } else {
+              row.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Row Selection Inspector Updater
+      docRows.forEach(row => {
+        row.addEventListener('click', () => {
+          const docId = row.getAttribute('data-doc-id');
+          const data = documentDatabase[docId];
+          if (!data) return;
+
+          // Visual selection indicator
+          docRows.forEach(r => r.classList.remove('ring-1', 'ring-primary'));
+          row.classList.add('ring-1', 'ring-primary');
+
+          // Update Inspector Panel with realistic data
+          inspectorTitle.textContent = data.title;
+          inspectorDocCode.textContent = data.code;
+          inspectorSpan.textContent = data.span;
+          inspectorLapse.textContent = data.lapse;
+          inspectorBadge.textContent = data.badge;
+          inspectorBadge.className = 'font-code-sm text-code-sm px-2 py-0.5 rounded font-semibold ' + data.badgeClass;
+          inspectorRuleText.textContent = data.rule;
+        });
+      });
+
+      // Export feedback button
+      const exportBtn = document.getElementById('exportDossierBtn');
+      if (exportBtn) {
+        exportBtn.addEventListener('click', () => {
+          const original = exportBtn.innerHTML;
+          exportBtn.innerHTML = '<span class="material-symbols-outlined text-sm animate-spin">sync</span><span>Preparing Dossier PDF...</span>';
+          setTimeout(() => {
+            exportBtn.innerHTML = '<span class="material-symbols-outlined text-sm text-surface-tint">check</span><span>Audit Dossier Exported</span>';
+            setTimeout(() => { exportBtn.innerHTML = original; }, 2500);
+          }, 900);
+        });
+      }
+    })();
+  </script>
+</div></main></div><footer class="fixed bottom-0 left-0 right-0 h-7 z-50 bg-surface-container-high text-on-surface-variant px-gutter flex items-center justify-between shadow-[0_-1px_6px_rgba(0,0,0,0.02)]"><div class="flex items-center gap-space-xs"><span class="inline-block w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span><span class="font-code-sm text-code-sm">Connected to National Academic Depository (NAD) &amp; Land Records API • Sync OK • Latency 42ms</span></div><div class="flex items-center gap-space-sm font-code-sm text-code-sm text-on-surface-variant"><span class="hidden md:inline">AICTE Act 1987 Sub-clause 10(k)</span><span>Node ID: WRO-INSP-04</span></div></footer></body></html>
