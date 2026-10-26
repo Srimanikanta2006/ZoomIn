@@ -130,7 +130,7 @@ export function AuthWorkspace() {
       sessionStorage.setItem("zoomin_demo_user", JSON.stringify(demoUser));
       sessionStorage.setItem("zoomin_demo_role", targetRole);
     }
-    setSession({ user: demoUser as any, access_token: `demo-${targetRole}-token` } as any);
+    setSession({ user: demoUser as unknown as User, access_token: `demo-${targetRole}-token` } as unknown as Session);
     setRole(targetRole);
     setMessage("");
     setDemoAccountRepair(null);

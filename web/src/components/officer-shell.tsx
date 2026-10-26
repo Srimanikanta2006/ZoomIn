@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import {
   BarChart3,
   ClipboardList,
@@ -88,7 +88,7 @@ export function OfficerShell({
   const [drawerOpen, setDrawerOpen] = useState(false);
   const isDemoMode = process.env.NEXT_PUBLIC_DEMO_MODE === "true";
 
-  // Active persona role (synced with sessionStorage or default)
+  // Active role strictly synced with sessionStorage or initialRole
   const [activeRole, setActiveRole] = useState<Role>(() => {
     if (typeof window !== "undefined") {
       const stored = sessionStorage.getItem("zoomin_demo_role") as Role | null;
@@ -101,43 +101,55 @@ export function OfficerShell({
   });
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      const stored = sessionStorage.getItem("zoomin_demo_role") as Role | null;
+      if (stored) {
+        setActiveRole(stored);
+        return;
+      }
+    }
     if (initialRole) {
       setActiveRole(initialRole);
     } else {
-      // Auto-adapt to current view in demo mode
       if (page === "portal") setActiveRole("applicant");
       else if (page === "rules" || page === "metrics" || page === "audit") setActiveRole("admin");
       else setActiveRole("scrutiny_officer");
     }
   }, [initialRole, page]);
 
-  // Persona Switcher: 1-click switch between Scrutiny Officer, Admin, and Applicant with smooth SPA transition
-  const switchPersona = useCallback((newRole: Role) => {
-    setActiveRole(newRole);
+  // Strict page guard: ensure logged-in profile only accesses their allowed views
+  useEffect(() => {
     if (typeof window !== "undefined") {
-      const demoEmail =
-        newRole === "admin"
-          ? "admin@zoomin.gov"
-          : newRole === "applicant"
-          ? "applicant@institution.edu"
-          : "officer@zoomin.gov";
-      const demoUser = {
-        id:
-          newRole === "admin"
-            ? "10000000-0000-4000-8000-000000000001"
-            : newRole === "applicant"
-            ? "10000000-0000-4000-8000-000000000003"
-            : "10000000-0000-4000-8000-000000000002",
-        email: demoEmail,
-        app_metadata: { role: newRole },
-        user_metadata: { role: newRole },
-      };
-      sessionStorage.setItem("zoomin_demo_user", JSON.stringify(demoUser));
-      sessionStorage.setItem("zoomin_demo_role", newRole);
+      const stored = (sessionStorage.getItem("zoomin_demo_role") as Role | null) || initialRole || activeRole;
+      if (stored === "admin") {
+        const isAdminPage = page === "rules" || page === "metrics" || page === "audit";
+        if (!isAdminPage) router.replace("/rules");
+      } else if (stored === "applicant") {
+        if (page !== "portal") router.replace("/portal");
+      } else if (stored === "scrutiny_officer") {
+        const isOfficerPage = page === "queue" || page === "case_file" || page === "trust_graph" || page === "timeline" || page === "letters" || page === "notices";
+        if (!isOfficerPage) router.replace("/officer");
+      }
     }
-    const targetUrl = newRole === "applicant" ? "/portal" : newRole === "admin" ? "/rules" : "/officer";
-    router.push(targetUrl);
-  }, [router]);
+  }, [activeRole, initialRole, page, router]);
+
+  // Navigation items strictly scoped to active logged-in role
+  const roleNavItems = useMemo(() => {
+    if (activeRole === "admin") {
+      return ALL_NAV_ITEMS.filter((item) => item.section === "Administration");
+    }
+    if (activeRole === "applicant") {
+      return ALL_NAV_ITEMS.filter((item) => item.section === "Institution");
+    }
+    return ALL_NAV_ITEMS.filter((item) => item.section === "Scrutiny");
+  }, [activeRole]);
+
+  const sectionHeading =
+    activeRole === "admin"
+      ? "Administration"
+      : activeRole === "applicant"
+      ? "Institution Filings"
+      : "Regulatory Scrutiny";
 
   const handleSignOut = useCallback(async (isTimeout = false) => {
     if (typeof window !== "undefined") {
@@ -174,9 +186,6 @@ export function OfficerShell({
 
   const homeHref = activeRole === "applicant" ? "/portal" : activeRole === "admin" ? "/rules" : "/officer";
 
-  // Group nav items by section
-  const sections = ["Scrutiny", "Administration", "Institution"] as const;
-
   return (
     <div className="review-app">
       {/* Feather Atlas Styled Sidebar with ZoomIn Branding */}
@@ -195,106 +204,35 @@ export function OfficerShell({
           </b>
         </Link>
 
-        {/* Persona Switcher Chips */}
-        <div style={{ marginBottom: "14px", padding: "8px 10px", background: "#f2eee5", borderRadius: "10px", border: "1px solid #e7e0d1" }}>
-          <div style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "0.1em", color: "#4d5a3d", marginBottom: "6px", textTransform: "uppercase" }}>
-            Active Persona
-          </div>
-          <div style={{ display: "flex", gap: "4px" }}>
-            <button
-              type="button"
-              onClick={() => switchPersona("scrutiny_officer")}
-              style={{
-                flex: 1,
-                padding: "4px 2px",
-                fontSize: "10.5px",
-                fontWeight: activeRole === "scrutiny_officer" ? 700 : 500,
-                borderRadius: "6px",
-                border: activeRole === "scrutiny_officer" ? "1px solid #4d5a3d" : "1px solid #d5cdbd",
-                background: activeRole === "scrutiny_officer" ? "#4d5a3d" : "#ffffff",
-                color: activeRole === "scrutiny_officer" ? "#ffffff" : "#4a5568",
-                cursor: "pointer",
-                transition: "all 0.15s ease",
-              }}
-              title="Switch to Scrutiny Officer"
-            >
-              Officer
-            </button>
-            <button
-              type="button"
-              onClick={() => switchPersona("admin")}
-              style={{
-                flex: 1,
-                padding: "4px 2px",
-                fontSize: "10.5px",
-                fontWeight: activeRole === "admin" ? 700 : 500,
-                borderRadius: "6px",
-                border: activeRole === "admin" ? "1px solid #4d5a3d" : "1px solid #d5cdbd",
-                background: activeRole === "admin" ? "#4d5a3d" : "#ffffff",
-                color: activeRole === "admin" ? "#ffffff" : "#4a5568",
-                cursor: "pointer",
-                transition: "all 0.15s ease",
-              }}
-              title="Switch to Administrator"
-            >
-              Admin
-            </button>
-            <button
-              type="button"
-              onClick={() => switchPersona("applicant")}
-              style={{
-                flex: 1,
-                padding: "4px 2px",
-                fontSize: "10.5px",
-                fontWeight: activeRole === "applicant" ? 700 : 500,
-                borderRadius: "6px",
-                border: activeRole === "applicant" ? "1px solid #4d5a3d" : "1px solid #d5cdbd",
-                background: activeRole === "applicant" ? "#4d5a3d" : "#ffffff",
-                color: activeRole === "applicant" ? "#ffffff" : "#4a5568",
-                cursor: "pointer",
-                transition: "all 0.15s ease",
-              }}
-              title="Switch to Institution Applicant"
-            >
-              Applicant
-            </button>
-          </div>
-        </div>
-
-        {/* Categorized Navigation List */}
+        {/* Role-scoped Navigation List - Strictly shows only logged-in profile items */}
         <nav aria-label="Role-scoped workspace navigation" className="sidebar-nav-list" style={{ overflowY: "auto", flex: 1 }}>
-          {sections.map((section) => {
-            const items = ALL_NAV_ITEMS.filter((i) => i.section === section);
-            return (
-              <div key={section} style={{ marginBottom: "12px" }}>
-                <div style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "0.12em", color: "#8a8477", padding: "4px 10px", textTransform: "uppercase" }}>
-                  {section}
-                </div>
-                {items.map(({ id, label, sub, href, icon: Icon }) => {
-                  const isActive =
-                    page === id ||
-                    (id === "queue" && page === "case_file") ||
-                    (id === "notices" && page === "letters");
-                  return (
-                    <Link
-                      key={id}
-                      className={isActive ? "review-nav-link active" : "review-nav-link"}
-                      href={href}
-                      aria-current={isActive ? "page" : undefined}
-                    >
-                      <span className="nav-icon-wrap">
-                        <Icon size={16} />
-                      </span>
-                      <div className="nav-label-group">
-                        <span className="nav-primary-label">{label}</span>
-                        <small className="nav-sub-label">{sub}</small>
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
-            );
-          })}
+          <div style={{ marginBottom: "12px" }}>
+            <div style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "0.12em", color: "#8a8477", padding: "4px 10px", textTransform: "uppercase" }}>
+              {sectionHeading}
+            </div>
+            {roleNavItems.map(({ id, label, sub, href, icon: Icon }) => {
+              const isActive =
+                page === id ||
+                (id === "queue" && page === "case_file") ||
+                (id === "notices" && page === "letters");
+              return (
+                <Link
+                  key={id}
+                  className={isActive ? "review-nav-link active" : "review-nav-link"}
+                  href={href}
+                  aria-current={isActive ? "page" : undefined}
+                >
+                  <span className="nav-icon-wrap">
+                    <Icon size={16} />
+                  </span>
+                  <div className="nav-label-group">
+                    <span className="nav-primary-label">{label}</span>
+                    <small className="nav-sub-label">{sub}</small>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
         </nav>
 
         {/* Featured Card Pinned to Bottom */}
@@ -319,54 +257,56 @@ export function OfficerShell({
         </div>
       </aside>
 
-      <header className="review-header">
-        <div className="review-breadcrumb">
-          <Search size={14} className="breadcrumb-search-icon" />
-          <span>ZOOMIN</span>
-          <span className="breadcrumb-sep">/</span>
-          <span className="breadcrumb-current">
-            {ALL_NAV_ITEMS.find((item) => item.id === page)?.label.toUpperCase() ?? page.toUpperCase()}
-          </span>
-        </div>
-
-        <div className="review-header-tools">
-          <NotificationBell role={activeRole} />
-
-          {/* Admin-only Demo Controls Drawer Trigger */}
-          {isDemoMode && activeRole === "admin" && (
-            <button
-              onClick={() => setDrawerOpen(true)}
-              className="admin-demo-trigger"
-              title="Open Admin Demo Controls"
-            >
-              <SlidersHorizontal size={13} />
-              <span>Demo controls</span>
-            </button>
-          )}
-
-          {/* User Identity Chip */}
-          <div className="review-user">
-            <span className="review-user-email">
-              {email || (activeRole === "admin" ? "admin@zoomin.gov" : activeRole === "applicant" ? "applicant@institution.edu" : "officer@zoomin.gov")}
+      <div className="review-content-area">
+        <header className="review-header">
+          <div className="review-breadcrumb">
+            <Search size={14} className="breadcrumb-search-icon" />
+            <span>ZOOMIN</span>
+            <span className="breadcrumb-sep">/</span>
+            <span className="breadcrumb-current">
+              {ALL_NAV_ITEMS.find((item) => item.id === page)?.label.toUpperCase() ?? page.toUpperCase()}
             </span>
-            <b className="review-user-role">{ROLE_LABELS[activeRole]}</b>
           </div>
 
-          <button
-            onClick={() => void handleSignOut(false)}
-            className="topbar-signout-btn"
-            title="Sign out"
-          >
-            <LogOut size={13} />
-            <span>Sign out</span>
-          </button>
-        </div>
-      </header>
+          <div className="review-header-tools">
+            <NotificationBell role={activeRole} />
 
-      <main className="review-main">
-        {children}
-        <footer className="review-footer-note">Indicators for human review, not decisions.</footer>
-      </main>
+            {/* Admin-only Demo Controls Drawer Trigger */}
+            {isDemoMode && activeRole === "admin" && (
+              <button
+                onClick={() => setDrawerOpen(true)}
+                className="admin-demo-trigger"
+                title="Open Admin Demo Controls"
+              >
+                <SlidersHorizontal size={13} />
+                <span>Demo controls</span>
+              </button>
+            )}
+
+            {/* User Identity Chip */}
+            <div className="review-user">
+              <span className="review-user-email">
+                {email || (activeRole === "admin" ? "admin@zoomin.gov" : activeRole === "applicant" ? "applicant@institution.edu" : "officer@zoomin.gov")}
+              </span>
+              <b className="review-user-role">{ROLE_LABELS[activeRole]}</b>
+            </div>
+
+            <button
+              onClick={() => void handleSignOut(false)}
+              className="topbar-signout-btn"
+              title="Sign out"
+            >
+              <LogOut size={13} />
+              <span>Sign out</span>
+            </button>
+          </div>
+        </header>
+
+        <main className="review-main">
+          {children}
+          <footer className="review-footer-note">Indicators for human review, not decisions.</footer>
+        </main>
+      </div>
 
       {/* Admin-only Demo Controls Drawer */}
       {isDemoMode && activeRole === "admin" && drawerOpen && (

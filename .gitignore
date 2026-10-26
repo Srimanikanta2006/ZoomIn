@@ -15,4 +15,7 @@ dist/
 data/cache/
 eval/cache/
 .freebuff/
-
+out/
+web/out/
+.firebase/
+web/.firebase/
